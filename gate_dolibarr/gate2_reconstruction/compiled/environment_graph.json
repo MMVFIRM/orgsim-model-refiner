@@ -1,0 +1,21 @@
+{
+  "organization": "Dolibarr disposable tenant — Gate 2 unreviewed behavioral hypotheses",
+  "nodes": [
+    "dolibarr.contacts",
+    "dolibarr.emailtemplates",
+    "dolibarr.invoices",
+    "dolibarr.orders",
+    "dolibarr.paiements",
+    "dolibarr.products",
+    "dolibarr.thirdparties",
+    "dolibarr.users"
+  ],
+  "edges": [
+    {
+      "kind": "foreign_key",
+      "from": "dolibarr.orders",
+      "to": "dolibarr.thirdparties",
+      "field": "socid"
+    }
+  ]
+}

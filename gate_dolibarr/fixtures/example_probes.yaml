@@ -1,0 +1,44 @@
+# Example probes: adapt against YOUR freshly initialized disposable Dolibarr tenant.
+# Distinct discovery / holdout phases. Do not pass holdout cases into a model.
+# GET list parity requires matching clean starting conditions.
+cases:
+  - id: list-thirdparties
+    phase: discovery
+    method: GET
+    path: /thirdparties?limit=1
+    tool: dolibarr.thirdparties.list
+    args: {limit: 1}
+  - id: list-products
+    phase: discovery
+    method: GET
+    path: /products?limit=1
+    tool: dolibarr.products.list
+    args: {limit: 1}
+  - id: missing-thirdparty
+    phase: holdout
+    method: GET
+    path: /thirdparties/999999999
+    tool: dolibarr.thirdparties.get
+    args: {id: 999999999}
+  - id: missing-product
+    phase: holdout
+    method: GET
+    path: /products/999999999
+    tool: dolibarr.products.get
+    args: {id: 999999999}
+  # WRITE TESTS are blocked without --allow-writes, --confirm, and localhost.
+  # Dolibarr may not accept this example payload without additional configuration.
+  - id: create-thirdparty
+    phase: holdout
+    method: POST
+    path: /thirdparties
+    tool: dolibarr.thirdparties.create
+    body: {name: "OrgSim Gate Temporary Customer", client: 1}
+    args: {name: "OrgSim Gate Temporary Customer", client: 1}
+    capture_id_as: new_customer_id
+  - id: read-created-thirdparty
+    phase: holdout
+    method: GET
+    path: /thirdparties/${new_customer_id}
+    tool: dolibarr.thirdparties.get
+    args: {id: "${new_customer_id}"}

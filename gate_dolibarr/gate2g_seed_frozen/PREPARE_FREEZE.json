@@ -1,0 +1,14 @@
+{
+  "candidate_reviewed": false,
+  "candidate_sha256": "08a08ecd2835ca9c347ae6df88e99b6d63b250c6a035e555ef847f22d24e7083",
+  "format": "orgsim-gate2g-fixed-denominator-v1-prepare-freeze",
+  "independent_tenant_holdout": false,
+  "live_reads": 0,
+  "live_writes": 0,
+  "model_provider_calls": 0,
+  "phase": "prepare",
+  "plan_sha256": "ae0f39ceffb11c1b0d5c44e1269afbe10adcaa79dbdd58f0e78cfbe0bff3a964",
+  "source_development_sha256": "f115e35bc18c31e7ad198e444bf8667cb8274597c8601ed2104c4c453a387ab4",
+  "source_discovery_sha256": "136025e9432f687605691473d515ad1dccdb435d227220e9146c04c77eb51d2c",
+  "source_swagger_sha256": "620d34b8a32dd4d32252b293050ce752cd17c54f1da52f53f2b8e5cca562310a"
+}

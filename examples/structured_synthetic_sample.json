@@ -1,0 +1,33 @@
+{
+  "action": {
+    "id": "o1"
+  },
+  "operation": "validate_order",
+  "state": {
+    "customer": {
+      "closes": 0,
+      "credit": 1000,
+      "received": 0
+    },
+    "invoice": {
+      "balance": 1000,
+      "customer_id": "c1",
+      "payment_count": 0,
+      "status": "issued"
+    },
+    "order": {
+      "allocated": 0,
+      "amount": 0,
+      "customer_id": "c1",
+      "invoiced": true,
+      "product_id": "p1",
+      "qty": 1,
+      "shipped": 30,
+      "status": "draft"
+    },
+    "product": {
+      "reserved": 0,
+      "stock": 1000
+    }
+  }
+}

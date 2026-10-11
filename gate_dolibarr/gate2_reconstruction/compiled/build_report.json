@@ -1,0 +1,33 @@
+{
+  "organization": "Dolibarr disposable tenant — Gate 2 unreviewed behavioral hypotheses",
+  "reviewed": false,
+  "assurance": "contract_only_unreviewed",
+  "tool_count": 41,
+  "resource_count": 8,
+  "integration_count": 0,
+  "workflow_count": 0,
+  "lookup_count": 3,
+  "notes": [
+    "MODEL CANDIDATE: reviewed=false; all semantics other than reported discovery and Swagger declarations remain hypotheses.",
+    "H1 (UNVERIFIED): orders.socid references thirdparties.id when supplied; derived from POST /orders example and declared 404 thirdparty-not-found.",
+    "Hypothesis not implemented: orders.lines[*].fk_product references products.id; v0.1 FK DSL cannot address array elements.",
+    "No product.ref uniqueness rule: GET /products/ref/{ref} suggests lookup semantics but does not prove uniqueness enforcement.",
+    "Observed field names/types are single-record discovery shape evidence, not compulsory output defaults; added selected fields to open storage schema only.",
+    "The numeric POST ID response is contract-declared; input string ID and numeric response are handled by v0.1.3 runtime.",
+    "Some observed read values use strings where simulator inputs are numbers; v0.2 supports explicitly modeled response projections, but no verified Dolibarr coercion has been learned.",
+    "The orgsim_gate_readonly role is represented in addition to test_agent; v0.2 probe harness now accepts suite.sim_role; permission equivalence with Dolibarr still needs an independent test.",
+    "GET/POST /login excluded; swagger warns it exposes passwords and returns API tokens.",
+    "Excluded faux CRUD resource mappings for status, documents, objectlinks; these need specialized read/action adapters.",
+    "All custom endpoints, including orders.validate, invoices.validate, payments and nested resource actions, remain unmodeled in this Gate 2 manifest.",
+    "State transitions, negative error response contracts and side effects must be learned/verified on a disposable test tenant before enabling.",
+    "Evidence used for candidate: supplied sanitized Swagger and two discovery probes only; ZERO holdout results.",
+    "Three alternate-key lookup proposals are executable in the simulator, but not yet verified against Dolibarr.",
+    "Unmodeled order/invoice lifecycle commands are described in preflight_offline/workflow_hypotheses.json, but deliberately not executable until state effects are specified."
+  ],
+  "limits": [
+    "Only configured policy invariants are enforced",
+    "Tool roles are untrusted caller-supplied lab identities",
+    "Unmodeled custom operations remain unsupported until a reviewed declarative action is supplied",
+    "No live system I/O or organization data cloning"
+  ]
+}

@@ -1,0 +1,1559 @@
+{
+  "organization": "Dolibarr disposable tenant — Gate 2 unreviewed behavioral hypotheses",
+  "reviewed": false,
+  "tools": [
+    {
+      "name": "dolibarr.contacts.create",
+      "description": "Create contacts in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "contacts",
+      "action": "create",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "additionalProperties": true
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.contacts.delete",
+      "description": "Delete contacts in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "contacts",
+      "action": "delete",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.contacts.get",
+      "description": "Get contacts in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "contacts",
+      "action": "get",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.contacts.update",
+      "description": "Update contacts in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "contacts",
+      "action": "update",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "patch": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false,
+            "minProperties": 1
+          }
+        },
+        "required": [
+          "id",
+          "patch"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.emailtemplates.create",
+      "description": "Create emailtemplates in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "emailtemplates",
+      "action": "create",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "additionalProperties": true
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.emailtemplates.delete",
+      "description": "Delete emailtemplates in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "emailtemplates",
+      "action": "delete",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.emailtemplates.get",
+      "description": "Get emailtemplates in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "emailtemplates",
+      "action": "get",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.emailtemplates.list",
+      "description": "List emailtemplates in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "emailtemplates",
+      "action": "list",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "type": "object"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          }
+        },
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.emailtemplates.update",
+      "description": "Update emailtemplates in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "emailtemplates",
+      "action": "update",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "patch": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false,
+            "minProperties": 1
+          }
+        },
+        "required": [
+          "id",
+          "patch"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.invoices.create",
+      "description": "Create invoices in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "invoices",
+      "action": "create",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "socid": {
+            "type": [
+              "string",
+              "integer",
+              "null"
+            ]
+          },
+          "lines": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "object"
+            }
+          },
+          "status": {
+            "type": [
+              "string",
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": true
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.invoices.delete",
+      "description": "Delete invoices in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "invoices",
+      "action": "delete",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.invoices.get",
+      "description": "Get invoices in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "invoices",
+      "action": "get",
+      "roles": [
+        "orgsim_gate_readonly",
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.invoices.list",
+      "description": "List invoices in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "invoices",
+      "action": "list",
+      "roles": [
+        "orgsim_gate_readonly",
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "type": "object"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          }
+        },
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.invoices.update",
+      "description": "Update invoices in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "invoices",
+      "action": "update",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "patch": {
+            "type": "object",
+            "properties": {
+              "socid": {
+                "type": [
+                  "string",
+                  "integer",
+                  "null"
+                ]
+              },
+              "lines": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "object"
+                }
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "minProperties": 1
+          }
+        },
+        "required": [
+          "id",
+          "patch"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.orders.create",
+      "description": "Create orders in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "orders",
+      "action": "create",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "socid": {
+            "type": [
+              "integer",
+              "string",
+              "null"
+            ]
+          },
+          "date": {
+            "type": [
+              "integer",
+              "number",
+              "null"
+            ]
+          },
+          "type": {
+            "type": [
+              "integer",
+              "number",
+              "null"
+            ]
+          },
+          "lines": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "object",
+              "properties": {
+                "fk_product": {
+                  "type": [
+                    "integer",
+                    "string",
+                    "null"
+                  ]
+                },
+                "qty": {
+                  "type": "number"
+                }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [],
+        "additionalProperties": true
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.orders.delete",
+      "description": "Delete orders in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "orders",
+      "action": "delete",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.orders.get",
+      "description": "Get orders in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "orders",
+      "action": "get",
+      "roles": [
+        "orgsim_gate_readonly",
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.orders.list",
+      "description": "List orders in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "orders",
+      "action": "list",
+      "roles": [
+        "orgsim_gate_readonly",
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "type": "object"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          }
+        },
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.orders.update",
+      "description": "Update orders in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "orders",
+      "action": "update",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "patch": {
+            "type": "object",
+            "properties": {
+              "socid": {
+                "type": [
+                  "integer",
+                  "string",
+                  "null"
+                ]
+              },
+              "date": {
+                "type": [
+                  "integer",
+                  "number",
+                  "null"
+                ]
+              },
+              "type": {
+                "type": [
+                  "integer",
+                  "number",
+                  "null"
+                ]
+              },
+              "lines": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "fk_product": {
+                      "type": [
+                        "integer",
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "qty": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            },
+            "additionalProperties": false,
+            "minProperties": 1
+          }
+        },
+        "required": [
+          "id",
+          "patch"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.paiements.delete",
+      "description": "Delete paiements in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "paiements",
+      "action": "delete",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.paiements.get",
+      "description": "Get paiements in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "paiements",
+      "action": "get",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.paiements.list",
+      "description": "List paiements in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "paiements",
+      "action": "list",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "type": "object"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          }
+        },
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.paiements.update",
+      "description": "Update paiements in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "paiements",
+      "action": "update",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "patch": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false,
+            "minProperties": 1
+          }
+        },
+        "required": [
+          "id",
+          "patch"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.products.create",
+      "description": "Create products in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "products",
+      "action": "create",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ref_ext": {},
+          "label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "price": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "price_ttc": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tva_tx": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "price_base_type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status_buy": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stockable_product": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "barcode": {},
+          "desiredstock": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "seuil_stock_alerte": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "date_creation": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "date_modification": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "entity": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "array_options": {
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "tobuy": {},
+          "tosell": {}
+        },
+        "required": [],
+        "additionalProperties": true
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.products.delete",
+      "description": "Delete products in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "products",
+      "action": "delete",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.products.get",
+      "description": "Get products in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "products",
+      "action": "get",
+      "roles": [
+        "orgsim_gate_readonly",
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.products.list",
+      "description": "List products in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "products",
+      "action": "list",
+      "roles": [
+        "orgsim_gate_readonly",
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "type": "object"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          }
+        },
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.products.update",
+      "description": "Update products in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "products",
+      "action": "update",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "patch": {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ref_ext": {},
+              "label": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "description": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "type": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "price": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "price_ttc": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "tva_tx": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "price_base_type": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status_buy": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "stockable_product": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "barcode": {},
+              "desiredstock": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "seuil_stock_alerte": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "date_creation": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "date_modification": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "entity": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "array_options": {
+                "type": [
+                  "array",
+                  "null"
+                ]
+              },
+              "tobuy": {},
+              "tosell": {}
+            },
+            "additionalProperties": false,
+            "minProperties": 1
+          }
+        },
+        "required": [
+          "id",
+          "patch"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.thirdparties.create",
+      "description": "Create thirdparties in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "thirdparties",
+      "action": "create",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "client": {
+            "type": [
+              "string",
+              "number",
+              "null"
+            ]
+          },
+          "prospect": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "fournisseur": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ref_ext": {},
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "country_code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "address": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "zip": {},
+          "town": {},
+          "email": {},
+          "phone": {},
+          "outstanding_limit": {},
+          "tva_intra": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "entity": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "code_client": {},
+          "date_creation": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "date_modification": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "array_options": {
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "socialnetworks": {
+            "type": [
+              "array",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": true
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.thirdparties.delete",
+      "description": "Delete thirdparties in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "thirdparties",
+      "action": "delete",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.thirdparties.get",
+      "description": "Get thirdparties in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "thirdparties",
+      "action": "get",
+      "roles": [
+        "orgsim_gate_readonly",
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.thirdparties.list",
+      "description": "List thirdparties in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "thirdparties",
+      "action": "list",
+      "roles": [
+        "orgsim_gate_readonly",
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "type": "object"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          }
+        },
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.thirdparties.update",
+      "description": "Update thirdparties in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "thirdparties",
+      "action": "update",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "patch": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "client": {
+                "type": [
+                  "string",
+                  "number",
+                  "null"
+                ]
+              },
+              "prospect": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "fournisseur": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ref_ext": {},
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "country_code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "address": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "zip": {},
+              "town": {},
+              "email": {},
+              "phone": {},
+              "outstanding_limit": {},
+              "tva_intra": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "entity": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "code_client": {},
+              "date_creation": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "date_modification": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "array_options": {
+                "type": [
+                  "array",
+                  "null"
+                ]
+              },
+              "socialnetworks": {
+                "type": [
+                  "array",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "minProperties": 1
+          }
+        },
+        "required": [
+          "id",
+          "patch"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.users.create",
+      "description": "Create users in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "users",
+      "action": "create",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "additionalProperties": true
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.users.delete",
+      "description": "Delete users in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "users",
+      "action": "delete",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.users.get",
+      "description": "Get users in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "users",
+      "action": "get",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.users.list",
+      "description": "List users in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "users",
+      "action": "list",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "type": "object"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          }
+        },
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "dolibarr.users.update",
+      "description": "Update users in dolibarr; subject to configured business policies",
+      "system": "dolibarr",
+      "resource": "users",
+      "action": "update",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "patch": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false,
+            "minProperties": 1
+          }
+        },
+        "required": [
+          "id",
+          "patch"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "dolibarr.lookup.product_by_barcode",
+      "description": "Get product by barcode: contract-named lookup, not independently validated",
+      "system": "dolibarr",
+      "resource": "lookup",
+      "action": "product_by_barcode",
+      "kind": "lookup",
+      "roles": [
+        "test_agent",
+        "orgsim_gate_readonly"
+      ],
+      "mutates": false,
+      "evidence": "hypothesis",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "barcode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "barcode"
+        ]
+      }
+    },
+    {
+      "name": "dolibarr.lookup.product_by_ref",
+      "description": "Get product by reference: contract-named lookup, not independently validated",
+      "system": "dolibarr",
+      "resource": "lookup",
+      "action": "product_by_ref",
+      "kind": "lookup",
+      "roles": [
+        "test_agent",
+        "orgsim_gate_readonly"
+      ],
+      "mutates": false,
+      "evidence": "hypothesis",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "ref": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ref"
+        ]
+      }
+    },
+    {
+      "name": "dolibarr.lookup.thirdparty_by_email",
+      "description": "Get third party by email: contract-named lookup, not independently validated",
+      "system": "dolibarr",
+      "resource": "lookup",
+      "action": "thirdparty_by_email",
+      "kind": "lookup",
+      "roles": [
+        "test_agent",
+        "orgsim_gate_readonly"
+      ],
+      "mutates": false,
+      "evidence": "hypothesis",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email"
+        ]
+      }
+    }
+  ],
+  "dependency_edges": [
+    {
+      "kind": "foreign_key",
+      "from": "dolibarr.orders",
+      "to": "dolibarr.thirdparties",
+      "field": "socid"
+    }
+  ]
+}

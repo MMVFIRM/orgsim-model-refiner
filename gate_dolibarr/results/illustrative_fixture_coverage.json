@@ -1,0 +1,59 @@
+{
+  "format": "orgsim-contract-coverage-v1",
+  "evidence": "API surface ONLY; no real-system behavior was tested",
+  "api_operations": 9,
+  "mapped_operations": 7,
+  "unimplemented_operations": 2,
+  "mapped_fraction": 0.7778,
+  "mapped": [
+    {
+      "method": "GET",
+      "path": "/products",
+      "tool": "dolibarr.products.list"
+    },
+    {
+      "method": "POST",
+      "path": "/products",
+      "tool": "dolibarr.products.create"
+    },
+    {
+      "method": "GET",
+      "path": "/products/{id}",
+      "tool": "dolibarr.products.get"
+    },
+    {
+      "method": "GET",
+      "path": "/thirdparties",
+      "tool": "dolibarr.thirdparties.list"
+    },
+    {
+      "method": "POST",
+      "path": "/thirdparties",
+      "tool": "dolibarr.thirdparties.create"
+    },
+    {
+      "method": "GET",
+      "path": "/thirdparties/{id}",
+      "tool": "dolibarr.thirdparties.get"
+    },
+    {
+      "method": "PUT",
+      "path": "/thirdparties/{id}",
+      "tool": "dolibarr.thirdparties.update"
+    }
+  ],
+  "not_reconstructed": [
+    "GET /login",
+    "POST /orders/{id}/validate"
+  ],
+  "resource_count": 2,
+  "review_notes": [
+    "Verify list response envelope for GET /thirdparties",
+    "Verify list response envelope for GET /products",
+    "Unsupported custom endpoint: POST /orders/{id}/validate (requires explicit adapter)",
+    "Unsupported collection response: GET /login (expected array; inspect real response)",
+    "Verify list response envelope for GET /login",
+    "dolibarr.thirdparties: verify business constraints, identity mapping, uniqueness, defaults, permissions and side effects",
+    "dolibarr.products: verify business constraints, identity mapping, uniqueness, defaults, permissions and side effects"
+  ]
+}

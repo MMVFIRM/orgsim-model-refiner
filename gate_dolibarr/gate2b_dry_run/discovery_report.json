@@ -1,0 +1,41 @@
+{
+  "api_key_saved": false,
+  "evidence": "DRY_RUN",
+  "format": "orgsim-gate2b-readonly-discovery-v1",
+  "operations_configured": 4,
+  "operations_executed": 0,
+  "phase": "discovery",
+  "probes": [
+    {
+      "category": "collection",
+      "id": "thirdparties_list",
+      "method": "GET",
+      "path_template": "/thirdparties",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "category": "collection",
+      "id": "products_list",
+      "method": "GET",
+      "path_template": "/products",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "category": "collection",
+      "id": "orders_list",
+      "method": "GET",
+      "path_template": "/orders",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "category": "collection",
+      "id": "invoices_list",
+      "method": "GET",
+      "path_template": "/invoices",
+      "status": "NOT_EXECUTED"
+    }
+  ],
+  "record_values_saved": false,
+  "scope": "loopback_disposable_sandbox_only",
+  "writes_executed": 0
+}

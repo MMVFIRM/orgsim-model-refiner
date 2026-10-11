@@ -1,0 +1,194 @@
+{
+  "format": "orgsim-probe-priorities-v1",
+  "probes": [
+    {
+      "method": "GET",
+      "path_template": "/invoices",
+      "requires_synthetic_fixtures": [],
+      "operation_id": "listInvoices",
+      "information_priority": 11,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/invoices/templates",
+      "requires_synthetic_fixtures": [],
+      "operation_id": "invoicesListTemplateInvoices",
+      "information_priority": 11,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/orders",
+      "requires_synthetic_fixtures": [],
+      "operation_id": "listOrders",
+      "information_priority": 11,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/products",
+      "requires_synthetic_fixtures": [],
+      "operation_id": "listProducts",
+      "information_priority": 11,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/products/attributes",
+      "requires_synthetic_fixtures": [],
+      "operation_id": "productsRetrieveAttributes",
+      "information_priority": 11,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/products/purchase_prices",
+      "requires_synthetic_fixtures": [],
+      "operation_id": "productsRetrieveSupplierProducts",
+      "information_priority": 11,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/thirdparties",
+      "requires_synthetic_fixtures": [],
+      "operation_id": "listThirdparties",
+      "information_priority": 11,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/invoices/{id}/contacts",
+      "requires_synthetic_fixtures": [
+        "id"
+      ],
+      "operation_id": "invoicesRetrieveContacts",
+      "information_priority": 8,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/invoices/{id}/discount",
+      "requires_synthetic_fixtures": [
+        "id"
+      ],
+      "operation_id": "invoicesRetrieveDiscount",
+      "information_priority": 8,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/invoices/{id}/lines",
+      "requires_synthetic_fixtures": [
+        "id"
+      ],
+      "operation_id": "invoicesRetrieveLines",
+      "information_priority": 8,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/invoices/{id}/payments",
+      "requires_synthetic_fixtures": [
+        "id"
+      ],
+      "operation_id": "invoicesRetrievePayments",
+      "information_priority": 8,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/orders/{id}/contacts",
+      "requires_synthetic_fixtures": [
+        "id"
+      ],
+      "operation_id": "ordersRetrieveContacts",
+      "information_priority": 8,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/orders/{id}/lines",
+      "requires_synthetic_fixtures": [
+        "id"
+      ],
+      "operation_id": "ordersRetrieveLines",
+      "information_priority": 8,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/orders/{id}/shipment",
+      "requires_synthetic_fixtures": [
+        "id"
+      ],
+      "operation_id": "ordersRetrieveOrderShipments",
+      "information_priority": 8,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/products/attributes/ref/{ref}/values",
+      "requires_synthetic_fixtures": [
+        "ref"
+      ],
+      "operation_id": "productsRetrieveAttributeValuesByRef",
+      "information_priority": 8,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/products/attributes/{id}/values",
+      "requires_synthetic_fixtures": [
+        "id"
+      ],
+      "operation_id": "productsRetrieveAttributeValues",
+      "information_priority": 8,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/products/ref/{ref}/variants",
+      "requires_synthetic_fixtures": [
+        "ref"
+      ],
+      "operation_id": "productsRetrieveVariantsByProdRef",
+      "information_priority": 8,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    },
+    {
+      "method": "GET",
+      "path_template": "/thirdparties/{id}/accounts",
+      "requires_synthetic_fixtures": [
+        "id"
+      ],
+      "operation_id": "thirdpartiesRetrieveSocieteAccounts",
+      "information_priority": 8,
+      "request_status": "PROPOSED_NOT_EXECUTED",
+      "note": "Read-only permission and risk must still be confirmed by a human"
+    }
+  ],
+  "excluded_counts": {
+    "outside_focus": 21,
+    "unsafe_or_mutating": 168
+  },
+  "live_calls_performed": 0
+}

@@ -1,0 +1,29 @@
+# DEVELOPMENT / DISCOVERY ONLY. Everything must be synthetic; adapt these
+# example fixture names to those already in your OWN disposable Dolibarr tenant.
+# The harness applies sim_seed_calls ONLY to OrgSim (never to real Dolibarr).
+# In your live sandbox, these are *read-only* probes; no permission changes needed.
+# Do not score these as blind tests after viewing results.
+sim_seed_calls:
+  - tool: dolibarr.thirdparties.create
+    args: {name: "Fixture Client Alpha", client: 1}
+  - tool: dolibarr.thirdparties.create
+    args: {name: "Fixture Client Beta", client: 1}
+  - tool: dolibarr.products.create
+    args: {ref: "FIXTURE-SKU-001", label: "Fixture Product"}
+cases:
+  - id: synthetic-thirdparty-values
+    phase: discovery
+    method: GET
+    path: /thirdparties?limit=100
+    tool: dolibarr.thirdparties.list
+    args: {limit: 100}
+    match_items_by: name
+    compare_fields: [name, client]
+  - id: synthetic-product-values
+    phase: discovery
+    method: GET
+    path: /products?limit=100
+    tool: dolibarr.products.list
+    args: {limit: 100}
+    match_items_by: ref
+    compare_fields: [ref, label]

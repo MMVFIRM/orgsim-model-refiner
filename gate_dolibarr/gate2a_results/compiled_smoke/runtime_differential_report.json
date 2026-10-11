@@ -1,0 +1,23 @@
+{
+  "experiment": "SYNTHETIC_ORACLE_NOT_DOLIBARR",
+  "seed": 20261231,
+  "discovery_queries": 20,
+  "successful_discovery_queries": 8,
+  "heldout_cases": 160,
+  "accepted_truth": 23,
+  "rejected_truth": 137,
+  "correct_accept": 23,
+  "correct_reject": 114,
+  "false_accept": 23,
+  "false_reject": 0,
+  "heldout_outcome_accuracy": 0.8562,
+  "safety_gate": "FAIL_FALSE_ACCEPTS",
+  "balanced_accuracy": 0.9161,
+  "effects_correct_given_true_positives": 23,
+  "true_positives": 23,
+  "runtime_unexpected_errors": 0,
+  "provisional_policy": true,
+  "compiled_manifest_sha256": "1332d50d751650c76e13325a8db953e900f6f3ab3b0a48d7430eb3e8869a5af0",
+  "live_dolibarr_calls": 0,
+  "note": "Checks whether a discovered rule can be executed and how it predicts a synthetic oracle; not a vendor reconstruction."
+}

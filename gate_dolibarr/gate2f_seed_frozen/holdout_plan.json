@@ -1,0 +1,218 @@
+{
+  "cases": [
+    {
+      "evidence_class": "unseen_ordering",
+      "family": "thirdparties",
+      "id": "customers_desc",
+      "index": 0,
+      "route": "/thirdparties?limit=3&sortorder=DESC&properties=id,name,client",
+      "selected": [
+        "id",
+        "name",
+        "client"
+      ],
+      "special": "reverse"
+    },
+    {
+      "evidence_class": "unseen_ordering",
+      "family": "orders",
+      "id": "orders_desc",
+      "index": 0,
+      "route": "/orders?limit=3&sortorder=DESC&properties=id,socid,ref,status",
+      "selected": [
+        "id",
+        "socid",
+        "ref",
+        "status"
+      ],
+      "special": "reverse"
+    },
+    {
+      "evidence_class": "unseen_pagination",
+      "family": "thirdparties",
+      "id": "customers_page2",
+      "index": 0,
+      "route": "/thirdparties?limit=1&page=2&properties=id,name,client",
+      "selected": [
+        "id",
+        "name",
+        "client"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_filter",
+      "family": "products",
+      "id": "products_mode",
+      "index": 0,
+      "route": "/products?limit=3&mode=1&properties=id,ref,label,type",
+      "selected": [
+        "id",
+        "ref",
+        "label",
+        "type"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_combined_modifier",
+      "family": "products",
+      "id": "products_ids_desc",
+      "index": 0,
+      "route": "/products?limit=3&sortorder=DESC&ids_only=1",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_filter",
+      "family": "orders",
+      "id": "orders_draft",
+      "index": 0,
+      "route": "/orders?limit=3&status=draft&properties=id,ref,status",
+      "selected": [
+        "id",
+        "ref",
+        "status"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_filter",
+      "family": "invoices",
+      "id": "invoices_unpaid",
+      "index": 0,
+      "route": "/invoices?limit=3&status=unpaid&properties=id,ref,status",
+      "selected": [
+        "id",
+        "ref",
+        "status"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_projection",
+      "family": "invoices",
+      "id": "invoices_hide_lines",
+      "index": 0,
+      "route": "/invoices?limit=3&withLines=false&properties=id,ref,status,lines",
+      "selected": [
+        "id",
+        "ref",
+        "status",
+        "lines"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "orders",
+      "id": "orders_by_ref",
+      "index": 0,
+      "route": "/orders/ref/{ref}",
+      "selected": [
+        "id",
+        "ref",
+        "socid",
+        "status"
+      ],
+      "special": "ref_match"
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "invoices",
+      "id": "invoices_by_ref",
+      "index": 0,
+      "route": "/invoices/ref/{ref}",
+      "selected": [
+        "id",
+        "ref",
+        "socid",
+        "status"
+      ],
+      "special": "ref_match"
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "orders",
+      "id": "orders_contacts",
+      "index": 0,
+      "route": "/orders/{id}/contacts",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "invoices",
+      "id": "invoices_contacts",
+      "index": 0,
+      "route": "/invoices/{id}/contacts",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "invoices",
+      "id": "invoices_discount",
+      "index": 0,
+      "route": "/invoices/{id}/discount",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "new_identity",
+      "family": "thirdparties",
+      "id": "customers_outstanding_second",
+      "index": 1,
+      "route": "/thirdparties/{id}/outstandingorders",
+      "selected": [
+        "opened",
+        "refs"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "new_identity",
+      "family": "thirdparties",
+      "id": "customers_outstanding_third",
+      "index": 2,
+      "route": "/thirdparties/{id}/outstandinginvoices",
+      "selected": [
+        "opened",
+        "refs",
+        "refsopened"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "thirdparties",
+      "id": "customer_categories",
+      "index": 0,
+      "route": "/thirdparties/{id}/categories",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "products",
+      "id": "product_purchase_prices",
+      "index": 0,
+      "route": "/products/{id}/purchase_prices",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "products",
+      "id": "product_variants",
+      "index": 0,
+      "route": "/products/{id}/variants",
+      "selected": [],
+      "special": ""
+    }
+  ],
+  "format": "orgsim-gate2f-read-prediction-v1-plan",
+  "independent_tenant_holdout": false,
+  "prior_gate2e_cases_excluded": true,
+  "query_holdout": true
+}

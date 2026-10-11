@@ -1,0 +1,15 @@
+usage: dolibarr_observe.py [-h] --url URL [--allow-remote-read]
+                           --family {orders,products,thirdparties,invoices}
+                           --id ID [--api-key-env API_KEY_ENV] [--out OUT]
+
+Read-only production Dolibarr observer; no mutations
+
+options:
+  -h, --help            show this help message and exit
+  --url URL             Origin only, e.g. https://erp.example.com
+  --allow-remote-read   Explicitly opt into HTTPS remote reads
+  --family {orders,products,thirdparties,invoices}
+  --id ID
+  --api-key-env API_KEY_ENV
+  --out OUT             Private output; contains full record data, do not
+                        share

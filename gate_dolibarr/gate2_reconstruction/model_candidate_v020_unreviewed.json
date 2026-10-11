@@ -1,0 +1,829 @@
+{
+  "version": "0.1",
+  "organization": "Dolibarr disposable tenant — Gate 2 unreviewed behavioral hypotheses",
+  "reviewed": false,
+  "systems": {
+    "dolibarr": {
+      "resources": {
+        "contacts": {
+          "id_field": "id",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": true
+          },
+          "allow": {
+            "get": [
+              "test_agent"
+            ],
+            "update": [
+              "test_agent"
+            ],
+            "delete": [
+              "test_agent"
+            ],
+            "create": [
+              "test_agent"
+            ]
+          },
+          "guards": {},
+          "foreign_keys": [],
+          "response_contract": {
+            "get": {
+              "status": 200,
+              "kind": "string",
+              "evidence": "declared_openapi_only"
+            },
+            "update": {
+              "status": 200,
+              "kind": "string",
+              "evidence": "declared_openapi_only"
+            },
+            "delete": {
+              "status": 200,
+              "kind": "string",
+              "evidence": "declared_openapi_only"
+            },
+            "create": {
+              "status": 200,
+              "kind": "number",
+              "evidence": "declared_openapi_only"
+            }
+          }
+        },
+        "emailtemplates": {
+          "id_field": "id",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": true
+          },
+          "allow": {
+            "delete": [
+              "test_agent"
+            ],
+            "get": [
+              "test_agent"
+            ],
+            "update": [
+              "test_agent"
+            ],
+            "list": [
+              "test_agent"
+            ],
+            "create": [
+              "test_agent"
+            ]
+          },
+          "guards": {},
+          "foreign_keys": [],
+          "response_contract": {
+            "delete": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "get": {
+              "status": 200,
+              "kind": "unknown",
+              "evidence": "declared_openapi_only"
+            },
+            "update": {
+              "status": 200,
+              "kind": "unknown",
+              "evidence": "declared_openapi_only"
+            },
+            "list": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "create": {
+              "status": 200,
+              "kind": "number",
+              "evidence": "declared_openapi_only"
+            }
+          }
+        },
+        "invoices": {
+          "id_field": "id",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "socid": {
+                "type": [
+                  "string",
+                  "integer",
+                  "null"
+                ]
+              },
+              "lines": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "object"
+                }
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": true
+          },
+          "allow": {
+            "get": [
+              "orgsim_gate_readonly",
+              "test_agent"
+            ],
+            "update": [
+              "test_agent"
+            ],
+            "delete": [
+              "test_agent"
+            ],
+            "list": [
+              "orgsim_gate_readonly",
+              "test_agent"
+            ],
+            "create": [
+              "test_agent"
+            ]
+          },
+          "guards": {},
+          "foreign_keys": [],
+          "response_contract": {
+            "get": {
+              "status": 200,
+              "kind": "unknown",
+              "evidence": "declared_openapi_only"
+            },
+            "update": {
+              "status": 200,
+              "kind": "string",
+              "evidence": "declared_openapi_only"
+            },
+            "delete": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "list": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "create": {
+              "status": 200,
+              "kind": "number",
+              "evidence": "declared_openapi_only"
+            }
+          }
+        },
+        "orders": {
+          "id_field": "id",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "socid": {
+                "type": [
+                  "integer",
+                  "string",
+                  "null"
+                ]
+              },
+              "date": {
+                "type": [
+                  "integer",
+                  "number",
+                  "null"
+                ]
+              },
+              "type": {
+                "type": [
+                  "integer",
+                  "number",
+                  "null"
+                ]
+              },
+              "lines": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "fk_product": {
+                      "type": [
+                        "integer",
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "qty": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": true
+          },
+          "allow": {
+            "get": [
+              "orgsim_gate_readonly",
+              "test_agent"
+            ],
+            "update": [
+              "test_agent"
+            ],
+            "delete": [
+              "test_agent"
+            ],
+            "list": [
+              "orgsim_gate_readonly",
+              "test_agent"
+            ],
+            "create": [
+              "test_agent"
+            ]
+          },
+          "guards": {},
+          "foreign_keys": [
+            {
+              "field": "socid",
+              "system": "dolibarr",
+              "resource": "thirdparties",
+              "nullable": true
+            }
+          ],
+          "response_contract": {
+            "get": {
+              "status": 200,
+              "kind": "string",
+              "evidence": "declared_openapi_only"
+            },
+            "update": {
+              "status": 200,
+              "kind": "unknown",
+              "evidence": "declared_openapi_only"
+            },
+            "delete": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "list": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "create": {
+              "status": 200,
+              "kind": "number",
+              "evidence": "declared_openapi_only"
+            }
+          }
+        },
+        "paiements": {
+          "id_field": "id",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": true
+          },
+          "allow": {
+            "get": [
+              "test_agent"
+            ],
+            "update": [
+              "test_agent"
+            ],
+            "delete": [
+              "test_agent"
+            ],
+            "list": [
+              "test_agent"
+            ]
+          },
+          "guards": {},
+          "foreign_keys": [],
+          "response_contract": {
+            "get": {
+              "status": 200,
+              "kind": "unknown",
+              "evidence": "declared_openapi_only"
+            },
+            "update": {
+              "status": 200,
+              "kind": "unknown",
+              "evidence": "declared_openapi_only"
+            },
+            "delete": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "list": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            }
+          }
+        },
+        "products": {
+          "id_field": "id",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ref_ext": {},
+              "label": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "description": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "type": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "price": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "price_ttc": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "tva_tx": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "price_base_type": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status_buy": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "stockable_product": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "barcode": {},
+              "desiredstock": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "seuil_stock_alerte": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "date_creation": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "date_modification": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "entity": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "array_options": {
+                "type": [
+                  "array",
+                  "null"
+                ]
+              },
+              "tobuy": {},
+              "tosell": {}
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": true
+          },
+          "allow": {
+            "get": [
+              "orgsim_gate_readonly",
+              "test_agent"
+            ],
+            "update": [
+              "test_agent"
+            ],
+            "delete": [
+              "test_agent"
+            ],
+            "list": [
+              "orgsim_gate_readonly",
+              "test_agent"
+            ],
+            "create": [
+              "test_agent"
+            ]
+          },
+          "guards": {},
+          "foreign_keys": [],
+          "response_contract": {
+            "get": {
+              "status": 200,
+              "kind": "string",
+              "evidence": "declared_openapi_only"
+            },
+            "update": {
+              "status": 200,
+              "kind": "unknown",
+              "evidence": "declared_openapi_only"
+            },
+            "delete": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "list": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "create": {
+              "status": 200,
+              "kind": "number",
+              "evidence": "declared_openapi_only"
+            }
+          }
+        },
+        "thirdparties": {
+          "id_field": "id",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "client": {
+                "type": [
+                  "string",
+                  "number",
+                  "null"
+                ]
+              },
+              "prospect": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "fournisseur": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ref_ext": {},
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "country_code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "address": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "zip": {},
+              "town": {},
+              "email": {},
+              "phone": {},
+              "outstanding_limit": {},
+              "tva_intra": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "entity": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "code_client": {},
+              "date_creation": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "date_modification": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "array_options": {
+                "type": [
+                  "array",
+                  "null"
+                ]
+              },
+              "socialnetworks": {
+                "type": [
+                  "array",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": true
+          },
+          "allow": {
+            "get": [
+              "orgsim_gate_readonly",
+              "test_agent"
+            ],
+            "update": [
+              "test_agent"
+            ],
+            "delete": [
+              "test_agent"
+            ],
+            "list": [
+              "orgsim_gate_readonly",
+              "test_agent"
+            ],
+            "create": [
+              "test_agent"
+            ]
+          },
+          "guards": {},
+          "foreign_keys": [],
+          "response_contract": {
+            "get": {
+              "status": 200,
+              "kind": "unknown",
+              "evidence": "declared_openapi_only"
+            },
+            "update": {
+              "status": 200,
+              "kind": "unknown",
+              "evidence": "declared_openapi_only"
+            },
+            "delete": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "list": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "create": {
+              "status": 200,
+              "kind": "number",
+              "evidence": "declared_openapi_only"
+            }
+          }
+        },
+        "users": {
+          "id_field": "id",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": true
+          },
+          "allow": {
+            "list": [
+              "test_agent"
+            ],
+            "create": [
+              "test_agent"
+            ],
+            "get": [
+              "test_agent"
+            ],
+            "update": [
+              "test_agent"
+            ],
+            "delete": [
+              "test_agent"
+            ]
+          },
+          "guards": {},
+          "foreign_keys": [],
+          "response_contract": {
+            "list": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            },
+            "create": {
+              "status": 200,
+              "kind": "number",
+              "evidence": "declared_openapi_only"
+            },
+            "get": {
+              "status": 200,
+              "kind": "string",
+              "evidence": "declared_openapi_only"
+            },
+            "update": {
+              "status": 200,
+              "kind": "unknown",
+              "evidence": "declared_openapi_only"
+            },
+            "delete": {
+              "status": 200,
+              "kind": "array",
+              "evidence": "declared_openapi_only"
+            }
+          }
+        }
+      },
+      "lookups": {
+        "product_by_ref": {
+          "resource": "products",
+          "field": "ref",
+          "arg": "ref",
+          "roles": [
+            "test_agent",
+            "orgsim_gate_readonly"
+          ],
+          "http": {
+            "method": "GET",
+            "path": "/products/ref/{ref}"
+          },
+          "evidence": "hypothesis",
+          "description": "Get product by reference: contract-named lookup, not independently validated"
+        },
+        "product_by_barcode": {
+          "resource": "products",
+          "field": "barcode",
+          "arg": "barcode",
+          "roles": [
+            "test_agent",
+            "orgsim_gate_readonly"
+          ],
+          "http": {
+            "method": "GET",
+            "path": "/products/barcode/{barcode}"
+          },
+          "evidence": "hypothesis",
+          "description": "Get product by barcode: contract-named lookup, not independently validated"
+        },
+        "thirdparty_by_email": {
+          "resource": "thirdparties",
+          "field": "email",
+          "arg": "email",
+          "roles": [
+            "test_agent",
+            "orgsim_gate_readonly"
+          ],
+          "http": {
+            "method": "GET",
+            "path": "/thirdparties/email/{email}"
+          },
+          "evidence": "hypothesis",
+          "description": "Get third party by email: contract-named lookup, not independently validated"
+        }
+      }
+    }
+  },
+  "integrations": [],
+  "scenarios": [],
+  "review_notes": [
+    "MODEL CANDIDATE: reviewed=false; all semantics other than reported discovery and Swagger declarations remain hypotheses.",
+    "H1 (UNVERIFIED): orders.socid references thirdparties.id when supplied; derived from POST /orders example and declared 404 thirdparty-not-found.",
+    "Hypothesis not implemented: orders.lines[*].fk_product references products.id; v0.1 FK DSL cannot address array elements.",
+    "No product.ref uniqueness rule: GET /products/ref/{ref} suggests lookup semantics but does not prove uniqueness enforcement.",
+    "Observed field names/types are single-record discovery shape evidence, not compulsory output defaults; added selected fields to open storage schema only.",
+    "The numeric POST ID response is contract-declared; input string ID and numeric response are handled by v0.1.3 runtime.",
+    "Some observed read values use strings where simulator inputs are numbers; v0.2 supports explicitly modeled response projections, but no verified Dolibarr coercion has been learned.",
+    "The orgsim_gate_readonly role is represented in addition to test_agent; v0.2 probe harness now accepts suite.sim_role; permission equivalence with Dolibarr still needs an independent test.",
+    "GET/POST /login excluded; swagger warns it exposes passwords and returns API tokens.",
+    "Excluded faux CRUD resource mappings for status, documents, objectlinks; these need specialized read/action adapters.",
+    "All custom endpoints, including orders.validate, invoices.validate, payments and nested resource actions, remain unmodeled in this Gate 2 manifest.",
+    "State transitions, negative error response contracts and side effects must be learned/verified on a disposable test tenant before enabling.",
+    "Evidence used for candidate: supplied sanitized Swagger and two discovery probes only; ZERO holdout results.",
+    "Three alternate-key lookup proposals are executable in the simulator, but not yet verified against Dolibarr.",
+    "Unmodeled order/invoice lifecycle commands are described in preflight_offline/workflow_hypotheses.json, but deliberately not executable until state effects are specified."
+  ],
+  "origin": "Model-generated candidate from supplied permitted Swagger and Gate 1C discovery observations (NOT a verified clone)"
+}

@@ -1,0 +1,286 @@
+{
+  "cases": [
+    {
+      "evidence_class": "unseen_ordering",
+      "family": "thirdparties",
+      "id": "customers_asc_ref",
+      "index": 0,
+      "route": "/thirdparties?limit=2&sortfield=t.rowid&sortorder=ASC&properties=id,ref,name,client",
+      "selected": [
+        "id",
+        "ref",
+        "name",
+        "client"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_pagination",
+      "family": "thirdparties",
+      "id": "customers_empty_page",
+      "index": 0,
+      "route": "/thirdparties?limit=2&page=2&properties=id,name,client",
+      "selected": [
+        "id",
+        "name",
+        "client"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_combined_modifier",
+      "family": "thirdparties",
+      "id": "customers_desc_limit2",
+      "index": 0,
+      "route": "/thirdparties?limit=2&sortorder=DESC&properties=id,ref,name",
+      "selected": [
+        "id",
+        "ref",
+        "name"
+      ],
+      "special": "reverse"
+    },
+    {
+      "evidence_class": "unseen_projection",
+      "family": "products",
+      "id": "products_projected_new",
+      "index": 0,
+      "route": "/products?limit=2&properties=id,ref,label,type,price_ttc",
+      "selected": [
+        "id",
+        "ref",
+        "label",
+        "type",
+        "price_ttc"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_combined_modifier",
+      "family": "products",
+      "id": "products_ids_page0",
+      "index": 0,
+      "route": "/products?limit=2&page=0&ids_only=1",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_filter",
+      "family": "products",
+      "id": "products_category_filter",
+      "index": 0,
+      "route": "/products?limit=3&category=1&properties=id,ref,label",
+      "selected": [
+        "id",
+        "ref",
+        "label"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_projection",
+      "family": "orders",
+      "id": "orders_small_projection",
+      "index": 0,
+      "route": "/orders?limit=1&properties=id,ref,socid,status,total_ht",
+      "selected": [
+        "id",
+        "ref",
+        "socid",
+        "status",
+        "total_ht"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_pagination",
+      "family": "orders",
+      "id": "orders_page2",
+      "index": 0,
+      "route": "/orders?limit=1&page=2&properties=id,ref,socid,status",
+      "selected": [
+        "id",
+        "ref",
+        "socid",
+        "status"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_ordering",
+      "family": "orders",
+      "id": "orders_new_sort",
+      "index": 0,
+      "route": "/orders?limit=2&sortfield=t.rowid&sortorder=DESC&properties=id,ref,socid,status",
+      "selected": [
+        "id",
+        "ref",
+        "socid",
+        "status"
+      ],
+      "special": "reverse"
+    },
+    {
+      "evidence_class": "unseen_projection",
+      "family": "invoices",
+      "id": "invoices_with_lines",
+      "index": 0,
+      "route": "/invoices?limit=1&withLines=true&properties=id,ref,status,lines",
+      "selected": [
+        "id",
+        "ref",
+        "status",
+        "lines"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_combined_modifier",
+      "family": "invoices",
+      "id": "invoices_suppress_lines",
+      "index": 0,
+      "route": "/invoices?limit=1&withLines=false&properties=id,ref,status,lines",
+      "selected": [
+        "id",
+        "ref",
+        "status",
+        "lines"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_filter",
+      "family": "invoices",
+      "id": "invoices_status_cancelled",
+      "index": 0,
+      "route": "/invoices?limit=2&status=cancelled&properties=id,ref,status",
+      "selected": [
+        "id",
+        "ref",
+        "status"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_relationship_modifier",
+      "family": "thirdparties",
+      "id": "customer_outstanding_mode",
+      "index": 1,
+      "route": "/thirdparties/{id}/outstandingorders?mode=1",
+      "selected": [
+        "opened",
+        "refs"
+      ],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_endpoint",
+      "family": "thirdparties",
+      "id": "customer_notifications",
+      "index": 0,
+      "route": "/thirdparties/{id}/notifications",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_endpoint",
+      "family": "thirdparties",
+      "id": "customer_representatives",
+      "index": 0,
+      "route": "/thirdparties/{id}/representatives?mode=1",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_endpoint",
+      "family": "thirdparties",
+      "id": "customer_fixed_discount",
+      "index": 0,
+      "route": "/thirdparties/{id}/fixedamountdiscounts?mode=0",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_endpoint",
+      "family": "thirdparties",
+      "id": "customer_supplier_categories",
+      "index": 0,
+      "route": "/thirdparties/{id}/supplier_categories?limit=2",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_endpoint",
+      "family": "products",
+      "id": "product_contacts",
+      "index": 0,
+      "route": "/products/{id}/contacts",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_endpoint",
+      "family": "products",
+      "id": "product_subproducts",
+      "index": 0,
+      "route": "/products/{id}/subproducts",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_endpoint",
+      "family": "products",
+      "id": "product_quantity_prices",
+      "index": 0,
+      "route": "/products/{id}/selling_multiprices/per_quantity",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_endpoint",
+      "family": "products",
+      "id": "product_ref_variants",
+      "index": 0,
+      "route": "/products/ref/{ref}/variants",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_endpoint_modifier",
+      "family": "invoices",
+      "id": "invoice_contact_filter",
+      "index": 0,
+      "route": "/invoices/{id}/contacts?type=external",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_endpoint_modifier",
+      "family": "orders",
+      "id": "order_contact_filter",
+      "index": 0,
+      "route": "/orders/{id}/contacts?type=external",
+      "selected": [],
+      "special": ""
+    },
+    {
+      "evidence_class": "unseen_detail_modifier",
+      "family": "invoices",
+      "id": "invoice_detail_suppress_lines",
+      "index": 0,
+      "route": "/invoices/{id}?withLines=false&properties=id,ref,status,lines",
+      "selected": [
+        "id",
+        "ref",
+        "status",
+        "lines"
+      ],
+      "special": ""
+    }
+  ],
+  "fixed_scoring_rubric": true,
+  "format": "orgsim-gate2g-fixed-denominator-v1-plan",
+  "independent_tenant_holdout": false,
+  "prior_gate2e_cases_excluded": true,
+  "query_holdout": true
+}

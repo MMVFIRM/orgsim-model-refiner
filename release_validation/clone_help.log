@@ -1,0 +1,13 @@
+usage: prepare_clone_permit.py [-h] --url URL [--expires-hours EXPIRES_HOURS]
+                               [--max-mutations MAX_MUTATIONS] --ack ACK
+                               --out OUT
+
+Prepare local expiring disposable-clone authorization
+
+options:
+  -h, --help            show this help message and exit
+  --url URL             Loopback origin of disposable clone
+  --expires-hours EXPIRES_HOURS
+  --max-mutations MAX_MUTATIONS
+  --ack ACK             Exact string: I CONFIRM THIS IS A DISPOSABLE CLONE
+  --out OUT

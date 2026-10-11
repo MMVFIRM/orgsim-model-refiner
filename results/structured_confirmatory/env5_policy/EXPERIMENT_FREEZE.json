@@ -1,0 +1,10 @@
+{
+  "dataset_freeze_sha256": "26af894840dd2b8769c0e655cd0f25b530e442390f0e3eb7eecd2666caf40a2a",
+  "dolibarr_reads": 0,
+  "dolibarr_writes": 0,
+  "format": "orgsim-refiner-executable-policy-study-v1-freeze",
+  "no_external_timestamp": true,
+  "program_sha256": "2df7d1ff539585d879c3786479fae4786fda028b7d45a80fb9e597c218215621",
+  "provider_calls": 0,
+  "report_sha256": "c5876829ba2a407888ddb56e58aede613d0ccbd8775f43c7c1e70ca09e20cecc"
+}

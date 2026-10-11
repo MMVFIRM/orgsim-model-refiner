@@ -1,0 +1,12 @@
+{
+  "candidate_reviewed": false,
+  "candidate_sha256": "afaeace09556280745c045650f2186b826a46fd03f85e7bbb4fa08515c2052ee",
+  "format": "orgsim-gate2e-predictive-read-v1-prepare-freeze",
+  "independent_tenant_holdout": false,
+  "live_writes": 0,
+  "model_provider_calls": 0,
+  "plan_sha256": "e9f3addc8fb3f266d784834e60be42d7f95f8a1a37cded2e1474802351a768ca",
+  "query_holdout": true,
+  "reads_executed": 0,
+  "source_discovery_sha256": "136025e9432f687605691473d515ad1dccdb435d227220e9146c04c77eb51d2c"
+}

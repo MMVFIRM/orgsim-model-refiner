@@ -1,0 +1,15 @@
+{
+  "format": "orgsim-refiner-integrated-plan-v1",
+  "tenants": 24,
+  "seed": 771902,
+  "heldout_and_stress_cases": 12288,
+  "maximum_simulator_query_attempts": 196608,
+  "model_comparison_requested": false,
+  "model": null,
+  "maximum_provider_attempts": 0,
+  "provider_calls_made_by_preview": 0,
+  "max_output_tokens": 4096,
+  "no_dollar_price_assumed": true,
+  "actual_erp_calls": 0,
+  "scope": "Synthetic raw-input study with explicit region-coverage accounting."
+}

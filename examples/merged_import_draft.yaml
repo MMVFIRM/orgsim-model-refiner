@@ -1,0 +1,79 @@
+version: '0.1'
+organization: Test Co
+reviewed: false
+systems:
+  crm:
+    resources:
+      accounts:
+        id_field: id
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            credit_limit_cents:
+              type: integer
+              minimum: 0
+          additionalProperties: false
+          required:
+          - id
+          - name
+        allow:
+          list:
+          - test_agent
+          create:
+          - test_agent
+          get:
+          - test_agent
+          update:
+          - test_agent
+        guards: {}
+        foreign_keys: []
+  erp:
+    resources:
+      orders:
+        id_field: id
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+            account_id:
+              type: string
+            quantity:
+              type: integer
+              minimum: 1
+            status:
+              type: string
+              enum:
+              - pending
+              - shipped
+          additionalProperties: false
+          required:
+          - account_id
+          - id
+          - quantity
+        allow:
+          create:
+          - test_agent
+          list:
+          - test_agent
+          get:
+          - test_agent
+        guards: {}
+        foreign_keys: []
+integrations: []
+scenarios: []
+review_notes:
+- Verify list response envelope for GET /accounts
+- 'Unsupported custom endpoint: POST /accounts/{id}/approve (requires explicit adapter)'
+- 'crm.accounts: verify business constraints, identity mapping, uniqueness, defaults,
+  permissions and side effects'
+- Verify list response envelope for GET /orders
+- 'Unsupported custom endpoint: POST /orders/{id}/ship (requires explicit adapter)'
+- 'erp.orders: verify business constraints, identity mapping, uniqueness, defaults,
+  permissions and side effects'
+- 'REVIEW REQUIRED: Model identity mapping, cross-system policy invariants and event
+  integrations; nothing was inferred.'

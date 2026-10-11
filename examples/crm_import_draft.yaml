@@ -1,0 +1,41 @@
+version: '0.1'
+organization: TestCo
+reviewed: false
+systems:
+  crm:
+    resources:
+      accounts:
+        id_field: id
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            credit_limit_cents:
+              type: integer
+              minimum: 0
+          additionalProperties: false
+          required:
+          - id
+          - name
+        allow:
+          list:
+          - test_agent
+          create:
+          - test_agent
+          get:
+          - test_agent
+          update:
+          - test_agent
+        guards: {}
+        foreign_keys: []
+integrations: []
+scenarios: []
+review_notes:
+- Verify list response envelope for GET /accounts
+- 'Unsupported custom endpoint: POST /accounts/{id}/approve (requires explicit adapter)'
+- 'crm.accounts: verify business constraints, identity mapping, uniqueness, defaults,
+  permissions and side effects'
+origin: OpenAPI contract import (NOT a verified behavioral clone)

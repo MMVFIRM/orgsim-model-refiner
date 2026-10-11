@@ -1,0 +1,177 @@
+{
+  "criterion": {
+    "decision_accuracy_min": 0.95,
+    "end2end_min": 0.95,
+    "false_accept_rate_max": 0.02
+  },
+  "environments": 3,
+  "format": "simlearn-benchmark-summary-v1",
+  "oracle_calls_total": 16889,
+  "performance_target_met": true,
+  "real_ERP_fidelity_verified": false,
+  "real_model_fitted": false,
+  "scope": "heldout states in seen synthetic policy environments",
+  "scores": {
+    "stress": {
+      "always_reject": {
+        "accuracy": 0.5,
+        "cases": 2400,
+        "end_to_end_exact_accuracy": 0.5,
+        "false_accepts": 0,
+        "false_rejects": 1200,
+        "max_environment_accuracy": 0.5,
+        "min_environment_accuracy": 0.5,
+        "per_environment_accuracy": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "per_environment_end_to_end": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "model_refiner_retrieval": {
+        "accuracy": 0.642083,
+        "cases": 2400,
+        "end_to_end_exact_accuracy": 0.642083,
+        "false_accepts": 493,
+        "false_rejects": 366,
+        "max_environment_accuracy": 0.64875,
+        "min_environment_accuracy": 0.63875,
+        "per_environment_accuracy": [
+          0.63875,
+          0.63875,
+          0.64875
+        ],
+        "per_environment_end_to_end": [
+          0.63875,
+          0.63875,
+          0.64875
+        ]
+      },
+      "public_guards": {
+        "accuracy": 0.7725,
+        "cases": 2400,
+        "end_to_end_exact_accuracy": 0.7725,
+        "false_accepts": 546,
+        "false_rejects": 0,
+        "max_environment_accuracy": 0.7825,
+        "min_environment_accuracy": 0.76625,
+        "per_environment_accuracy": [
+          0.76875,
+          0.76625,
+          0.7825
+        ],
+        "per_environment_end_to_end": [
+          0.76875,
+          0.76625,
+          0.7825
+        ]
+      },
+      "tabular_simtrained": {
+        "accuracy": 0.993333,
+        "cases": 2400,
+        "end_to_end_exact_accuracy": 0.993333,
+        "false_accepts": 11,
+        "false_rejects": 5,
+        "max_environment_accuracy": 0.99875,
+        "min_environment_accuracy": 0.99,
+        "per_environment_accuracy": [
+          0.99,
+          0.99125,
+          0.99875
+        ],
+        "per_environment_end_to_end": [
+          0.99,
+          0.99125,
+          0.99875
+        ]
+      }
+    },
+    "test": {
+      "always_reject": {
+        "accuracy": 0.5,
+        "cases": 2400,
+        "end_to_end_exact_accuracy": 0.5,
+        "false_accepts": 0,
+        "false_rejects": 1200,
+        "max_environment_accuracy": 0.5,
+        "min_environment_accuracy": 0.5,
+        "per_environment_accuracy": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "per_environment_end_to_end": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "model_refiner_retrieval": {
+        "accuracy": 0.6675,
+        "cases": 2400,
+        "end_to_end_exact_accuracy": 0.6675,
+        "false_accepts": 423,
+        "false_rejects": 375,
+        "max_environment_accuracy": 0.69,
+        "min_environment_accuracy": 0.645,
+        "per_environment_accuracy": [
+          0.6675,
+          0.645,
+          0.69
+        ],
+        "per_environment_end_to_end": [
+          0.6675,
+          0.645,
+          0.69
+        ]
+      },
+      "public_guards": {
+        "accuracy": 0.81125,
+        "cases": 2400,
+        "end_to_end_exact_accuracy": 0.81125,
+        "false_accepts": 453,
+        "false_rejects": 0,
+        "max_environment_accuracy": 0.83875,
+        "min_environment_accuracy": 0.77875,
+        "per_environment_accuracy": [
+          0.83875,
+          0.77875,
+          0.81625
+        ],
+        "per_environment_end_to_end": [
+          0.83875,
+          0.77875,
+          0.81625
+        ]
+      },
+      "tabular_simtrained": {
+        "accuracy": 0.991667,
+        "cases": 2400,
+        "end_to_end_exact_accuracy": 0.991667,
+        "false_accepts": 16,
+        "false_rejects": 4,
+        "max_environment_accuracy": 0.99875,
+        "min_environment_accuracy": 0.985,
+        "per_environment_accuracy": [
+          0.99125,
+          0.985,
+          0.99875
+        ],
+        "per_environment_end_to_end": [
+          0.99125,
+          0.985,
+          0.99875
+        ]
+      }
+    }
+  },
+  "seeds": [
+    20261011,
+    20268930,
+    20276849
+  ]
+}

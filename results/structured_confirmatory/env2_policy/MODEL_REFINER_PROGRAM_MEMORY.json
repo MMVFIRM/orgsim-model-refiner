@@ -1,0 +1,106 @@
+{
+  "format": "model-refiner-external-program-memory-v1",
+  "native_model_weights_modified": false,
+  "permitted_execution_target": "synthetic_only",
+  "policies": {
+    "close_order": {
+      "audit_mismatches": 0,
+      "audit_ready": true,
+      "audit_total": 87,
+      "evidence_hash": "10acfd949b7d428518155c7e38e265e1ea424acfb0b8f00a0b93e4a21c8d4b27",
+      "guards": [
+        {
+          "expression": "order.qty",
+          "kind": "upper",
+          "max": 5
+        },
+        {
+          "a": "order.amount",
+          "b": "order.shipped",
+          "ge_a": 50,
+          "ge_b": 7,
+          "kind": "pair_upper"
+        }
+      ],
+      "operation": "close_order",
+      "provenance": "SYNTHETIC_ORGSIM_ORACLE_OBSERVATIONS_ONLY",
+      "public_guards": "public_preconditions",
+      "queries": 69,
+      "real_ERP_behavior_verified": false,
+      "scope": "PUBLIC_GUARD_PLUS_MONOTONE_UPPER_VETO",
+      "version": "simlearn-structured-policy-v1"
+    },
+    "pay_invoice": {
+      "audit_mismatches": 0,
+      "audit_ready": true,
+      "audit_total": 128,
+      "evidence_hash": "1e50af5660480774b08ecb581712294a4c5c495cf2066187cc1a7012c9622ce7",
+      "guards": [
+        {
+          "expression": "invoice.payment_count",
+          "kind": "upper",
+          "max": 2
+        }
+      ],
+      "operation": "pay_invoice",
+      "provenance": "SYNTHETIC_ORGSIM_ORACLE_OBSERVATIONS_ONLY",
+      "public_guards": "public_preconditions",
+      "queries": 96,
+      "real_ERP_behavior_verified": false,
+      "scope": "PUBLIC_GUARD_PLUS_MONOTONE_UPPER_VETO",
+      "version": "simlearn-structured-policy-v1"
+    },
+    "reserve_stock": {
+      "audit_mismatches": 0,
+      "audit_ready": true,
+      "audit_total": 85,
+      "evidence_hash": "0a34a8a9b77b889dd16871ab93a90295708c87faa77b26ca31706d1a0f454bc1",
+      "guards": [
+        {
+          "expression": "product.reserved+action.reserve_qty",
+          "kind": "sum_upper",
+          "max": 12
+        },
+        {
+          "a": "action.reserve_qty",
+          "b": "product.reserved",
+          "ge_a": 6,
+          "ge_b": 6,
+          "kind": "pair_upper"
+        }
+      ],
+      "operation": "reserve_stock",
+      "provenance": "SYNTHETIC_ORGSIM_ORACLE_OBSERVATIONS_ONLY",
+      "public_guards": "public_preconditions",
+      "queries": 61,
+      "real_ERP_behavior_verified": false,
+      "scope": "PUBLIC_GUARD_PLUS_MONOTONE_UPPER_VETO",
+      "version": "simlearn-structured-policy-v1"
+    },
+    "validate_order": {
+      "audit_mismatches": 0,
+      "audit_ready": true,
+      "audit_total": 88,
+      "evidence_hash": "adb79f426058516ad59026812ce8eaeda9bae1f29bb82a2ec1a74235cbcd5af7",
+      "guards": [
+        {
+          "a": "order.qty",
+          "b": "order.amount",
+          "ge_a": 8,
+          "ge_b": 60,
+          "kind": "pair_upper"
+        }
+      ],
+      "operation": "validate_order",
+      "provenance": "SYNTHETIC_ORGSIM_ORACLE_OBSERVATIONS_ONLY",
+      "public_guards": "public_preconditions",
+      "queries": 59,
+      "real_ERP_behavior_verified": false,
+      "scope": "PUBLIC_GUARD_PLUS_MONOTONE_UPPER_VETO",
+      "version": "simlearn-structured-policy-v1"
+    }
+  },
+  "policies_sha256": "baf6b52e8a5bda574dee53fc5670cbea7526e31be0a83083ccde507d900b8971",
+  "real_ERP_write_authorized": false,
+  "tenant_fingerprint": "21a1e6b99292619e933b1a912433abe759417ac7e9663ae477bb2c9b120a92f9"
+}

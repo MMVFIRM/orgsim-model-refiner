@@ -1,0 +1,230 @@
+version: '0.1'
+organization: Synthetic unknown-ERP workflow oracle
+reviewed: false
+systems:
+  erp:
+    resources:
+      customers:
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+          required:
+          - id
+          - name
+          additionalProperties: false
+        allow:
+          create:
+          - test_agent
+          get:
+          - test_agent
+      products:
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+            ref:
+              type: string
+            stock:
+              type: integer
+              minimum: 0
+          required:
+          - id
+          - ref
+          - stock
+          additionalProperties: false
+        allow:
+          create:
+          - test_agent
+          get:
+          - test_agent
+          list:
+          - test_agent
+        response_projection:
+          get:
+            include_base: false
+            fields:
+              ref:
+                path: record.ref
+              stock_left:
+                path: record.stock
+      orders:
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+            customer_id:
+              type: string
+            product_id:
+              type: string
+            qty:
+              type: integer
+              minimum: 1
+            status:
+              type: string
+          required:
+          - id
+          - customer_id
+          - product_id
+          - qty
+          - status
+          additionalProperties: false
+        foreign_keys:
+        - field: customer_id
+          system: erp
+          resource: customers
+        - field: product_id
+          system: erp
+          resource: products
+        allow:
+          create:
+          - test_agent
+          get:
+          - test_agent
+      invoices:
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+            order_id:
+              type: string
+            status:
+              type: string
+          required:
+          - id
+          - order_id
+          - status
+          additionalProperties: false
+        foreign_keys:
+        - field: order_id
+          system: erp
+          resource: orders
+        allow:
+          get:
+          - test_agent
+    lookups:
+      product_by_ref:
+        resource: products
+        field: ref
+        arg: ref
+        roles:
+        - test_agent
+        http:
+          method: GET
+          path: /products/ref/{ref}
+        evidence: hypothesis
+    workflows:
+      validate_order:
+        description: Validate order and reserve stock (SYNTHETIC ONLY)
+        roles:
+        - test_agent
+        evidence: hypothesis
+        http:
+          method: POST
+          path: /orders/{id}/validate
+        input_schema:
+          type: object
+          properties:
+            id:
+              type: string
+          required:
+          - id
+          additionalProperties: false
+        preconditions:
+        - compare:
+            left:
+              lookup:
+                system: erp
+                resource: orders
+                id:
+                  path: input.id
+                field: status
+            op: eq
+            right:
+              literal: draft
+        steps:
+        - kind: update
+          system: erp
+          resource: orders
+          id:
+            path: input.id
+          values:
+            status:
+              literal: validated
+          require:
+          - compare:
+              left:
+                path: record.status
+              op: eq
+              right:
+                literal: draft
+        - kind: adjust
+          system: erp
+          resource: products
+          id:
+            lookup:
+              system: erp
+              resource: orders
+              id:
+                path: input.id
+              field: product_id
+          field: stock
+          by:
+            negate:
+              lookup:
+                system: erp
+                resource: orders
+                id:
+                  path: input.id
+                field: qty
+        result:
+          path: steps.0.after.status
+        response_contract:
+          invoke:
+            status: 200
+            kind: string
+      invoice_from_order:
+        roles:
+        - test_agent
+        evidence: hypothesis
+        http:
+          method: POST
+          path: /invoices/createfromorder/{orderid}
+        input_schema:
+          type: object
+          properties:
+            id:
+              type: string
+          required:
+          - id
+        preconditions:
+        - compare:
+            left:
+              lookup:
+                system: erp
+                resource: orders
+                id:
+                  path: input.id
+                field: status
+            op: eq
+            right:
+              literal: validated
+        steps:
+        - kind: create
+          system: erp
+          resource: invoices
+          values:
+            order_id:
+              path: input.id
+            status:
+              literal: draft
+        result:
+          path: after.id
+integrations: []
+scenarios: []

@@ -1,0 +1,557 @@
+{
+  "arms": {
+    "conditional": {
+      "customer_fixed_discount": {},
+      "customer_notifications": {},
+      "customer_outstanding_mode": {
+        "field_types": {
+          "opened": "number",
+          "refs": [
+            "array",
+            "object"
+          ]
+        },
+        "kind": "object",
+        "status": 200
+      },
+      "customer_representatives": {},
+      "customer_supplier_categories": {},
+      "customers_asc_ref": {
+        "field_types": {
+          "client": "string",
+          "id": "string",
+          "name": "string",
+          "ref": "string"
+        },
+        "item_keys": [
+          "client",
+          "id",
+          "name",
+          "ref"
+        ],
+        "kind": "array",
+        "length": 2,
+        "status": 200
+      },
+      "customers_desc_limit2": {
+        "field_types": {
+          "id": "string",
+          "name": "string",
+          "ref": "string"
+        },
+        "item_keys": [
+          "id",
+          "name",
+          "ref"
+        ],
+        "kind": "array",
+        "length": 2,
+        "reverse_matches": true,
+        "status": 200
+      },
+      "customers_empty_page": {
+        "kind": "array",
+        "length": 0,
+        "status": 200
+      },
+      "invoice_contact_filter": {
+        "kind": "array",
+        "status": 200
+      },
+      "invoice_detail_suppress_lines": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "status": "string"
+        },
+        "kind": "object",
+        "status": 200
+      },
+      "invoices_status_cancelled": {
+        "kind": "array",
+        "status": 200
+      },
+      "invoices_suppress_lines": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "status"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "invoices_with_lines": {
+        "field_types": {
+          "id": "string",
+          "lines": "array",
+          "ref": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "lines",
+          "ref",
+          "status"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "order_contact_filter": {
+        "kind": "array",
+        "status": 200
+      },
+      "orders_new_sort": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "socid": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "socid",
+          "status"
+        ],
+        "kind": "array",
+        "length": 2,
+        "reverse_matches": true,
+        "status": 200
+      },
+      "orders_page2": {
+        "kind": "array",
+        "length": 0,
+        "status": 200
+      },
+      "orders_small_projection": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "socid": "string",
+          "status": "string",
+          "total_ht": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "socid",
+          "status",
+          "total_ht"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "product_contacts": {
+        "kind": "array",
+        "status": 200
+      },
+      "product_quantity_prices": {},
+      "product_ref_variants": {
+        "kind": "array",
+        "status": 200
+      },
+      "product_subproducts": {},
+      "products_category_filter": {
+        "kind": "array",
+        "status": 200
+      },
+      "products_ids_page0": {
+        "item_kind": "string",
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "products_projected_new": {
+        "field_types": {
+          "id": "string",
+          "label": "string",
+          "price_ttc": "string",
+          "ref": "string",
+          "type": "string"
+        },
+        "item_keys": [
+          "id",
+          "label",
+          "price_ttc",
+          "ref",
+          "type"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      }
+    },
+    "contract": {
+      "customer_fixed_discount": {
+        "kind": "array",
+        "status": 200
+      },
+      "customer_notifications": {
+        "kind": "array",
+        "status": 200
+      },
+      "customer_outstanding_mode": {
+        "kind": "array",
+        "status": 200
+      },
+      "customer_representatives": {
+        "kind": "array",
+        "status": 200
+      },
+      "customer_supplier_categories": {
+        "kind": "array",
+        "status": 200
+      },
+      "customers_asc_ref": {
+        "kind": "array",
+        "status": 200
+      },
+      "customers_desc_limit2": {
+        "kind": "array",
+        "status": 200
+      },
+      "customers_empty_page": {
+        "kind": "array",
+        "status": 200
+      },
+      "invoice_contact_filter": {
+        "kind": "string",
+        "status": 200
+      },
+      "invoice_detail_suppress_lines": {
+        "status": 200
+      },
+      "invoices_status_cancelled": {
+        "kind": "array",
+        "status": 200
+      },
+      "invoices_suppress_lines": {
+        "kind": "array",
+        "status": 200
+      },
+      "invoices_with_lines": {
+        "kind": "array",
+        "status": 200
+      },
+      "order_contact_filter": {
+        "kind": "string",
+        "status": 200
+      },
+      "orders_new_sort": {
+        "kind": "array",
+        "status": 200
+      },
+      "orders_page2": {
+        "kind": "array",
+        "status": 200
+      },
+      "orders_small_projection": {
+        "kind": "array",
+        "status": 200
+      },
+      "product_contacts": {
+        "kind": "string",
+        "status": 200
+      },
+      "product_quantity_prices": {
+        "kind": "string",
+        "status": 200
+      },
+      "product_ref_variants": {
+        "kind": "array",
+        "status": 200
+      },
+      "product_subproducts": {
+        "kind": "array",
+        "status": 200
+      },
+      "products_category_filter": {
+        "kind": "array",
+        "status": 200
+      },
+      "products_ids_page0": {
+        "kind": "array",
+        "status": 200
+      },
+      "products_projected_new": {
+        "kind": "array",
+        "status": 200
+      }
+    },
+    "symbolic": {
+      "customer_fixed_discount": {},
+      "customer_notifications": {},
+      "customer_outstanding_mode": {
+        "field_types": {
+          "opened": "number",
+          "refs": "array"
+        },
+        "kind": "object",
+        "status": 200
+      },
+      "customer_representatives": {},
+      "customer_supplier_categories": {},
+      "customers_asc_ref": {
+        "field_types": {
+          "client": "string",
+          "id": "string",
+          "name": "string",
+          "ref": "string"
+        },
+        "item_keys": [
+          "client",
+          "id",
+          "name",
+          "ref"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "customers_desc_limit2": {
+        "field_types": {
+          "id": "string",
+          "name": "string",
+          "ref": "string"
+        },
+        "item_keys": [
+          "id",
+          "name",
+          "ref"
+        ],
+        "kind": "array",
+        "length": 1,
+        "reverse_matches": true,
+        "status": 200
+      },
+      "customers_empty_page": {
+        "field_types": {
+          "client": "string",
+          "id": "string",
+          "name": "string"
+        },
+        "item_keys": [
+          "client",
+          "id",
+          "name"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "invoice_contact_filter": {},
+      "invoice_detail_suppress_lines": {
+        "field_types": {
+          "id": "string",
+          "lines": "array",
+          "ref": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "lines",
+          "ref",
+          "status"
+        ],
+        "kind": "array",
+        "length": 1
+      },
+      "invoices_status_cancelled": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "status"
+        ],
+        "kind": "array",
+        "status": 200
+      },
+      "invoices_suppress_lines": {
+        "field_types": {
+          "id": "string",
+          "lines": "array",
+          "ref": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "lines",
+          "ref",
+          "status"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "invoices_with_lines": {
+        "field_types": {
+          "id": "string",
+          "lines": "array",
+          "ref": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "lines",
+          "ref",
+          "status"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "order_contact_filter": {},
+      "orders_new_sort": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "socid": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "socid",
+          "status"
+        ],
+        "kind": "array",
+        "length": 1,
+        "reverse_matches": true,
+        "status": 200
+      },
+      "orders_page2": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "socid": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "socid",
+          "status"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "orders_small_projection": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "socid": "string",
+          "status": "string",
+          "total_ht": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "socid",
+          "status",
+          "total_ht"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "product_contacts": {},
+      "product_quantity_prices": {},
+      "product_ref_variants": {
+        "kind": "object",
+        "status": 200
+      },
+      "product_subproducts": {},
+      "products_category_filter": {
+        "field_types": {
+          "id": "string",
+          "label": "string",
+          "ref": "string"
+        },
+        "item_keys": [
+          "id",
+          "label",
+          "ref"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "products_ids_page0": {
+        "item_kind": "string",
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "products_projected_new": {
+        "field_types": {
+          "id": "string",
+          "label": "string",
+          "price_ttc": "string",
+          "ref": "string",
+          "type": "string"
+        },
+        "item_keys": [
+          "id",
+          "label",
+          "price_ttc",
+          "ref",
+          "type"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      }
+    }
+  },
+  "behavioral_clone": false,
+  "conditional_evidence_summary": {
+    "conditional_predictions_are_provisional": true,
+    "learned_query_suppressions": [
+      {
+        "family": "invoices",
+        "omitted_fields": [
+          "lines"
+        ],
+        "parameter": "withLines",
+        "value": "false"
+      }
+    ],
+    "observed_route_patterns": 24,
+    "observed_status_outcomes": 37,
+    "polymorphic_type_fields": {
+      "thirdparties": {
+        "refs": [
+          "array",
+          "object"
+        ]
+      }
+    },
+    "role_scope": "same_readonly_API_user",
+    "source": "discovery_and_revealed_development_only"
+  },
+  "format": "orgsim-gate2g-fixed-denominator-v1-candidate",
+  "matched_evidence_arms": [
+    "symbolic",
+    "conditional"
+  ],
+  "model_provider_calls_during_prepare": 0,
+  "reviewed": false,
+  "role_scope": "same_readonly_API_user",
+  "source_development_sha256": "f115e35bc18c31e7ad198e444bf8667cb8274597c8601ed2104c4c453a387ab4",
+  "source_discovery_sha256": "136025e9432f687605691473d515ad1dccdb435d227220e9146c04c77eb51d2c",
+  "source_swagger_sha256": "620d34b8a32dd4d32252b293050ce752cd17c54f1da52f53f2b8e5cca562310a",
+  "version": "0.2.6"
+}

@@ -1,0 +1,1 @@
+{"claim":"Deliberately inadequate query/cell budgets: report failure/abstention, do not claim automatic detection of arbitrary hidden rules.","family":"diagonal","format":"orgsim-refiner-resource-controls-v1","max_cells":64,"seed":1887024,"tenants":2,"training_queries_per_tenant":64}

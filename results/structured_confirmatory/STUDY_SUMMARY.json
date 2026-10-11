@@ -1,0 +1,330 @@
+{
+  "active_oracle_calls_total": 1452,
+  "adversarial_out_of_grammar": [
+    {
+      "adapter_generalization_claim": "NONE",
+      "caution": "Out-of-grammar detection is empirical, not complete proof of safety.",
+      "format": "simlearn-nonmonotone-stress-v1",
+      "per_operation": {
+        "close_order": {
+          "audit_mismatches": 1,
+          "audit_ready": false,
+          "coverage": 0.28125,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 72
+        },
+        "pay_invoice": {
+          "audit_mismatches": 23,
+          "audit_ready": false,
+          "coverage": 0.273438,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 95
+        },
+        "reserve_stock": {
+          "audit_mismatches": 1,
+          "audit_ready": false,
+          "coverage": 0.398438,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 65
+        },
+        "validate_order": {
+          "audit_mismatches": 1,
+          "audit_ready": false,
+          "coverage": 0.367188,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 59
+        }
+      },
+      "real_erp_verified": false,
+      "seed": 20361237
+    },
+    {
+      "adapter_generalization_claim": "NONE",
+      "caution": "Out-of-grammar detection is empirical, not complete proof of safety.",
+      "format": "simlearn-nonmonotone-stress-v1",
+      "per_operation": {
+        "close_order": {
+          "audit_mismatches": 1,
+          "audit_ready": false,
+          "coverage": 0.304688,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 66
+        },
+        "pay_invoice": {
+          "audit_mismatches": 46,
+          "audit_ready": false,
+          "coverage": 0.296875,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 95
+        },
+        "reserve_stock": {
+          "audit_mismatches": 2,
+          "audit_ready": false,
+          "coverage": 0.398438,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 66
+        },
+        "validate_order": {
+          "audit_mismatches": 3,
+          "audit_ready": false,
+          "coverage": 0.382812,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 59
+        }
+      },
+      "real_erp_verified": false,
+      "seed": 20369114
+    },
+    {
+      "adapter_generalization_claim": "NONE",
+      "caution": "Out-of-grammar detection is empirical, not complete proof of safety.",
+      "format": "simlearn-nonmonotone-stress-v1",
+      "per_operation": {
+        "close_order": {
+          "audit_mismatches": 1,
+          "audit_ready": false,
+          "coverage": 0.375,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 69
+        },
+        "pay_invoice": {
+          "audit_mismatches": 34,
+          "audit_ready": false,
+          "coverage": 0.328125,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 96
+        },
+        "reserve_stock": {
+          "audit_mismatches": 1,
+          "audit_ready": false,
+          "coverage": 0.414062,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 63
+        },
+        "validate_order": {
+          "audit_mismatches": 1,
+          "audit_ready": false,
+          "coverage": 0.421875,
+          "incorrect_accepts": 0,
+          "incorrect_rejects": 0,
+          "probes": 55
+        }
+      },
+      "real_erp_verified": false,
+      "seed": 20376991
+    }
+  ],
+  "all_audits_ready": true,
+  "arms": {
+    "stress": {
+      "public_guards": {
+        "abstentions": 0,
+        "accuracy_all_cases": 0.778125,
+        "cases": 2560,
+        "coverage": 1.0,
+        "end_to_end_exact_all_cases": 0.778125,
+        "false_accept_rate_on_true_rejects": 0.44375,
+        "incorrect_accepts": 568,
+        "incorrect_rejects": 0,
+        "per_environment_accuracy": [
+          0.740234,
+          0.775391,
+          0.796875,
+          0.783203,
+          0.794922
+        ]
+      },
+      "structured_program": {
+        "abstentions": 0,
+        "accuracy_all_cases": 1.0,
+        "cases": 2560,
+        "coverage": 1.0,
+        "end_to_end_exact_all_cases": 1.0,
+        "false_accept_rate_on_true_rejects": 0.0,
+        "incorrect_accepts": 0,
+        "incorrect_rejects": 0,
+        "per_environment_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "tabular_matched_active": {
+        "abstentions": 0,
+        "accuracy_all_cases": 0.983203,
+        "cases": 2560,
+        "coverage": 1.0,
+        "end_to_end_exact_all_cases": 0.983203,
+        "false_accept_rate_on_true_rejects": 0.027344,
+        "incorrect_accepts": 35,
+        "incorrect_rejects": 8,
+        "per_environment_accuracy": [
+          0.970703,
+          0.980469,
+          0.980469,
+          0.994141,
+          0.990234
+        ]
+      },
+      "tabular_passive": {
+        "abstentions": 0,
+        "accuracy_all_cases": 0.973437,
+        "cases": 2560,
+        "coverage": 1.0,
+        "end_to_end_exact_all_cases": 0.973437,
+        "false_accept_rate_on_true_rejects": 0.042188,
+        "incorrect_accepts": 54,
+        "incorrect_rejects": 14,
+        "per_environment_accuracy": [
+          0.964844,
+          0.972656,
+          0.972656,
+          0.986328,
+          0.970703
+        ]
+      }
+    },
+    "test": {
+      "public_guards": {
+        "abstentions": 0,
+        "accuracy_all_cases": 0.807813,
+        "cases": 2560,
+        "coverage": 1.0,
+        "end_to_end_exact_all_cases": 0.807813,
+        "false_accept_rate_on_true_rejects": 0.384375,
+        "incorrect_accepts": 492,
+        "incorrect_rejects": 0,
+        "per_environment_accuracy": [
+          0.773438,
+          0.791016,
+          0.8125,
+          0.808594,
+          0.853516
+        ]
+      },
+      "structured_program": {
+        "abstentions": 0,
+        "accuracy_all_cases": 1.0,
+        "cases": 2560,
+        "coverage": 1.0,
+        "end_to_end_exact_all_cases": 1.0,
+        "false_accept_rate_on_true_rejects": 0.0,
+        "incorrect_accepts": 0,
+        "incorrect_rejects": 0,
+        "per_environment_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "tabular_matched_active": {
+        "abstentions": 0,
+        "accuracy_all_cases": 0.98125,
+        "cases": 2560,
+        "coverage": 1.0,
+        "end_to_end_exact_all_cases": 0.98125,
+        "false_accept_rate_on_true_rejects": 0.029687,
+        "incorrect_accepts": 38,
+        "incorrect_rejects": 10,
+        "per_environment_accuracy": [
+          0.978516,
+          0.988281,
+          0.984375,
+          0.978516,
+          0.976562
+        ]
+      },
+      "tabular_passive": {
+        "abstentions": 0,
+        "accuracy_all_cases": 0.975781,
+        "cases": 2560,
+        "coverage": 1.0,
+        "end_to_end_exact_all_cases": 0.975781,
+        "false_accept_rate_on_true_rejects": 0.041406,
+        "incorrect_accepts": 53,
+        "incorrect_rejects": 9,
+        "per_environment_accuracy": [
+          0.980469,
+          0.980469,
+          0.962891,
+          0.972656,
+          0.982422
+        ]
+      }
+    }
+  },
+  "cross_tenant_without_local_learning": [
+    {
+      "cases": 512,
+      "hypothetical_unbound_accuracy": 0.921875,
+      "hypothetical_unbound_false_accepts": 15,
+      "source_org": 1,
+      "target_org": 2,
+      "tenant_bound_abstentions": 512,
+      "warning": "Unbound simulation is a diagnostic only; program memory refuses cross-tenant authorization."
+    },
+    {
+      "cases": 512,
+      "hypothetical_unbound_accuracy": 0.871094,
+      "hypothetical_unbound_false_accepts": 19,
+      "source_org": 2,
+      "target_org": 3,
+      "tenant_bound_abstentions": 512,
+      "warning": "Unbound simulation is a diagnostic only; program memory refuses cross-tenant authorization."
+    },
+    {
+      "cases": 512,
+      "hypothetical_unbound_accuracy": 0.892578,
+      "hypothetical_unbound_false_accepts": 23,
+      "source_org": 3,
+      "target_org": 4,
+      "tenant_bound_abstentions": 512,
+      "warning": "Unbound simulation is a diagnostic only; program memory refuses cross-tenant authorization."
+    },
+    {
+      "cases": 512,
+      "hypothetical_unbound_accuracy": 0.896484,
+      "hypothetical_unbound_false_accepts": 12,
+      "source_org": 4,
+      "target_org": 5,
+      "tenant_bound_abstentions": 512,
+      "warning": "Unbound simulation is a diagnostic only; program memory refuses cross-tenant authorization."
+    }
+  ],
+  "dolibarr_calls": 0,
+  "evidence_budget": "Training corpus plus explicitly counted adaptive black-box oracle queries; matched-active comparator gets the same probes",
+  "format": "orgsim-refiner-executable-policy-study-v1-summary",
+  "independent_real_erp_holdout": false,
+  "organizations": 5,
+  "provider_model_calls": 0,
+  "quality_gate_passed": true,
+  "safety_gate": {
+    "exact_state_effects_required": true,
+    "maximum_false_accepts": 0,
+    "min_accuracy_all_cases": 0.99,
+    "min_coverage": 0.95
+  },
+  "scope": "Fresh synthetic tenants with a specified public-feature/monotone-upper-interaction grammar; not Dolibarr",
+  "seeds": [
+    20261237,
+    20269156,
+    20277075,
+    20284994,
+    20292913
+  ]
+}

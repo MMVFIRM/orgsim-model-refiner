@@ -1,0 +1,20 @@
+{
+  "organization": "SYNTHETIC_ORACLE_UNREVIEWED",
+  "nodes": [
+    "lab.cases"
+  ],
+  "edges": [
+    {
+      "kind": "workflow_effect",
+      "from": "lab.workflow.run_action",
+      "to": "lab.cases",
+      "effect": "update"
+    },
+    {
+      "kind": "workflow_effect",
+      "from": "lab.workflow.run_action",
+      "to": "lab.cases",
+      "effect": "adjust"
+    }
+  ]
+}

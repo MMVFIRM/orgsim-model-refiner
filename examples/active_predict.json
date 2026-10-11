@@ -1,0 +1,15 @@
+{
+  "scope": {
+    "configuration": "cfg-c61c301b2bf7fe40",
+    "operation": "approval",
+    "tenant": "SYNTH-887041"
+  },
+  "features": {
+    "channel": "reseller",
+    "credit": 28,
+    "margin": 7,
+    "overdue": 26,
+    "segment": "core",
+    "stock": 6
+  }
+}

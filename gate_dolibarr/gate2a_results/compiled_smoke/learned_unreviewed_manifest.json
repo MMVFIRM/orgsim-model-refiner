@@ -1,0 +1,200 @@
+{
+  "version": "0.1",
+  "organization": "SYNTHETIC_ORACLE_UNREVIEWED",
+  "reviewed": false,
+  "systems": {
+    "lab": {
+      "resources": {
+        "cases": {
+          "id_field": "id",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "qty": {
+                "type": "integer"
+              },
+              "stock": {
+                "type": "integer"
+              },
+              "amount": {
+                "type": "integer"
+              },
+              "credit": {
+                "type": "integer"
+              },
+              "record_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "allow": {
+            "create": [
+              "test_agent"
+            ],
+            "get": [
+              "test_agent"
+            ],
+            "list": [
+              "test_agent"
+            ]
+          },
+          "guards": {},
+          "foreign_keys": []
+        }
+      },
+      "workflows": {
+        "run_action": {
+          "description": "Model-inferred synthetic behavior; NOT reviewed and NOT a real ERP rule",
+          "roles": [
+            "test_agent"
+          ],
+          "evidence": "hypothesis",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "preconditions": [
+            {
+              "compare": {
+                "left": {
+                  "add": [
+                    {
+                      "lookup": {
+                        "system": "lab",
+                        "resource": "cases",
+                        "id": {
+                          "path": "input.id"
+                        },
+                        "field": "credit"
+                      }
+                    },
+                    {
+                      "negate": {
+                        "lookup": {
+                          "system": "lab",
+                          "resource": "cases",
+                          "id": {
+                            "path": "input.id"
+                          },
+                          "field": "amount"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "op": "ge",
+                "right": {
+                  "literal": 10
+                }
+              }
+            },
+            {
+              "compare": {
+                "left": {
+                  "add": [
+                    {
+                      "lookup": {
+                        "system": "lab",
+                        "resource": "cases",
+                        "id": {
+                          "path": "input.id"
+                        },
+                        "field": "stock"
+                      }
+                    },
+                    {
+                      "negate": {
+                        "lookup": {
+                          "system": "lab",
+                          "resource": "cases",
+                          "id": {
+                            "path": "input.id"
+                          },
+                          "field": "qty"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "op": "ge",
+                "right": {
+                  "literal": 2
+                }
+              }
+            }
+          ],
+          "steps": [
+            {
+              "kind": "update",
+              "system": "lab",
+              "resource": "cases",
+              "id": {
+                "path": "input.id"
+              },
+              "values": {
+                "status": {
+                  "literal": "confirmed"
+                }
+              }
+            },
+            {
+              "kind": "adjust",
+              "system": "lab",
+              "resource": "cases",
+              "id": {
+                "path": "input.id"
+              },
+              "field": "stock",
+              "by": {
+                "negate": {
+                  "lookup": {
+                    "system": "lab",
+                    "resource": "cases",
+                    "id": {
+                      "path": "input.id"
+                    },
+                    "field": "qty"
+                  }
+                }
+              }
+            }
+          ],
+          "result": {
+            "lookup": {
+              "system": "lab",
+              "resource": "cases",
+              "id": {
+                "path": "input.id"
+              },
+              "field": "status"
+            }
+          }
+        }
+      }
+    }
+  },
+  "integrations": [],
+  "scenarios": [],
+  "review_notes": [
+    "Synthetic discovery hypothesis only. Cannot be presented as verified Dolibarr behavior.",
+    "All preconditions must be validated on new independent examples."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "dataset_sha256": "108800f3a5ef3340656968cffb7e2979b250bb627c6ce48235f18020e27cb0b1",
+  "format": "simlearn-benchmark-freeze-v1",
+  "live_dolibarr_requests": 0,
+  "live_dolibarr_writes": 0,
+  "no_claim_of_dolibarr_fidelity": true,
+  "provider_calls": 0,
+  "report_sha256": "6f0b8d447071aaa78fc9471b68e5dc9f2259da646afe56980437096f93730158"
+}

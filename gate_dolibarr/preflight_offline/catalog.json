@@ -1,0 +1,3378 @@
+[
+  {
+    "method": "GET",
+    "path": "/contacts",
+    "summary": "List contacts 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "listContacts",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "thirdparty_ids",
+      "category",
+      "sqlfilters",
+      "includecount",
+      "includeroles",
+      "properties",
+      "pagination_data"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/contacts",
+    "summary": "Create a contact 🔐",
+    "kind": "create",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "createContacts",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/contacts/email/{email}",
+    "summary": "Get a contact by Email 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "contactsRetrieveByEmail",
+    "params": [
+      "email",
+      "includecount",
+      "includeroles"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/contacts/{id}",
+    "summary": "Delete a contact 🔐",
+    "kind": "delete",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "removeContacts",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/contacts/{id}",
+    "summary": "Get a contact 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "retrieveContacts",
+    "params": [
+      "id",
+      "includecount",
+      "includeroles"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/contacts/{id}",
+    "summary": "Update a contact 🔐",
+    "kind": "update",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "updateContacts",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/contacts/{id}/categories",
+    "summary": "Get categories of a contact 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "contactsRetrieveCategories",
+    "params": [
+      "id",
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/contacts/{id}/categories/{category_id}",
+    "summary": "Remove the link between a category and a contact 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "contactsRemoveCategory",
+    "params": [
+      "id",
+      "category_id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/contacts/{id}/categories/{category_id}",
+    "summary": "Add a category to a contact 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "contactsAddCategory",
+    "params": [
+      "id",
+      "category_id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/contacts/{id}/createUser",
+    "summary": "Create a user account object from contact (external user) 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "contactsCreateUser",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/documents",
+    "summary": "Delete a document 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "removeDocuments",
+    "params": [
+      "modulepart",
+      "original_file"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/documents",
+    "summary": "List all documents of an element 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "documentsRetrieveDocumentsListByElement",
+    "params": [
+      "modulepart",
+      "id",
+      "ref",
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "content_type",
+      "pagination_data"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/documents/builddoc",
+    "summary": "Build a document 🔐",
+    "kind": "update",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "documentsBuilddoc",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/documents/download",
+    "summary": "Download a given document 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "listDocuments",
+    "params": [
+      "modulepart",
+      "original_file"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/documents/upload",
+    "summary": "Upload a document 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "createDocuments",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/emailtemplates",
+    "summary": "List email templates 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "listEmailtemplates",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "fk_user",
+      "sqlfilters",
+      "properties",
+      "pagination_data"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/emailtemplates",
+    "summary": "Create an email template 🔐",
+    "kind": "create",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "createEmailtemplates",
+    "params": []
+  },
+  {
+    "method": "DELETE",
+    "path": "/emailtemplates/label/{label}",
+    "summary": "Delete an email template 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "emailtemplatesRemoveByLabel",
+    "params": [
+      "label"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/emailtemplates/label/{label}",
+    "summary": "Get properties of an email template by label 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "emailtemplatesRetrieveByLabel",
+    "params": [
+      "label"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/emailtemplates/label/{label}",
+    "summary": "Update an email template 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "emailtemplatesUpdatebyLabel",
+    "params": [
+      "label"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/emailtemplates/{id}",
+    "summary": "Delete an email template 🔐",
+    "kind": "delete",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "emailtemplatesRemoveById",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/emailtemplates/{id}",
+    "summary": "Get properties of a email template by id 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "emailtemplatesRetrieveById",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/emailtemplates/{id}",
+    "summary": "Update an email template 🔐",
+    "kind": "update",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "emailtemplatesUpdateById",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/invoices",
+    "summary": "List invoices 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "listInvoices",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "thirdparty_ids",
+      "status",
+      "sqlfilters",
+      "properties",
+      "pagination_data",
+      "loadlinkedobjects",
+      "withLines"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices",
+    "summary": "Create invoice object 🔐",
+    "kind": "create",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "createInvoices",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/createfromcontract/{contractid}",
+    "summary": "Create an invoice using a contract. 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesCreateInvoiceFromContract",
+    "params": [
+      "contractid"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/createfromorder/{orderid}",
+    "summary": "Create an invoice using an existing order. 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesCreateInvoiceFromOrder",
+    "params": [
+      "orderid"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/invoices/payments/{id}",
+    "summary": "Update a payment 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesUpdatePayment",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/paymentsdistributed",
+    "summary": "Add a payment to pay partially or completely one or several invoices. 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesAddPaymentDistributed",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/invoices/ref/{ref}",
+    "summary": "Get properties of an invoice object by ref 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesRetrieveByRef",
+    "params": [
+      "ref",
+      "contact_list"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/invoices/ref_ext/{ref_ext}",
+    "summary": "Get properties of an invoice object by ref_ext 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesRetrieveByRefExt",
+    "params": [
+      "ref_ext",
+      "contact_list"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/invoices/templates",
+    "summary": "List template invoices 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesListTemplateInvoices",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "thirdparty_ids",
+      "status",
+      "sqlfilters",
+      "properties",
+      "pagination_data",
+      "loadlinkedobjects",
+      "withLines"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/invoices/templates/{id}",
+    "summary": "Get properties of a template invoice object 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesRetrieveTemplateInvoice",
+    "params": [
+      "id",
+      "contact_list"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/invoices/{id}",
+    "summary": "Delete invoice 🔐",
+    "kind": "delete",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "removeInvoices",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/invoices/{id}",
+    "summary": "Get properties of a invoice object 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "retrieveInvoices",
+    "params": [
+      "id",
+      "contact_list",
+      "properties",
+      "withLines"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/invoices/{id}",
+    "summary": "Update invoice 🔐",
+    "kind": "update",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "updateInvoices",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/invoices/{id}/contact/{contactid}/{type}",
+    "summary": "Delete a contact type of given invoice 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesRemoveContact",
+    "params": [
+      "id",
+      "contactid",
+      "type"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/{id}/contact/{contactid}/{type}",
+    "summary": "Add a contact type of given invoice 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesCreateContact",
+    "params": [
+      "id",
+      "contactid",
+      "type"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/invoices/{id}/contacts",
+    "summary": "Get contacts of given invoice 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesRetrieveContacts",
+    "params": [
+      "id",
+      "type"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/{id}/contacts",
+    "summary": "Adds a contact to an invoice 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesAddContact",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/invoices/{id}/discount",
+    "summary": "Get discount from invoice 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesRetrieveDiscount",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/invoices/{id}/lines",
+    "summary": "Get lines of an invoice 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesRetrieveLines",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/{id}/lines",
+    "summary": "Add a line to a given invoice 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesCreateLine",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/invoices/{id}/lines/{lineid}",
+    "summary": "Deletes a line of a given invoice 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesRemoveLine",
+    "params": [
+      "id",
+      "lineid"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/invoices/{id}/lines/{lineid}",
+    "summary": "Update a line to a given invoice 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesUpdateLine",
+    "params": [
+      "id",
+      "lineid"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/{id}/markAsCreditAvailable",
+    "summary": "Create a discount (credit available) for a credit note or a deposit. 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesMarkAsCreditAvailable",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/invoices/{id}/payments",
+    "summary": "Get list of payments of a given invoice 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesRetrievePayments",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/{id}/payments",
+    "summary": "Add payment line to a specific invoice with the remain to pay as amount. 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesAddPayment",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/{id}/settodraft",
+    "summary": "Sets an invoice as draft 🔐",
+    "kind": "lifecycle_transition",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesSettodraft",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/{id}/settopaid",
+    "summary": "Sets an invoice as paid 🔐",
+    "kind": "lifecycle_transition",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesSettopaid",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/{id}/settounpaid",
+    "summary": "Sets an invoice as unpaid 🔐",
+    "kind": "lifecycle_transition",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesSettounpaid",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/{id}/usecreditnote/{discountid}",
+    "summary": "Add an available credit note discount to payments of an existing invoice. 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesUseCreditNote",
+    "params": [
+      "id",
+      "discountid"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/{id}/usediscount/{discountid}",
+    "summary": "Add a discount line into an invoice (as an invoice line) using an existing absolute discount 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesUseDiscount",
+    "params": [
+      "id",
+      "discountid"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/invoices/{id}/validate",
+    "summary": "Validate an invoice 🔐",
+    "kind": "lifecycle_transition",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "invoicesValidate",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/login",
+    "summary": "Login 🔓",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "loginLoginUnsecured",
+    "params": [
+      "login",
+      "password",
+      "entity",
+      "reset"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/login",
+    "summary": "Login 🔓",
+    "kind": "create",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "listLogin",
+    "params": []
+  },
+  {
+    "method": "DELETE",
+    "path": "/objectlinks",
+    "summary": "Delete object link By Values, not id 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "objectlinksRemoveByValues",
+    "params": [
+      "fk_source",
+      "sourcetype",
+      "fk_target",
+      "targettype",
+      "relationtype",
+      "notrigger"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/objectlinks",
+    "summary": "GET object link(s) By Values, not id 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "objectlinksRetrieveByValues",
+    "params": [
+      "fk_source",
+      "sourcetype",
+      "fk_target",
+      "targettype",
+      "relationtype"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/objectlinks",
+    "summary": "Create object link 🔐",
+    "kind": "create",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "objectlinksCreate",
+    "params": []
+  },
+  {
+    "method": "DELETE",
+    "path": "/objectlinks/{id}",
+    "summary": "Delete an object link 🔐",
+    "kind": "delete",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "objectlinksRemoveById",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/objectlinks/{id}",
+    "summary": "Get properties of a ObjectLink object 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "objectlinksRetrieveById",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/orders",
+    "summary": "List orders 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "listOrders",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "thirdparty_ids",
+      "sqlfilters",
+      "sqlfilterlines",
+      "properties",
+      "pagination_data",
+      "loadlinkedobjects"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "summary": "Create a sale order 🔐",
+    "kind": "create",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "createOrders",
+    "params": []
+  },
+  {
+    "method": "POST",
+    "path": "/orders/createfromproposal/{proposalid}",
+    "summary": "Create an order using an existing proposal. 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersCreateOrderFromProposal",
+    "params": [
+      "proposalid"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/orders/ref/{ref}",
+    "summary": "Get properties of an order object by ref 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersRetrieveByRef",
+    "params": [
+      "ref",
+      "contact_list"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/orders/ref_ext/{ref_ext}",
+    "summary": "Get properties of an order object by ref_ext 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersRetrieveByRefExt",
+    "params": [
+      "ref_ext",
+      "contact_list"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/orders/{id}",
+    "summary": "Delete order 🔐",
+    "kind": "delete",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "removeOrders",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/orders/{id}",
+    "summary": "Get properties of an order object by id 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "retrieveOrders",
+    "params": [
+      "id",
+      "contact_list"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/orders/{id}",
+    "summary": "Update order general fields (won't touch lines of order) 🔐",
+    "kind": "update",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "updateOrders",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/orders/{id}/close",
+    "summary": "Close an order (Classify it as \"Delivered\") 🔐",
+    "kind": "lifecycle_transition",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersClose",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/orders/{id}/contact/{contactid}/{type}",
+    "summary": "Unlink a contact type of given order 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersRemoveContact",
+    "params": [
+      "id",
+      "contactid",
+      "type"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/orders/{id}/contact/{contactid}/{type}",
+    "summary": "Add a contact type of given order 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersCreateContact",
+    "params": [
+      "id",
+      "contactid",
+      "type"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/orders/{id}/contacts",
+    "summary": "Get contacts of a given order 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersRetrieveContacts",
+    "params": [
+      "id",
+      "type"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/orders/{id}/lines",
+    "summary": "Get lines of an order 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersRetrieveLines",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/orders/{id}/lines",
+    "summary": "Add a line to given order 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersCreateLine",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/orders/{id}/lines/{lineid}",
+    "summary": "Delete a line of a given order 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersRemoveLine",
+    "params": [
+      "id",
+      "lineid"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/orders/{id}/lines/{lineid}",
+    "summary": "Get properties of a line of an order object by id 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersRetrieveLine",
+    "params": [
+      "id",
+      "lineid",
+      "properties"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/orders/{id}/lines/{lineid}",
+    "summary": "Update a line to given order 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersUpdateLine",
+    "params": [
+      "id",
+      "lineid"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/orders/{id}/reopen",
+    "summary": "Tag the order as validated (opened) 🔐",
+    "kind": "lifecycle_transition",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersReopen",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/orders/{id}/setinvoiced",
+    "summary": "Classify the order as invoiced. Could be also called setbilled 🔐",
+    "kind": "lifecycle_transition",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersSetinvoiced",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/orders/{id}/settodraft",
+    "summary": "Set an order to draft 🔐",
+    "kind": "lifecycle_transition",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersSettodraft",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/orders/{id}/shipment",
+    "summary": "Get the shipments of an order 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersRetrieveOrderShipments",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/orders/{id}/shipment/{warehouse_id}",
+    "summary": "Create the shipment of an order 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersCreateOrderShipment",
+    "params": [
+      "id",
+      "warehouse_id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/orders/{id}/validate",
+    "summary": "Validate an order 🔐",
+    "kind": "lifecycle_transition",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "ordersValidate",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/paiements",
+    "summary": "List paiements 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "listPaiements",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "sqlfilters",
+      "properties"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/paiements/{id}",
+    "summary": "Delete payment 🔐",
+    "kind": "delete",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "removePaiements",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/paiements/{id}",
+    "summary": "Get properties of a paiement object 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "retrievePaiements",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/paiements/{id}",
+    "summary": "Update paiement 🔐",
+    "kind": "update",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "updatePaiements",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products",
+    "summary": "List products 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "listProducts",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "mode",
+      "category",
+      "sqlfilters",
+      "ids_only",
+      "variant_filter",
+      "pagination_data",
+      "includestockdata",
+      "properties"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/products",
+    "summary": "Create a product 🔐",
+    "kind": "create",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "createProducts",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/products/attributes",
+    "summary": "Get attributes 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveAttributes",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "sqlfilters",
+      "properties"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/products/attributes",
+    "summary": "Add attributes 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsAddAttributes",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/products/attributes/ref/{ref}",
+    "summary": "Get attributes by ref 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveAttributesByRef",
+    "params": [
+      "ref"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/attributes/ref/{ref}/values",
+    "summary": "Get all values for an attribute ref 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveAttributeValuesByRef",
+    "params": [
+      "ref"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/attributes/ref_ext/{ref_ext}",
+    "summary": "Get attributes by ref_ext 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveAttributesByRefExt",
+    "params": [
+      "ref_ext"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/products/attributes/values/{id}",
+    "summary": "Delete attribute value by ID 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRemoveAttributeValueById",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/attributes/values/{id}",
+    "summary": "Get attribute value by ID 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveAttributeValueById",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/products/attributes/values/{id}",
+    "summary": "Update attribute value 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsUpdateAttributeValue",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/products/attributes/{id}",
+    "summary": "Delete attributes by ID 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRemoveAttributes",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/attributes/{id}",
+    "summary": "Get attribute by ID 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveAttributeById",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/products/attributes/{id}",
+    "summary": "Update attributes by ID 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsUpdateAttributes",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/attributes/{id}/values",
+    "summary": "Get all values for an attribute ID 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveAttributeValues",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/products/attributes/{id}/values",
+    "summary": "Add attribute value 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsAddAttributeValue",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/products/attributes/{id}/values/ref/{ref}",
+    "summary": "Delete attribute value by ref 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRemoveAttributeValueByRef",
+    "params": [
+      "id",
+      "ref"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/attributes/{id}/values/ref/{ref}",
+    "summary": "Get attribute value by ref 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveAttributeValueByRef",
+    "params": [
+      "id",
+      "ref"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/barcode/{barcode}",
+    "summary": "Get product by barcode 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveByBarcode",
+    "params": [
+      "barcode",
+      "includestockdata",
+      "includesubproducts",
+      "includeparentid",
+      "includetrans"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/purchase_prices",
+    "summary": "Get a list of all purchase prices of products 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveSupplierProducts",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "mode",
+      "category",
+      "supplier",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/ref/{ref}",
+    "summary": "Get product by ref 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveByRef",
+    "params": [
+      "ref",
+      "includestockdata",
+      "includesubproducts",
+      "includeparentid",
+      "includetrans"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/ref/{ref}/variants",
+    "summary": "Get product variants by Product ref 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveVariantsByProdRef",
+    "params": [
+      "ref"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/products/ref/{ref}/variants",
+    "summary": "Add variant by product ref 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsAddVariantByProductRef",
+    "params": [
+      "ref"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/ref_ext/{ref_ext}",
+    "summary": "Get product by ref_ext 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveByRefExt",
+    "params": [
+      "ref_ext",
+      "includestockdata",
+      "includesubproducts",
+      "includeparentid",
+      "includetrans"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/products/variants/{id}",
+    "summary": "Delete product variants 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRemoveVariant",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/products/variants/{id}",
+    "summary": "Update product variants 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsUpdateVariant",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/products/{id}",
+    "summary": "Delete a product 🔐",
+    "kind": "delete",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "removeProducts",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/{id}",
+    "summary": "Get a product 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "retrieveProducts",
+    "params": [
+      "id",
+      "includestockdata",
+      "includesubproducts",
+      "includeparentid",
+      "includetrans"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/products/{id}",
+    "summary": "Update a product 🔐",
+    "kind": "update",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "updateProducts",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/{id}/categories",
+    "summary": "Get categories for a product 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveCategories",
+    "params": [
+      "id",
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/products/{id}/contact/{contactid}/{type}",
+    "summary": "Unlink a contact type of given product 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRemoveContact",
+    "params": [
+      "id",
+      "contactid",
+      "type"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/products/{id}/contact/{contactid}/{type}",
+    "summary": "Add a contact type of given product 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsCreateContact",
+    "params": [
+      "id",
+      "contactid",
+      "type"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/{id}/contacts",
+    "summary": "Get contacts of a given product 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveContacts",
+    "params": [
+      "id",
+      "type"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/{id}/purchase_prices",
+    "summary": "Get purchase prices for a product 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrievePurchasePrices",
+    "params": [
+      "id",
+      "ref",
+      "ref_ext",
+      "barcode"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/products/{id}/purchase_prices",
+    "summary": "Add/Update purchase prices for a product 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsAddPurchasePrice",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/{id}/purchase_prices/logs",
+    "summary": "Get the history logs for all supplier prices of a specific product 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrievePurchasePriceLogs",
+    "params": [
+      "id",
+      "ref",
+      "ref_ext",
+      "barcode"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/products/{id}/purchase_prices/{priceid}",
+    "summary": "Delete a purchase price for a product 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRemovePurchasePrice",
+    "params": [
+      "id",
+      "priceid"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/{id}/selling_multiprices/per_customer",
+    "summary": "Get prices per customer for a product 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveCustomerPricesPerCustomer",
+    "params": [
+      "id",
+      "thirdparty_id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/{id}/selling_multiprices/per_quantity",
+    "summary": "Get prices per quantity for a product 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveCustomerPricesPerQuantity",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/{id}/selling_multiprices/per_segment",
+    "summary": "Get prices per segment for a product 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveCustomerPricesPerSegment",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/{id}/stock",
+    "summary": "Get stock data for a product 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveStock",
+    "params": [
+      "id",
+      "selected_warehouse_id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/{id}/subproducts",
+    "summary": "Get the list of subproducts of a product 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveSubproducts",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/products/{id}/subproducts/add",
+    "summary": "Add a subproduct 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsAddSubproducts",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/products/{id}/subproducts/remove/{subproduct_id}",
+    "summary": "Remove a subproduct 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsDelSubproducts",
+    "params": [
+      "id",
+      "subproduct_id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/products/{id}/variants",
+    "summary": "Get product variants 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsRetrieveVariants",
+    "params": [
+      "id",
+      "includestock"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/products/{id}/variants",
+    "summary": "Add variant 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "productsAddVariant",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/actiontriggers",
+    "summary": "Get the list of Action Triggers. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfActionTriggers",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "elementtype",
+      "lang",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/checkintegrity",
+    "summary": "Do a test of integrity for files and setup. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveCheckIntegrity",
+    "params": [
+      "target"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/company",
+    "summary": "Get properties of company 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveCompany",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/setup/conf",
+    "summary": "Get all setup variables 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveConfs",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/setup/conf/{constantname}",
+    "summary": "Get value of a setup variables 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveConf",
+    "params": [
+      "constantname"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/availability",
+    "summary": "Get the list of delivery times. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveAvailability",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/civilities",
+    "summary": "Get the list of civilities. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfCivilities",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "module",
+      "active",
+      "lang",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/contact_types",
+    "summary": "Get the list of contacts types. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfContactTypes",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "type",
+      "module",
+      "active",
+      "lang",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/countries",
+    "summary": "Get the list of countries. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfCountries",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "filter",
+      "lang",
+      "sqlfilters",
+      "loadregions",
+      "loadstates"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/countries/byCode/{code}",
+    "summary": "Get country by Code. 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveCountryByCode",
+    "params": [
+      "code",
+      "lang",
+      "loadregions",
+      "loadstates"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/countries/byISO/{iso}",
+    "summary": "Get country by Iso. 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveCountryByISO",
+    "params": [
+      "iso",
+      "lang",
+      "loadregions",
+      "loadstates"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/countries/{id}",
+    "summary": "Get country by ID. 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveCountryByID",
+    "params": [
+      "id",
+      "lang",
+      "loadregions",
+      "loadstates"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/currencies",
+    "summary": "Get the list of currencies. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfCurrencies",
+    "params": [
+      "multicurrency",
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/event_types",
+    "summary": "Get the list of events types. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfEventTypes",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "type",
+      "module",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/expensereport_types",
+    "summary": "Get the list of Expense Report types. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfExpenseReportsTypes",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "module",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/holiday_types",
+    "summary": "Get the list of holiday types. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfHolidayTypes",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "fk_country",
+      "active",
+      "lang",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/incoterms",
+    "summary": "Get the list of incoterms. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfIncoterms",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "lang",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/legal_form",
+    "summary": "Get the list of legal form of business. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfLegalForm",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "country",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/ordering_methods",
+    "summary": "Get the list of ordering methods. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveOrderingMethods",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/ordering_origins",
+    "summary": "Get the list of ordering origins. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveOrderingOrigins",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/payment_terms",
+    "summary": "Get the list of payments terms. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrievePaymentTerms",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/payment_types",
+    "summary": "Get the list of payments types. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrievePaymentTypes",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/public_holiday",
+    "summary": "Get the list of public holiday. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfPublicHolidays",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "fk_country",
+      "active",
+      "lang",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/regions",
+    "summary": "Get the list of regions. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfRegions",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "country",
+      "filter",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/regions/byCode/{code}",
+    "summary": "Get region by Code. 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveRegionByCode",
+    "params": [
+      "code"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/regions/{id}",
+    "summary": "Get region by ID. 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveRegionByID",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/shipping_methods",
+    "summary": "Get the list of shipping methods. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveShippingModes",
+    "params": [
+      "limit",
+      "page",
+      "active",
+      "lang",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/socialnetworks",
+    "summary": "Get the list of social networks. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfsocialNetworks",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/staff",
+    "summary": "Get the list of staff. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfStaff",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/states",
+    "summary": "Get the list of states/provinces. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfStates",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "country",
+      "filter",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/states/byCode/{code}",
+    "summary": "Get state by Code. 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveStateByCode",
+    "params": [
+      "code"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/states/{id}",
+    "summary": "Get state by ID. 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveStateByID",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/thirdparty_types",
+    "summary": "Get the list of thirdparties types. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveThirdpartiesTypes",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "lang",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/ticket_categories",
+    "summary": "Get the list of tickets categories. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveTicketsCategories",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "lang",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/ticket_severities",
+    "summary": "Get the list of tickets severity. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveTicketsSeverities",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "lang",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/ticket_types",
+    "summary": "Get the list of tickets types. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveTicketsTypes",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "lang",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/towns",
+    "summary": "Get the list of towns. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfTowns",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "zipcode",
+      "town",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/units",
+    "summary": "Get the list of measuring units. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfMeasuringUnits",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/dictionary/vat",
+    "summary": "Get the list of vat. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfVAT",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "active",
+      "fk_country",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/establishments",
+    "summary": "Get the list of establishments. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveEstablishments",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/setup/establishments/{id}",
+    "summary": "Get establishment by ID. 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveEtablishmentByID",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/extrafields",
+    "summary": "Get the list of extra fields. 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveListOfExtrafields",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "elementtype",
+      "sqlfilters"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/setup/extrafields/{elementtype}/{attrname}",
+    "summary": "Delete extrafield 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRemoveExtrafieldsFromNames",
+    "params": [
+      "attrname",
+      "elementtype"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/extrafields/{elementtype}/{attrname}",
+    "summary": " 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveExtrafields",
+    "params": [
+      "attrname",
+      "elementtype"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/setup/extrafields/{elementtype}/{attrname}",
+    "summary": "Create Extrafield object 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupCreateExtrafields",
+    "params": [
+      "attrname",
+      "elementtype"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/setup/extrafields/{elementtype}/{attrname}",
+    "summary": "Update Extrafield object 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupUpdateExtrafields",
+    "params": [
+      "attrname",
+      "elementtype"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/setup/modules",
+    "summary": "Get list of enabled modules 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveModules",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/setup/modules/status/{origin}",
+    "summary": "Get list of modules with status and origin 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupRetrieveModulesList",
+    "params": [
+      "status",
+      "origin"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/setup/modules/{modulename}/disable",
+    "summary": "PUT enable module 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupDisableModules",
+    "params": [
+      "modulename"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/setup/modules/{modulename}/enable",
+    "summary": "PUT enable module 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "setupEnableModules",
+    "params": [
+      "modulename"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/status",
+    "summary": "Get status (Dolibarr version) 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "listStatus",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties",
+    "summary": "List third parties 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "listThirdparties",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "mode",
+      "category",
+      "sqlfilters",
+      "properties",
+      "pagination_data"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/thirdparties",
+    "summary": "Create a third party 🔐",
+    "kind": "create",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "createThirdparties",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/accounts/{site}/{key_account}",
+    "summary": "Get a specific third party by account 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveSocieteByAccounts",
+    "params": [
+      "site",
+      "key_account"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/barcode/{barcode}",
+    "summary": "Get a third party by barcode. 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveByBarcode",
+    "params": [
+      "barcode"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/email/{email}",
+    "summary": "Get properties of a third party by email. 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveByEmail",
+    "params": [
+      "email"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/thirdparties/{id}",
+    "summary": "Delete a third party 🔐",
+    "kind": "delete",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "removeThirdparties",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}",
+    "summary": "Get a third party 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "retrieveThirdparties",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/thirdparties/{id}",
+    "summary": "Update third party 🔐",
+    "kind": "update",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "updateThirdparties",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/thirdparties/{id}/accounts",
+    "summary": "Delete all accounts attached to a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRemoveSocieteAccounts",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/accounts",
+    "summary": "Get a specific account attached to a third party 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveSocieteAccounts",
+    "params": [
+      "id",
+      "site"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/thirdparties/{id}/accounts",
+    "summary": "Create and attach a new account to an existing third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesCreateSocieteAccount",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/thirdparties/{id}/accounts/{site}",
+    "summary": "Delete a specific site account attached to a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRemoveSocieteAccount",
+    "params": [
+      "id",
+      "site"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/thirdparties/{id}/accounts/{site}",
+    "summary": "Create and attach a new (or replace an existing) specific site account for a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesCreateSocieteAccount",
+    "params": [
+      "id",
+      "site"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/thirdparties/{id}/accounts/{site}",
+    "summary": "Update specified values of a specific account attached to a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesUpdateSocieteAccount",
+    "params": [
+      "id",
+      "site"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/bankaccounts",
+    "summary": "Get company bank accounts of a third party 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveCompanyBankAccount",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/thirdparties/{id}/bankaccounts",
+    "summary": "Create a company bank account for a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesCreateCompanyBankAccount",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/thirdparties/{id}/bankaccounts/{bankaccount_id}",
+    "summary": "Delete a bank account attached to a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRemoveCompanyBankAccount",
+    "params": [
+      "id",
+      "bankaccount_id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/thirdparties/{id}/bankaccounts/{bankaccount_id}",
+    "summary": "Update a company bank account of a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesUpdateCompanyBankAccount",
+    "params": [
+      "id",
+      "bankaccount_id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/categories",
+    "summary": "Get customer categories for a third party 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveCategories",
+    "params": [
+      "id",
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/thirdparties/{id}/categories/{category_id}",
+    "summary": "Remove the link between a customer category and the third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRemoveCategory",
+    "params": [
+      "id",
+      "category_id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/thirdparties/{id}/categories/{category_id}",
+    "summary": "Add a customer category to a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesAddCategory",
+    "params": [
+      "id",
+      "category_id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/fixedamountdiscounts",
+    "summary": "Get fixed amount discount of a third party 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveFixedAmountDiscounts",
+    "params": [
+      "id",
+      "mode",
+      "filter",
+      "sortfield",
+      "sortorder"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/thirdparties/{id}/fixedamountdiscounts",
+    "summary": "Create a fixed amount discount for a thirdparty 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesCreateFixedAmountDiscount",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/generateBankAccountDocument/{companybankid}/{model}",
+    "summary": "Generate a document from a bank account record 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesGenerateBankAccountDocument",
+    "params": [
+      "id",
+      "companybankid",
+      "model"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/getinvoicesqualifiedforcreditnote",
+    "summary": "Return invoices qualified to be corrected by a credit note 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveInvoicesQualifiedForCreditNote",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/getinvoicesqualifiedforreplacement",
+    "summary": "Return invoices qualified to be replaced by another invoice 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveInvoicesQualifiedForReplacement",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/thirdparties/{id}/merge/{idtodelete}",
+    "summary": "Merge a third party into another third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesMerge",
+    "params": [
+      "id",
+      "idtodelete"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/notifications",
+    "summary": "Get company notifications for a third party 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveCompanyNotification",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/thirdparties/{id}/notifications",
+    "summary": "Create a company notification for a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesCreateCompanyNotification",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/thirdparties/{id}/notifications/{notification_id}",
+    "summary": "Delete a company notification attached to a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRemoveCompanyNotification",
+    "params": [
+      "id",
+      "notification_id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/thirdparties/{id}/notifications/{notification_id}",
+    "summary": "Update a company notification for a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesUpdateCompanyNotification",
+    "params": [
+      "id",
+      "notification_id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/thirdparties/{id}/notificationsbycode/{code}",
+    "summary": "Create a company notification for a third party using action trigger code 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesCreateCompanyNotificationByCode",
+    "params": [
+      "id",
+      "code"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/outstandinginvoices",
+    "summary": "Get outstanding invoices for a third party 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveOutStandingInvoices",
+    "params": [
+      "id",
+      "mode"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/outstandingorders",
+    "summary": "Get outstanding orders for a third party 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveOutStandingOrder",
+    "params": [
+      "id",
+      "mode"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/outstandingproposals",
+    "summary": "Get outstanding proposals for a third party 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveOutStandingProposals",
+    "params": [
+      "id",
+      "mode"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/thirdparties/{id}/representative/{representative_id}",
+    "summary": "Remove the link between a customer representative and a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRemoveRepresentative",
+    "params": [
+      "id",
+      "representative_id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/thirdparties/{id}/representative/{representative_id}",
+    "summary": "Add a customer representative to a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesAddRepresentative",
+    "params": [
+      "id",
+      "representative_id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/representatives",
+    "summary": "Get representatives of a third party 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveSalesRepresentatives",
+    "params": [
+      "id",
+      "mode"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/thirdparties/{id}/setpricelevel/{priceLevel}",
+    "summary": "Set a new price level for the given third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesSetThirdpartyPriceLevel",
+    "params": [
+      "id",
+      "priceLevel"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/thirdparties/{id}/splitdiscount/{discountid}",
+    "summary": "Split a discount in 2 smaller discount 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesSplitdiscount",
+    "params": [
+      "id",
+      "discountid"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/thirdparties/{id}/supplier_categories",
+    "summary": "Get supplier categories for a third party 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRetrieveSupplierCategories",
+    "params": [
+      "id",
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/thirdparties/{id}/supplier_categories/{category_id}",
+    "summary": "Remove the link between a category and the third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesRemoveSupplierCategory",
+    "params": [
+      "id",
+      "category_id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/thirdparties/{id}/supplier_categories/{category_id}",
+    "summary": "Add a supplier category to a third party 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "thirdpartiesAddSupplierCategory",
+    "params": [
+      "id",
+      "category_id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/users",
+    "summary": "List users 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "listUsers",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "user_ids",
+      "category",
+      "sqlfilters",
+      "properties"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/users",
+    "summary": "Create a user 🔐",
+    "kind": "create",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "createUsers",
+    "params": []
+  },
+  {
+    "method": "GET",
+    "path": "/users/email/{email}",
+    "summary": "Get a user by email 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersRetrieveByEmail",
+    "params": [
+      "email",
+      "includepermissions"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/users/groups",
+    "summary": "List groups of the current user (so user of API token) 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersListGroups",
+    "params": [
+      "sortfield",
+      "sortorder",
+      "limit",
+      "page",
+      "group_ids",
+      "sqlfilters",
+      "properties"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/users/groups",
+    "summary": "Create user group 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersCreateGroups",
+    "params": []
+  },
+  {
+    "method": "DELETE",
+    "path": "/users/groups/{group}",
+    "summary": "Delete a usergroup 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersRemoveGroups",
+    "params": [
+      "group"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/users/groups/{group}",
+    "summary": "Get properties of a user group 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersInfoGroups",
+    "params": [
+      "group",
+      "load_members",
+      "includepermissions"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/users/groups/{group}",
+    "summary": "Update user group 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersUpdateGroups",
+    "params": [
+      "group"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/users/info",
+    "summary": "Get more properties of the current user (so user of API token). 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersRetrieveInfo",
+    "params": [
+      "includepermissions"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/users/login/{login}",
+    "summary": "Get a user by login 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersRetrieveByLogin",
+    "params": [
+      "login",
+      "includepermissions"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/users/{id}",
+    "summary": "Delete a user 🔐",
+    "kind": "delete",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "removeUsers",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/users/{id}",
+    "summary": "Get a user 🔐",
+    "kind": "lookup",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "retrieveUsers",
+    "params": [
+      "id",
+      "includepermissions"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/users/{id}",
+    "summary": "Update a user 🔐",
+    "kind": "update",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "updateUsers",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/users/{id}/groups",
+    "summary": "List the groups of a user 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersRetrieveGroups",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/users/{id}/notifications",
+    "summary": "Get notifications for a user 🔐",
+    "kind": "query",
+    "risk": "read",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersRetrieveUserNotification",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/users/{id}/notifications",
+    "summary": "Create a notification for a user 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersCreateUserNotification",
+    "params": [
+      "id"
+    ]
+  },
+  {
+    "method": "DELETE",
+    "path": "/users/{id}/notifications/{notification_id}",
+    "summary": "Delete a notification attached to a user 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersRemoveUserNotification",
+    "params": [
+      "id",
+      "notification_id"
+    ]
+  },
+  {
+    "method": "PUT",
+    "path": "/users/{id}/notifications/{notification_id}",
+    "summary": "Update a notification for a user 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersUpdateUserNotification",
+    "params": [
+      "id",
+      "notification_id"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/users/{id}/notificationsbycode/{code}",
+    "summary": "Create a notification for a user using action trigger code 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersCreateUserNotificationByCode",
+    "params": [
+      "id",
+      "code"
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/users/{id}/remove-group/{group}",
+    "summary": "Remove user from group (only admin) 🔐",
+    "kind": "workflow_or_relationship",
+    "risk": "mutating",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersRemoveUserFromGroup",
+    "params": [
+      "id",
+      "group"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/users/{id}/setGroup/{group}",
+    "summary": "Add a user to a group 🔐",
+    "kind": "lookup",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersSetGroup",
+    "params": [
+      "id",
+      "group",
+      "entity"
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/users/{id}/setPassword",
+    "summary": "Update a user password 🔐",
+    "kind": "query",
+    "risk": "blocked_sensitive",
+    "implementation": "UNVERIFIED_NO_EXECUTABLE_MODEL",
+    "operation_id": "usersSetPassword",
+    "params": [
+      "id",
+      "send_password"
+    ]
+  }
+]

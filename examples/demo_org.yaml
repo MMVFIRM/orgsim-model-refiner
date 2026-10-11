@@ -1,0 +1,294 @@
+version: '0.1'
+organization: Northstar Industrial Supply (fictional)
+reviewed: true  # Reviewed for this *fictional* demo only, NOT a real organization's policies.
+
+systems:
+  crm:
+    resources:
+      accounts:
+        id_field: id
+        schema:
+          type: object
+          additionalProperties: false
+          required: [id, name, credit_limit_cents]
+          properties:
+            id: {type: string, minLength: 1}
+            name: {type: string, minLength: 1}
+            credit_limit_cents: {type: integer, minimum: 0}
+        unique: [[name]]
+        allow:
+          create: [admin, sales]
+          get: [admin, sales, finance, analyst, agent]
+          list: [admin, sales, finance, analyst, agent]
+          update: [admin, finance]
+      quotes:
+        id_field: id
+        schema:
+          type: object
+          additionalProperties: false
+          required: [id, account_id, sku, quantity, unit_price_cents, status]
+          properties:
+            id: {type: string}
+            account_id: {type: string}
+            sku: {type: string}
+            quantity: {type: integer, minimum: 1}
+            unit_price_cents: {type: integer, minimum: 0}
+            status: {type: string, enum: [draft, accepted, expired]}
+        foreign_keys:
+          - {field: account_id, system: crm, resource: accounts}
+        allow:
+          create: [admin, sales]
+          get: [admin, sales, agent]
+          list: [admin, sales, agent]
+          update: [admin, sales]
+      order_mirror:
+        id_field: id
+        schema:
+          type: object
+          additionalProperties: false
+          required: [id, account_id, total_cents, status]
+          properties:
+            id: {type: string}
+            account_id: {type: string}
+            total_cents: {type: integer, minimum: 0}
+            status: {type: string, enum: [confirmed, cancelled]}
+        foreign_keys:
+          - {field: account_id, system: crm, resource: accounts}
+        allow:
+          get: [admin, sales, agent, analyst]
+          list: [admin, sales, agent, analyst]
+
+  erp:
+    resources:
+      inventory:
+        id_field: id
+        schema:
+          type: object
+          additionalProperties: false
+          required: [id, description, available, unit_price_cents]
+          properties:
+            id: {type: string}
+            description: {type: string}
+            available: {type: integer, minimum: 0}
+            unit_price_cents: {type: integer, minimum: 0}
+        allow:
+          create: [admin]
+          get: [admin, sales, agent, warehouse]
+          list: [admin, sales, agent, warehouse]
+          update: [admin, warehouse]
+      orders:
+        id_field: id
+        schema:
+          type: object
+          additionalProperties: false
+          required: [id, account_id, quote_id, sku, quantity, total_cents, status]
+          properties:
+            id: {type: string}
+            account_id: {type: string}
+            quote_id: {type: string}
+            sku: {type: string}
+            quantity: {type: integer, minimum: 1}
+            total_cents: {type: integer, minimum: 0}
+            approval_id: {type: [string, 'null']}
+            status: {type: string, enum: [confirmed]}
+        foreign_keys:
+          - {field: account_id, system: crm, resource: accounts}
+          - {field: quote_id, system: crm, resource: quotes}
+          - {field: sku, system: erp, resource: inventory}
+          - {field: approval_id, system: approvals, resource: requests, nullable: true}
+        allow:
+          create: [admin, sales, agent]
+          get: [admin, sales, agent, finance, analyst]
+          list: [admin, sales, agent, finance, analyst]
+        guards:
+          create:
+            # Accepted quote, consistent customer, product, quantity and quoted price.
+            - compare:
+                left: {lookup: {system: crm, resource: quotes, id: {path: input.quote_id}, field: status}}
+                op: eq
+                right: {literal: accepted}
+            - compare:
+                left: {lookup: {system: crm, resource: quotes, id: {path: input.quote_id}, field: account_id}}
+                op: eq
+                right: {path: input.account_id}
+            - compare:
+                left: {lookup: {system: crm, resource: quotes, id: {path: input.quote_id}, field: sku}}
+                op: eq
+                right: {path: input.sku}
+            - compare:
+                left: {lookup: {system: crm, resource: quotes, id: {path: input.quote_id}, field: quantity}}
+                op: eq
+                right: {path: input.quantity}
+            - compare:
+                left: {lookup: {system: crm, resource: quotes, id: {path: input.quote_id}, field: unit_price_cents}}
+                op: eq
+                right: {lookup: {system: erp, resource: inventory, id: {path: input.sku}, field: unit_price_cents}}
+            - compare:
+                left: {path: input.total_cents}
+                op: eq
+                right:
+                  mul:
+                    - {path: input.quantity}
+                    - {lookup: {system: erp, resource: inventory, id: {path: input.sku}, field: unit_price_cents}}
+            # Credit limit, or existing approved, matched credit exception.
+            - any:
+                - compare:
+                    left: {path: input.total_cents}
+                    op: le
+                    right: {lookup: {system: crm, resource: accounts, id: {path: input.account_id}, field: credit_limit_cents}}
+                - all:
+                    - compare:
+                        left: {lookup: {system: approvals, resource: requests, id: {path: input.approval_id}, field: status}}
+                        op: eq
+                        right: {literal: approved}
+                    - compare:
+                        left: {lookup: {system: approvals, resource: requests, id: {path: input.approval_id}, field: account_id}}
+                        op: eq
+                        right: {path: input.account_id}
+                    - compare:
+                        left: {lookup: {system: approvals, resource: requests, id: {path: input.approval_id}, field: quote_id}}
+                        op: eq
+                        right: {path: input.quote_id}
+                    - compare:
+                        left: {lookup: {system: approvals, resource: requests, id: {path: input.approval_id}, field: amount_cents}}
+                        op: ge
+                        right: {path: input.total_cents}
+            - compare:
+                left: {path: input.quantity}
+                op: le
+                right: {lookup: {system: erp, resource: inventory, id: {path: input.sku}, field: available}}
+        effects:
+          create:
+            - kind: adjust
+              target: {system: erp, resource: inventory, id: {path: input.sku}}
+              field: available
+              by: {negate: {path: input.quantity}}
+
+  approvals:
+    resources:
+      requests:
+        id_field: id
+        schema:
+          type: object
+          additionalProperties: false
+          required: [id, quote_id, account_id, amount_cents, status]
+          properties:
+            id: {type: string}
+            quote_id: {type: string}
+            account_id: {type: string}
+            amount_cents: {type: integer, minimum: 0}
+            status: {type: string, enum: [pending, approved, denied]}
+        foreign_keys:
+          - {field: quote_id, system: crm, resource: quotes}
+          - {field: account_id, system: crm, resource: accounts}
+        allow:
+          create: [admin, sales, agent]
+          get: [admin, sales, finance, agent]
+          list: [admin, sales, finance, agent]
+          update: [admin, finance]
+        guards:
+          update:
+            - compare:
+                left: {path: record.account_id}
+                op: eq
+                right: {lookup: {system: crm, resource: quotes, id: {path: record.quote_id}, field: account_id}}
+
+  lake:
+    resources:
+      order_facts:
+        id_field: id
+        schema:
+          type: object
+          additionalProperties: false
+          required: [id, account_id, total_cents, status]
+          properties:
+            id: {type: string}
+            account_id: {type: string}
+            total_cents: {type: integer, minimum: 0}
+            status: {type: string, enum: [confirmed]}
+        foreign_keys:
+          - {field: account_id, system: crm, resource: accounts}
+        allow:
+          get: [admin, analyst, agent]
+          list: [admin, analyst, agent]
+
+integrations:
+  # Delivery is delayed by simulated ticks, not wall-clock time.
+  - event: erp.orders.created
+    action: upsert
+    delay_ticks: 1
+    target: {system: crm, resource: order_mirror}
+    mapping:
+      id: {path: event.record.id}
+      account_id: {path: event.record.account_id}
+      total_cents: {path: event.record.total_cents}
+      status: {path: event.record.status}
+  - event: erp.orders.created
+    action: upsert
+    delay_ticks: 2
+    target: {system: lake, resource: order_facts}
+    mapping:
+      id: {path: event.record.id}
+      account_id: {path: event.record.account_id}
+      total_cents: {path: event.record.total_cents}
+      status: {path: event.record.status}
+
+scenarios:
+  - id: accepted_quote_order
+    agent_role: agent
+    variables:
+      customer_name: {choice: [Aster Machines, Greenfield Engineering, Skyward Manufacturing]}
+      quantity: {int: [1, 5]}
+      unit_price: {choice: [7000, 9000, 11000]}
+    derived:
+      total: {mul: ['${quantity}', '${unit_price}']}
+      expected_remaining: {sub: [20, '${quantity}']}
+    task: >
+      Create ERP order ORD-${case} for accepted CRM quote Q-${case} and customer A-${case}.
+      Use item SKU-${case}, quantity ${quantity}, and agreed total ${total} cents.
+      Confirm the CRM and data-lake projections are consistent after integration processing.
+    seed_calls:
+      - tool: crm.accounts.create
+        args: {id: 'A-${case}', name: '${customer_name}', credit_limit_cents: 80000}
+      - tool: erp.inventory.create
+        args: {id: 'SKU-${case}', description: 'Industrial actuator', available: 20, unit_price_cents: '${unit_price}'}
+      - tool: crm.quotes.create
+        args: {id: 'Q-${case}', account_id: 'A-${case}', sku: 'SKU-${case}', quantity: '${quantity}', unit_price_cents: '${unit_price}', status: accepted}
+    checks:
+      - exists: {lookup: {system: erp, resource: orders, id: {literal: 'ORD-${case}'}}}
+      - exists: {lookup: {system: crm, resource: order_mirror, id: {literal: 'ORD-${case}'}}}
+      - exists: {lookup: {system: lake, resource: order_facts, id: {literal: 'ORD-${case}'}}}
+      - compare:
+          left: {lookup: {system: erp, resource: inventory, id: {literal: 'SKU-${case}'}, field: available}}
+          op: eq
+          right: {literal: '${expected_remaining}'}
+
+  - id: credit_exception
+    agent_role: agent
+    variables:
+      customer_name: {choice: [Aster Machines, Greenfield Engineering]}
+    task: >
+      Customer A-${case} has an accepted quote Q-${case} for 3 units at 9000 cents per unit.
+      The 27000 cent order exceeds its 15000 cent credit limit. Approval APP-${case}
+      has already been authorized. Create ERP order ORD-${case} and synchronize downstream systems.
+    seed_calls:
+      - tool: crm.accounts.create
+        args: {id: 'A-${case}', name: '${customer_name}', credit_limit_cents: 15000}
+      - tool: erp.inventory.create
+        args: {id: 'SKU-${case}', description: 'Industrial actuator', available: 10, unit_price_cents: 9000}
+      - tool: crm.quotes.create
+        args: {id: 'Q-${case}', account_id: 'A-${case}', sku: 'SKU-${case}', quantity: 3, unit_price_cents: 9000, status: accepted}
+      - tool: approvals.requests.create
+        args: {id: 'APP-${case}', quote_id: 'Q-${case}', account_id: 'A-${case}', amount_cents: 27000, status: pending}
+        role: admin
+      - tool: approvals.requests.update
+        args: {id: 'APP-${case}', patch: {status: approved}}
+        role: finance
+    checks:
+      - exists: {lookup: {system: erp, resource: orders, id: {literal: 'ORD-${case}'}}}
+      - exists: {lookup: {system: crm, resource: order_mirror, id: {literal: 'ORD-${case}'}}}
+      - exists: {lookup: {system: lake, resource: order_facts, id: {literal: 'ORD-${case}'}}}
+      - compare:
+          left: {lookup: {system: erp, resource: inventory, id: {literal: 'SKU-${case}'}, field: available}}
+          op: eq
+          right: {literal: 7}

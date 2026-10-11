@@ -1,0 +1,132 @@
+{
+  "organization": "SYNTHETIC_ORACLE_UNREVIEWED",
+  "reviewed": false,
+  "tools": [
+    {
+      "name": "lab.cases.create",
+      "description": "Create cases in lab; subject to configured business policies",
+      "system": "lab",
+      "resource": "cases",
+      "action": "create",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "qty": {
+            "type": "integer"
+          },
+          "stock": {
+            "type": "integer"
+          },
+          "amount": {
+            "type": "integer"
+          },
+          "credit": {
+            "type": "integer"
+          },
+          "record_id": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "mutates": true
+    },
+    {
+      "name": "lab.cases.get",
+      "description": "Get cases in lab; subject to configured business policies",
+      "system": "lab",
+      "resource": "cases",
+      "action": "get",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "lab.cases.list",
+      "description": "List cases in lab; subject to configured business policies",
+      "system": "lab",
+      "resource": "cases",
+      "action": "list",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "type": "object"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          }
+        },
+        "additionalProperties": false
+      },
+      "mutates": false
+    },
+    {
+      "name": "lab.workflow.run_action",
+      "description": "Model-inferred synthetic behavior; NOT reviewed and NOT a real ERP rule",
+      "system": "lab",
+      "resource": "workflow",
+      "action": "run_action",
+      "roles": [
+        "test_agent"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "mutates": true,
+      "kind": "workflow",
+      "evidence": "hypothesis"
+    }
+  ],
+  "dependency_edges": [
+    {
+      "kind": "workflow_effect",
+      "from": "lab.workflow.run_action",
+      "to": "lab.cases",
+      "effect": "update"
+    },
+    {
+      "kind": "workflow_effect",
+      "from": "lab.workflow.run_action",
+      "to": "lab.cases",
+      "effect": "adjust"
+    }
+  ]
+}

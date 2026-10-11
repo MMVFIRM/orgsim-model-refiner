@@ -1,0 +1,289 @@
+{
+  "orders.validate": {
+    "description": "Validate a sales order; may require an acceptable lifecycle state, available stock, and financial capacity.",
+    "fields": {
+      "status": [
+        "draft",
+        "confirmed",
+        "closed"
+      ],
+      "qty": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "stock": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "amount": [
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110
+      ],
+      "credit": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150
+      ],
+      "record_id": [
+        "A01",
+        "A02",
+        "A03",
+        "A04"
+      ]
+    },
+    "derived_features": {
+      "stock_minus_qty": [
+        "stock",
+        "qty"
+      ],
+      "credit_minus_amount": [
+        "credit",
+        "amount"
+      ]
+    }
+  },
+  "invoices.validate": {
+    "description": "Validate an invoice, subject to state and prerequisites.",
+    "fields": {
+      "status": [
+        "draft",
+        "open",
+        "cancelled"
+      ],
+      "line_count": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "customer_active": [
+        false,
+        true
+      ],
+      "posted": [
+        false
+      ],
+      "record_id": [
+        "I01",
+        "I02",
+        "I03"
+      ]
+    },
+    "derived_features": {}
+  },
+  "invoices.payment": {
+    "description": "Register payment against an invoice, subject to state, amount, and identity checks.",
+    "fields": {
+      "status": [
+        "draft",
+        "open",
+        "paid"
+      ],
+      "due": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150
+      ],
+      "payment": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150
+      ],
+      "customer_match": [
+        false,
+        true
+      ],
+      "payment_count": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "record_id": [
+        "P01",
+        "P02",
+        "P03"
+      ]
+    },
+    "derived_features": {
+      "due_minus_payment": [
+        "due",
+        "payment"
+      ]
+    }
+  },
+  "orders.close": {
+    "description": "Close an order when its lifecycle and fulfillment permits.",
+    "fields": {
+      "status": [
+        "draft",
+        "confirmed",
+        "closed"
+      ],
+      "ordered_qty": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "shipped_qty": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "disputed": [
+        false,
+        true
+      ],
+      "record_id": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    "derived_features": {
+      "shipped_minus_ordered": [
+        "shipped_qty",
+        "ordered_qty"
+      ]
+    }
+  },
+  "inventory.reserve": {
+    "description": "Reserve available inventory for an active product.",
+    "fields": {
+      "product_active": [
+        false,
+        true
+      ],
+      "stock": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "allocated": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "qty": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "record_id": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    },
+    "derived_features": {
+      "stock_minus_allocated_minus_qty": [
+        "stock",
+        "allocated",
+        "qty"
+      ]
+    }
+  }
+}

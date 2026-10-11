@@ -1,0 +1,7 @@
+{
+  "phase": "discovery",
+  "status": "requires_new_blind_holdout_after_candidate_freeze",
+  "report_sha256": "d0adf10d5cbbeba83406a631355ee92bf6a8cbe338f3eee51da744a750eaaf73",
+  "no_live_writes": true,
+  "executed": false
+}

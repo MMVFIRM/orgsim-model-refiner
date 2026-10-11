@@ -1,0 +1,13 @@
+{
+  "candidate_reviewed": false,
+  "candidate_sha256": "364188150d57efccdea80424e2ff82eedb6cd9f79dcede4a92f5b853e33ed286",
+  "format": "orgsim-gate2f-read-prediction-v1-prepare-freeze",
+  "independent_tenant_holdout": false,
+  "live_reads": 0,
+  "live_writes": 0,
+  "model_provider_calls": 0,
+  "phase": "prepare",
+  "plan_sha256": "f20b4f5256ca3a602df532ce1031558ad9f7abc4fad1eeaa44fa431ac379ca8b",
+  "source_discovery_sha256": "136025e9432f687605691473d515ad1dccdb435d227220e9146c04c77eb51d2c",
+  "source_swagger_sha256": "620d34b8a32dd4d32252b293050ce752cd17c54f1da52f53f2b8e5cca562310a"
+}

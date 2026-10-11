@@ -1,0 +1,235 @@
+{
+  "behavioral_clone": false,
+  "constraints": [
+    "no writes",
+    "null observations do not imply permanent nulls",
+    "no transition or side-effect assumptions",
+    "same-tenant fresh queries are not an independent tenant holdout"
+  ],
+  "format": "orgsim-gate2e-predictive-read-v1-candidate",
+  "model_calls_made_during_prepare": 0,
+  "predictors": {
+    "symbolic": {
+      "invoices_customer_fk": {
+        "kind": "object",
+        "relation_exists": true,
+        "status": 200
+      },
+      "invoices_projected_limit2": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "socid": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "socid",
+          "status"
+        ],
+        "item_kind": "object",
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "order_line_product_fk": {
+        "kind": "object",
+        "relation_exists": true,
+        "status": 200
+      },
+      "orders_customer_fk": {
+        "kind": "object",
+        "relation_exists": true,
+        "status": 200
+      },
+      "orders_detail_holdout": {
+        "field_types": {
+          "id": "string",
+          "lines": "array",
+          "ref": "string",
+          "socid": "string",
+          "status": "string",
+          "total_ht": "string"
+        },
+        "kind": "object",
+        "status": 200
+      },
+      "orders_lines_holdout": {
+        "field_types": {
+          "fk_product": "string",
+          "id": "string",
+          "qty": "string",
+          "subprice": "number",
+          "total_ht": "string"
+        },
+        "item_kind": "object",
+        "kind": "array",
+        "status": 200
+      },
+      "orders_projected_limit2": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "socid": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "socid",
+          "status"
+        ],
+        "item_kind": "object",
+        "kind": "array",
+        "length": 2,
+        "status": 200
+      },
+      "orders_shipment_permission": {
+        "kind": "object",
+        "status": 403
+      },
+      "products_categories_permission": {
+        "kind": "object",
+        "status": 403
+      },
+      "products_projected_limit2": {
+        "field_types": {
+          "id": "string",
+          "label": "string",
+          "price": "string",
+          "ref": "string"
+        },
+        "item_keys": [
+          "id",
+          "label",
+          "price",
+          "ref"
+        ],
+        "item_kind": "object",
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "products_stock_permission": {
+        "kind": "object",
+        "status": 403
+      },
+      "thirdparties_detail_holdout": {
+        "field_types": {
+          "client": "string",
+          "country_code": "string",
+          "id": "string",
+          "name": "string",
+          "ref": "string",
+          "status": "string"
+        },
+        "kind": "object",
+        "status": 200
+      },
+      "thirdparties_projected_limit2": {
+        "field_types": {
+          "client": "string",
+          "id": "string",
+          "name": "string"
+        },
+        "item_keys": [
+          "client",
+          "id",
+          "name"
+        ],
+        "item_kind": "object",
+        "kind": "array",
+        "length": 2,
+        "status": 200
+      }
+    }
+  },
+  "relationship_hypotheses": [
+    {
+      "from": "orders.socid",
+      "to": "thirdparties.id",
+      "verified": false
+    },
+    {
+      "from": "invoices.socid",
+      "to": "thirdparties.id",
+      "verified": false
+    },
+    {
+      "from": "orders_lines.fk_product",
+      "to": "products.id",
+      "verified": false
+    }
+  ],
+  "reviewed": false,
+  "role_evidence": {
+    "invoices_detail": {
+      "kind": "object",
+      "status": 200
+    },
+    "invoices_lines": {
+      "kind": "array",
+      "status": 200
+    },
+    "invoices_list": {
+      "kind": "array",
+      "status": 200
+    },
+    "orders_detail": {
+      "kind": "object",
+      "status": 200
+    },
+    "orders_lines": {
+      "kind": "array",
+      "status": 200
+    },
+    "orders_list": {
+      "kind": "array",
+      "status": 200
+    },
+    "orders_shipment": {
+      "kind": "object",
+      "status": 403
+    },
+    "product_by_ref": {
+      "kind": "object",
+      "status": 200
+    },
+    "products_categories": {
+      "kind": "object",
+      "status": 403
+    },
+    "products_detail": {
+      "kind": "object",
+      "status": 200
+    },
+    "products_list": {
+      "kind": "array",
+      "status": 200
+    },
+    "products_stock": {
+      "kind": "object",
+      "status": 403
+    },
+    "thirdparties_detail": {
+      "kind": "object",
+      "status": 200
+    },
+    "thirdparties_list": {
+      "kind": "array",
+      "status": 200
+    },
+    "thirdparties_outstanding_invoices": {
+      "kind": "object",
+      "status": 200
+    },
+    "thirdparties_outstanding_orders": {
+      "kind": "object",
+      "status": 200
+    }
+  },
+  "role_scope": "same_API_user_as_discovery",
+  "source_discovery_sha256": "136025e9432f687605691473d515ad1dccdb435d227220e9146c04c77eb51d2c",
+  "version": "0.2.4"
+}

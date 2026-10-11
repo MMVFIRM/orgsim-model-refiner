@@ -1,0 +1,42 @@
+# Disposable development tenant only. Host port bound to localhost. No shared demos.
+# Launch: docker compose --env-file .env up -d
+services:
+  database:
+    image: mariadb:11.4
+    environment:
+      MARIADB_ROOT_PASSWORD: "${DOLI_DB_ROOT_PASSWORD:?Set the root password in .env}"
+      MARIADB_DATABASE: dolidb
+      MARIADB_USER: dolibarr
+      MARIADB_PASSWORD: "${DOLI_DB_PASSWORD:?Set the database password in .env}"
+    volumes:
+      - db_state:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h 127.0.0.1 -uroot -p$$MARIADB_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 10s
+      retries: 20
+  web:
+    image: "dolibarr/dolibarr:${DOLIBARR_IMAGE_TAG:-latest}"
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${DOLIBARR_PORT:-8088}:80"
+    environment:
+      DOLI_DB_HOST: database
+      DOLI_DB_NAME: dolidb
+      DOLI_DB_USER: dolibarr
+      DOLI_DB_PASSWORD: "${DOLI_DB_PASSWORD:?Set the database password}"
+      DOLI_URL_ROOT: "http://127.0.0.1:${DOLIBARR_PORT:-8088}"
+      DOLI_ADMIN_LOGIN: "${DOLI_ADMIN_LOGIN:-gate_admin}"
+      DOLI_ADMIN_PASSWORD: "${DOLI_ADMIN_PASSWORD:?Set an admin password}"
+      DOLI_COMPANY_NAME: "OrgSim Disposable Gate"
+      DOLI_COMPANY_COUNTRYCODE: "US"
+      DOLI_ENABLE_MODULES: "Societe,Product,Stock,Commande,Facture,Api"
+    volumes:
+      - documents:/var/www/documents
+      - custom:/var/www/html/custom
+volumes:
+  db_state:
+  documents:
+  custom:

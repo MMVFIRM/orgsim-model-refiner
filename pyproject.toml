@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orgsim-model-refiner-simlearn"
+version = "0.9.0"
+description = "OrgSim and Model Refiner integrated active executable policy framework"
+requires-python = ">=3.10"
+dependencies = ["jsonschema>=4.21", "PyYAML>=6.0", "scikit-learn>=1.4", "numpy>=1.24"]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "fastapi>=0.110", "httpx>=0.27", "uvicorn>=0.29"]
+openai = ["openai>=1.66"]
+
+[project.scripts]
+simlearn = "simlearn.cli:main"
+orgsim-learn = "orgsim_refiner.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

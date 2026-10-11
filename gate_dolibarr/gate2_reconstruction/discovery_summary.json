@@ -1,0 +1,28 @@
+{
+  "phase": "discovery",
+  "evidence": "LIVE_DOLIBARR (sanitized structural & seeded semantic observations only)",
+  "probes": [
+    {
+      "id": "v013-semantic-customers",
+      "kind": "customer_list",
+      "status": 200,
+      "row_count": 3,
+      "field_recall": 0.018633540372670808,
+      "missing_field_count": 158,
+      "semantic_compared": 3,
+      "semantic_matched": 3,
+      "caveat": "Comparison used manually aligned synthetic fixtures"
+    },
+    {
+      "id": "v013-semantic-products",
+      "kind": "product_list",
+      "status": 200,
+      "row_count": 1,
+      "field_recall": 0.0189873417721519,
+      "missing_field_count": 155,
+      "semantic_compared": 2,
+      "semantic_matched": 2,
+      "caveat": "Comparison used manually aligned synthetic fixtures"
+    }
+  ]
+}

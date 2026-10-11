@@ -1,0 +1,1544 @@
+{
+  "format": "orgsim-franzen-reconstruction-brief-v1",
+  "phase": "discovery",
+  "rules": [
+    "Do not read held-out cases, Dolibarr source code, or external documentation.",
+    "Operate only on the exported Swagger contract and approved discovery evidence.",
+    "Do not claim unobserved business constraints or default values as verified.",
+    "Emit a declarative OrgSim manifest; no Python snippets, eval, or network tools.",
+    "Mark the entire candidate reviewed:false; label workflow evidence hypothesis.",
+    "Prioritize predicted state transitions, preconditions and rejection behavior.",
+    "Never treat a matching HTTP 404, empty array, or response padding as a workflow pass."
+  ],
+  "counts": {
+    "api_operations": 249,
+    "by_kind": {
+      "query": 88,
+      "create": 9,
+      "lookup": 44,
+      "delete": 9,
+      "update": 9,
+      "workflow_or_relationship": 81,
+      "lifecycle_transition": 9
+    },
+    "by_first_path_component": {
+      "contacts": 10,
+      "documents": 5,
+      "emailtemplates": 8,
+      "invoices": 31,
+      "login": 2,
+      "objectlinks": 5,
+      "orders": 23,
+      "paiements": 4,
+      "products": 45,
+      "setup": 50,
+      "status": 1,
+      "thirdparties": 43,
+      "users": 22
+    },
+    "hypothesized_special_operations": 69
+  },
+  "known_reconstruction_limits": [
+    "Ordinary CRUD is not a full business workflow.",
+    "Swagger return types can conflict with observed runtime values.",
+    "Current discovery contains only customer and product read/list behavior.",
+    "No live evidence exists for orders/invoices transitions or side effects.",
+    "Business-value fidelity and state-transition fidelity must be scored separately."
+  ],
+  "candidate_manifest_sha256": "b6558d5ec9dfe80ed6ee7edcff4465b53222b6c083673d5129615501f668a795",
+  "candidate_manifest_reviewed": false,
+  "discovery_probes_available": 2,
+  "heldout_probes_available_to_model": 0,
+  "workflow_blueprints": [
+    {
+      "id": "invoicesCreateInvoiceFromContract",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/createfromcontract/{contractid}"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Create an invoice using a contract. 🔐",
+      "known_parameters": [
+        "contractid"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesCreateInvoiceFromOrder",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/createfromorder/{orderid}"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Create an invoice using an existing order. 🔐",
+      "known_parameters": [
+        "orderid"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesUpdatePayment",
+      "http": {
+        "method": "PUT",
+        "path": "/invoices/payments/{id}"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Update a payment 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesAddPaymentDistributed",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/paymentsdistributed"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add a payment to pay partially or completely one or several invoices. 🔐",
+      "known_parameters": [],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesRemoveContact",
+      "http": {
+        "method": "DELETE",
+        "path": "/invoices/{id}/contact/{contactid}/{type}"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Delete a contact type of given invoice 🔐",
+      "known_parameters": [
+        "id",
+        "contactid",
+        "type"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesCreateContact",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/{id}/contact/{contactid}/{type}"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add a contact type of given invoice 🔐",
+      "known_parameters": [
+        "id",
+        "contactid",
+        "type"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesAddContact",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/{id}/contacts"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Adds a contact to an invoice 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesCreateLine",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/{id}/lines"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add a line to a given invoice 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesRemoveLine",
+      "http": {
+        "method": "DELETE",
+        "path": "/invoices/{id}/lines/{lineid}"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Deletes a line of a given invoice 🔐",
+      "known_parameters": [
+        "id",
+        "lineid"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesUpdateLine",
+      "http": {
+        "method": "PUT",
+        "path": "/invoices/{id}/lines/{lineid}"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Update a line to a given invoice 🔐",
+      "known_parameters": [
+        "id",
+        "lineid"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesMarkAsCreditAvailable",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/{id}/markAsCreditAvailable"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Create a discount (credit available) for a credit note or a deposit. 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesAddPayment",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/{id}/payments"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add payment line to a specific invoice with the remain to pay as amount. 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesSettodraft",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/{id}/settodraft"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "lifecycle_transition",
+      "description_from_contract": "Sets an invoice as draft 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesSettopaid",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/{id}/settopaid"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "lifecycle_transition",
+      "description_from_contract": "Sets an invoice as paid 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesSettounpaid",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/{id}/settounpaid"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "lifecycle_transition",
+      "description_from_contract": "Sets an invoice as unpaid 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesUseCreditNote",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/{id}/usecreditnote/{discountid}"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add an available credit note discount to payments of an existing invoice. 🔐",
+      "known_parameters": [
+        "id",
+        "discountid"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesUseDiscount",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/{id}/usediscount/{discountid}"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add a discount line into an invoice (as an invoice line) using an existing absolute discount 🔐",
+      "known_parameters": [
+        "id",
+        "discountid"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "invoicesValidate",
+      "http": {
+        "method": "POST",
+        "path": "/invoices/{id}/validate"
+      },
+      "action_family": "invoices",
+      "candidate_kind": "lifecycle_transition",
+      "description_from_contract": "Validate an invoice 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersCreateOrderFromProposal",
+      "http": {
+        "method": "POST",
+        "path": "/orders/createfromproposal/{proposalid}"
+      },
+      "action_family": "orders",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Create an order using an existing proposal. 🔐",
+      "known_parameters": [
+        "proposalid"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersClose",
+      "http": {
+        "method": "POST",
+        "path": "/orders/{id}/close"
+      },
+      "action_family": "orders",
+      "candidate_kind": "lifecycle_transition",
+      "description_from_contract": "Close an order (Classify it as \"Delivered\") 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersRemoveContact",
+      "http": {
+        "method": "DELETE",
+        "path": "/orders/{id}/contact/{contactid}/{type}"
+      },
+      "action_family": "orders",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Unlink a contact type of given order 🔐",
+      "known_parameters": [
+        "id",
+        "contactid",
+        "type"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersCreateContact",
+      "http": {
+        "method": "POST",
+        "path": "/orders/{id}/contact/{contactid}/{type}"
+      },
+      "action_family": "orders",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add a contact type of given order 🔐",
+      "known_parameters": [
+        "id",
+        "contactid",
+        "type"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersCreateLine",
+      "http": {
+        "method": "POST",
+        "path": "/orders/{id}/lines"
+      },
+      "action_family": "orders",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add a line to given order 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersRemoveLine",
+      "http": {
+        "method": "DELETE",
+        "path": "/orders/{id}/lines/{lineid}"
+      },
+      "action_family": "orders",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Delete a line of a given order 🔐",
+      "known_parameters": [
+        "id",
+        "lineid"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersUpdateLine",
+      "http": {
+        "method": "PUT",
+        "path": "/orders/{id}/lines/{lineid}"
+      },
+      "action_family": "orders",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Update a line to given order 🔐",
+      "known_parameters": [
+        "id",
+        "lineid"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersReopen",
+      "http": {
+        "method": "POST",
+        "path": "/orders/{id}/reopen"
+      },
+      "action_family": "orders",
+      "candidate_kind": "lifecycle_transition",
+      "description_from_contract": "Tag the order as validated (opened) 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersSetinvoiced",
+      "http": {
+        "method": "POST",
+        "path": "/orders/{id}/setinvoiced"
+      },
+      "action_family": "orders",
+      "candidate_kind": "lifecycle_transition",
+      "description_from_contract": "Classify the order as invoiced. Could be also called setbilled 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersSettodraft",
+      "http": {
+        "method": "POST",
+        "path": "/orders/{id}/settodraft"
+      },
+      "action_family": "orders",
+      "candidate_kind": "lifecycle_transition",
+      "description_from_contract": "Set an order to draft 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersCreateOrderShipment",
+      "http": {
+        "method": "POST",
+        "path": "/orders/{id}/shipment/{warehouse_id}"
+      },
+      "action_family": "orders",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Create the shipment of an order 🔐",
+      "known_parameters": [
+        "id",
+        "warehouse_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "ordersValidate",
+      "http": {
+        "method": "POST",
+        "path": "/orders/{id}/validate"
+      },
+      "action_family": "orders",
+      "candidate_kind": "lifecycle_transition",
+      "description_from_contract": "Validate an order 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsAddAttributes",
+      "http": {
+        "method": "POST",
+        "path": "/products/attributes"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add attributes 🔐",
+      "known_parameters": [],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsRemoveAttributeValueById",
+      "http": {
+        "method": "DELETE",
+        "path": "/products/attributes/values/{id}"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Delete attribute value by ID 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsUpdateAttributeValue",
+      "http": {
+        "method": "PUT",
+        "path": "/products/attributes/values/{id}"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Update attribute value 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsRemoveAttributes",
+      "http": {
+        "method": "DELETE",
+        "path": "/products/attributes/{id}"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Delete attributes by ID 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsUpdateAttributes",
+      "http": {
+        "method": "PUT",
+        "path": "/products/attributes/{id}"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Update attributes by ID 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsAddAttributeValue",
+      "http": {
+        "method": "POST",
+        "path": "/products/attributes/{id}/values"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add attribute value 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsRemoveAttributeValueByRef",
+      "http": {
+        "method": "DELETE",
+        "path": "/products/attributes/{id}/values/ref/{ref}"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Delete attribute value by ref 🔐",
+      "known_parameters": [
+        "id",
+        "ref"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsAddVariantByProductRef",
+      "http": {
+        "method": "POST",
+        "path": "/products/ref/{ref}/variants"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add variant by product ref 🔐",
+      "known_parameters": [
+        "ref"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsRemoveVariant",
+      "http": {
+        "method": "DELETE",
+        "path": "/products/variants/{id}"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Delete product variants 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsUpdateVariant",
+      "http": {
+        "method": "PUT",
+        "path": "/products/variants/{id}"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Update product variants 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsRemoveContact",
+      "http": {
+        "method": "DELETE",
+        "path": "/products/{id}/contact/{contactid}/{type}"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Unlink a contact type of given product 🔐",
+      "known_parameters": [
+        "id",
+        "contactid",
+        "type"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsCreateContact",
+      "http": {
+        "method": "POST",
+        "path": "/products/{id}/contact/{contactid}/{type}"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add a contact type of given product 🔐",
+      "known_parameters": [
+        "id",
+        "contactid",
+        "type"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsAddPurchasePrice",
+      "http": {
+        "method": "POST",
+        "path": "/products/{id}/purchase_prices"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add/Update purchase prices for a product 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsRemovePurchasePrice",
+      "http": {
+        "method": "DELETE",
+        "path": "/products/{id}/purchase_prices/{priceid}"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Delete a purchase price for a product 🔐",
+      "known_parameters": [
+        "id",
+        "priceid"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsAddSubproducts",
+      "http": {
+        "method": "POST",
+        "path": "/products/{id}/subproducts/add"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add a subproduct 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsDelSubproducts",
+      "http": {
+        "method": "DELETE",
+        "path": "/products/{id}/subproducts/remove/{subproduct_id}"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Remove a subproduct 🔐",
+      "known_parameters": [
+        "id",
+        "subproduct_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "productsAddVariant",
+      "http": {
+        "method": "POST",
+        "path": "/products/{id}/variants"
+      },
+      "action_family": "products",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add variant 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesRemoveSocieteAccounts",
+      "http": {
+        "method": "DELETE",
+        "path": "/thirdparties/{id}/accounts"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Delete all accounts attached to a third party 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesCreateSocieteAccount",
+      "http": {
+        "method": "POST",
+        "path": "/thirdparties/{id}/accounts"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Create and attach a new account to an existing third party 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesRemoveSocieteAccount",
+      "http": {
+        "method": "DELETE",
+        "path": "/thirdparties/{id}/accounts/{site}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Delete a specific site account attached to a third party 🔐",
+      "known_parameters": [
+        "id",
+        "site"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesCreateSocieteAccount",
+      "http": {
+        "method": "POST",
+        "path": "/thirdparties/{id}/accounts/{site}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Create and attach a new (or replace an existing) specific site account for a third party 🔐",
+      "known_parameters": [
+        "id",
+        "site"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesUpdateSocieteAccount",
+      "http": {
+        "method": "PUT",
+        "path": "/thirdparties/{id}/accounts/{site}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Update specified values of a specific account attached to a third party 🔐",
+      "known_parameters": [
+        "id",
+        "site"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesCreateCompanyBankAccount",
+      "http": {
+        "method": "POST",
+        "path": "/thirdparties/{id}/bankaccounts"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Create a company bank account for a third party 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesRemoveCompanyBankAccount",
+      "http": {
+        "method": "DELETE",
+        "path": "/thirdparties/{id}/bankaccounts/{bankaccount_id}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Delete a bank account attached to a third party 🔐",
+      "known_parameters": [
+        "id",
+        "bankaccount_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesUpdateCompanyBankAccount",
+      "http": {
+        "method": "PUT",
+        "path": "/thirdparties/{id}/bankaccounts/{bankaccount_id}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Update a company bank account of a third party 🔐",
+      "known_parameters": [
+        "id",
+        "bankaccount_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesRemoveCategory",
+      "http": {
+        "method": "DELETE",
+        "path": "/thirdparties/{id}/categories/{category_id}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Remove the link between a customer category and the third party 🔐",
+      "known_parameters": [
+        "id",
+        "category_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesAddCategory",
+      "http": {
+        "method": "PUT",
+        "path": "/thirdparties/{id}/categories/{category_id}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add a customer category to a third party 🔐",
+      "known_parameters": [
+        "id",
+        "category_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesCreateFixedAmountDiscount",
+      "http": {
+        "method": "POST",
+        "path": "/thirdparties/{id}/fixedamountdiscounts"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Create a fixed amount discount for a thirdparty 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesMerge",
+      "http": {
+        "method": "PUT",
+        "path": "/thirdparties/{id}/merge/{idtodelete}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Merge a third party into another third party 🔐",
+      "known_parameters": [
+        "id",
+        "idtodelete"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesCreateCompanyNotification",
+      "http": {
+        "method": "POST",
+        "path": "/thirdparties/{id}/notifications"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Create a company notification for a third party 🔐",
+      "known_parameters": [
+        "id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesRemoveCompanyNotification",
+      "http": {
+        "method": "DELETE",
+        "path": "/thirdparties/{id}/notifications/{notification_id}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Delete a company notification attached to a third party 🔐",
+      "known_parameters": [
+        "id",
+        "notification_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesUpdateCompanyNotification",
+      "http": {
+        "method": "PUT",
+        "path": "/thirdparties/{id}/notifications/{notification_id}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Update a company notification for a third party 🔐",
+      "known_parameters": [
+        "id",
+        "notification_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesCreateCompanyNotificationByCode",
+      "http": {
+        "method": "POST",
+        "path": "/thirdparties/{id}/notificationsbycode/{code}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Create a company notification for a third party using action trigger code 🔐",
+      "known_parameters": [
+        "id",
+        "code"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesRemoveRepresentative",
+      "http": {
+        "method": "DELETE",
+        "path": "/thirdparties/{id}/representative/{representative_id}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Remove the link between a customer representative and a third party 🔐",
+      "known_parameters": [
+        "id",
+        "representative_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesAddRepresentative",
+      "http": {
+        "method": "POST",
+        "path": "/thirdparties/{id}/representative/{representative_id}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add a customer representative to a third party 🔐",
+      "known_parameters": [
+        "id",
+        "representative_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesSetThirdpartyPriceLevel",
+      "http": {
+        "method": "PUT",
+        "path": "/thirdparties/{id}/setpricelevel/{priceLevel}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Set a new price level for the given third party 🔐",
+      "known_parameters": [
+        "id",
+        "priceLevel"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesSplitdiscount",
+      "http": {
+        "method": "POST",
+        "path": "/thirdparties/{id}/splitdiscount/{discountid}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Split a discount in 2 smaller discount 🔐",
+      "known_parameters": [
+        "id",
+        "discountid"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesRemoveSupplierCategory",
+      "http": {
+        "method": "DELETE",
+        "path": "/thirdparties/{id}/supplier_categories/{category_id}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Remove the link between a category and the third party 🔐",
+      "known_parameters": [
+        "id",
+        "category_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    },
+    {
+      "id": "thirdpartiesAddSupplierCategory",
+      "http": {
+        "method": "PUT",
+        "path": "/thirdparties/{id}/supplier_categories/{category_id}"
+      },
+      "action_family": "thirdparties",
+      "candidate_kind": "workflow_or_relationship",
+      "description_from_contract": "Add a supplier category to a third party 🔐",
+      "known_parameters": [
+        "id",
+        "category_id"
+      ],
+      "evidence": "contract_only_hypothesis",
+      "preconditions": "UNKNOWN",
+      "postconditions": "UNKNOWN",
+      "side_effects": "UNKNOWN",
+      "error_behavior": "UNKNOWN",
+      "state_transition": "UNKNOWN",
+      "executable": false,
+      "next_step": "Infer a candidate using permitted discovery, compile into the declarative workflow DSL, and check in a separate sandbox"
+    }
+  ],
+  "desired_model_output": {
+    "manifest_version": "0.1",
+    "system_workflows": "Declarative actions, guards and steps; separate evidence labels",
+    "uncertain": "Explicitly unsupported actions and undecidable transitions",
+    "evidence_ledger": "Hypothesis-to-observation claims, never heldout data"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "format": "simlearn-full-run-freeze-v1",
+  "independent_erp_holdout": false,
+  "live_erp_reads": 0,
+  "live_erp_writes": 0,
+  "model_provider_calls": 0,
+  "performance_target_met": true,
+  "summary_sha256": "73382beca542495595e10da4b99eb00d9262a1818cd0a18de50627f3626798a0"
+}

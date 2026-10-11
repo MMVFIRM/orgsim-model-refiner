@@ -1,0 +1,192 @@
+{
+  "cases": [
+    {
+      "category": "projection",
+      "evidence_split": "query_variant",
+      "family": "thirdparties",
+      "id": "thirdparties_projected_limit2",
+      "identity_index": 0,
+      "relation": "",
+      "selected_fields": [
+        "id",
+        "name",
+        "client"
+      ],
+      "source_profile": "thirdparties_list",
+      "template": "/thirdparties?limit=2&properties=id,name,client"
+    },
+    {
+      "category": "detail",
+      "evidence_split": "new_identity",
+      "family": "thirdparties",
+      "id": "thirdparties_detail_holdout",
+      "identity_index": 1,
+      "relation": "",
+      "selected_fields": [
+        "id",
+        "name",
+        "client",
+        "ref",
+        "country_code",
+        "status"
+      ],
+      "source_profile": "thirdparties_detail",
+      "template": "/thirdparties/{id}"
+    },
+    {
+      "category": "projection",
+      "evidence_split": "query_variant",
+      "family": "products",
+      "id": "products_projected_limit2",
+      "identity_index": 0,
+      "relation": "",
+      "selected_fields": [
+        "id",
+        "ref",
+        "label",
+        "price"
+      ],
+      "source_profile": "products_list",
+      "template": "/products?limit=2&properties=id,ref,label,price"
+    },
+    {
+      "category": "projection",
+      "evidence_split": "query_variant",
+      "family": "orders",
+      "id": "orders_projected_limit2",
+      "identity_index": 0,
+      "relation": "",
+      "selected_fields": [
+        "id",
+        "socid",
+        "ref",
+        "status"
+      ],
+      "source_profile": "orders_list",
+      "template": "/orders?limit=2&properties=id,socid,ref,status"
+    },
+    {
+      "category": "detail",
+      "evidence_split": "new_identity",
+      "family": "orders",
+      "id": "orders_detail_holdout",
+      "identity_index": 1,
+      "relation": "",
+      "selected_fields": [
+        "id",
+        "socid",
+        "ref",
+        "status",
+        "total_ht",
+        "lines"
+      ],
+      "source_profile": "orders_detail",
+      "template": "/orders/{id}"
+    },
+    {
+      "category": "projection",
+      "evidence_split": "query_variant",
+      "family": "invoices",
+      "id": "invoices_projected_limit2",
+      "identity_index": 0,
+      "relation": "",
+      "selected_fields": [
+        "id",
+        "socid",
+        "ref",
+        "status"
+      ],
+      "source_profile": "invoices_list",
+      "template": "/invoices?limit=2&properties=id,socid,ref,status"
+    },
+    {
+      "category": "related",
+      "evidence_split": "new_identity",
+      "family": "orders",
+      "id": "orders_lines_holdout",
+      "identity_index": 1,
+      "relation": "",
+      "selected_fields": [
+        "id",
+        "fk_product",
+        "qty",
+        "subprice",
+        "total_ht"
+      ],
+      "source_profile": "orders_lines",
+      "template": "/orders/{id}/lines"
+    },
+    {
+      "category": "permission",
+      "evidence_split": "query_variant",
+      "family": "products",
+      "id": "products_stock_permission",
+      "identity_index": 0,
+      "relation": "",
+      "selected_fields": [],
+      "source_profile": "products_stock",
+      "template": "/products/{id}/stock?selected_warehouse_id=0"
+    },
+    {
+      "category": "permission",
+      "evidence_split": "query_variant",
+      "family": "products",
+      "id": "products_categories_permission",
+      "identity_index": 0,
+      "relation": "",
+      "selected_fields": [],
+      "source_profile": "products_categories",
+      "template": "/products/{id}/categories?limit=2"
+    },
+    {
+      "category": "permission",
+      "evidence_split": "new_identity",
+      "family": "orders",
+      "id": "orders_shipment_permission",
+      "identity_index": 1,
+      "relation": "",
+      "selected_fields": [],
+      "source_profile": "orders_shipment",
+      "template": "/orders/{id}/shipment"
+    },
+    {
+      "category": "relationship",
+      "evidence_split": "new_identity_relation",
+      "family": "orders",
+      "id": "orders_customer_fk",
+      "identity_index": 1,
+      "relation": "order_customer",
+      "selected_fields": [],
+      "source_profile": "thirdparties_detail",
+      "template": "/thirdparties/{socid}"
+    },
+    {
+      "category": "relationship",
+      "evidence_split": "relationship_consistency_reuse",
+      "family": "invoices",
+      "id": "invoices_customer_fk",
+      "identity_index": 0,
+      "relation": "invoice_customer",
+      "selected_fields": [],
+      "source_profile": "thirdparties_detail",
+      "template": "/thirdparties/{socid}"
+    },
+    {
+      "category": "relationship",
+      "evidence_split": "relationship_consistency_reuse",
+      "family": "orders",
+      "id": "order_line_product_fk",
+      "identity_index": 1,
+      "relation": "line_product",
+      "selected_fields": [],
+      "source_profile": "products_detail",
+      "template": "/products/{fk_product}"
+    }
+  ],
+  "format": "orgsim-gate2e-predictive-read-v1-plan",
+  "independent_tenant_holdout": false,
+  "max_selector_rows": 20,
+  "phase": "frozen_query_holdout",
+  "query_holdout": true,
+  "source_discovery_sha256": "136025e9432f687605691473d515ad1dccdb435d227220e9146c04c77eb51d2c"
+}

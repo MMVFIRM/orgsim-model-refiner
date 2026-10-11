@@ -1,0 +1,45 @@
+version: '0.1'
+organization: Test Co
+reviewed: false
+systems:
+  erp:
+    resources:
+      orders:
+        id_field: id
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+            account_id:
+              type: string
+            quantity:
+              type: integer
+              minimum: 1
+            status:
+              type: string
+              enum:
+              - pending
+              - shipped
+          additionalProperties: false
+          required:
+          - account_id
+          - id
+          - quantity
+        allow:
+          create:
+          - test_agent
+          list:
+          - test_agent
+          get:
+          - test_agent
+        guards: {}
+        foreign_keys: []
+integrations: []
+scenarios: []
+review_notes:
+- Verify list response envelope for GET /orders
+- 'Unsupported custom endpoint: POST /orders/{id}/ship (requires explicit adapter)'
+- 'erp.orders: verify business constraints, identity mapping, uniqueness, defaults,
+  permissions and side effects'
+origin: OpenAPI contract import (NOT a verified behavioral clone)

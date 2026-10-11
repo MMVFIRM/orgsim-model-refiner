@@ -1,0 +1,53 @@
+openapi: 3.1.0
+info:
+  title: Fictional CRM API
+  version: 1.0.0
+paths:
+  /accounts:
+    get:
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {$ref: '#/components/schemas/Account'}
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/Account'}
+      responses:
+        '201': {description: created}
+  /accounts/{id}:
+    get:
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/Account'}
+    patch:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: {type: string}
+      responses:
+        '200': {description: updated}
+  /accounts/{id}/approve:
+    post:
+      responses:
+        '200': {description: approved}
+components:
+  schemas:
+    Account:
+      type: object
+      required: [id, name]
+      properties:
+        id: {type: string}
+        name: {type: string}
+        credit_limit_cents: {type: integer, minimum: 0}

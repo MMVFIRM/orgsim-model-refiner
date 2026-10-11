@@ -1,0 +1,148 @@
+{
+  "format": "orgsim-gate2a-v1",
+  "experiment": "SYNTHETIC_ORACLE; not Dolibarr or LLM test",
+  "seeds": 24,
+  "freeze_seed": 20261231,
+  "budget_per_action_per_arm": 8,
+  "holdout_cases_per_action_seed": 200,
+  "operations": 5,
+  "total_discovery_queries_per_arm": 960,
+  "methods": {
+    "uniform": "One common, budgeted public example + uniformly randomized candidate-state exploration + identical sparse conjunctive learner",
+    "franzen": "One common, budgeted public example + one-factor counterfactual probing + committee disagreement + transition memory + boundary guidance, with late-stage diversity recovery + identical sparse conjunctive learner"
+  },
+  "reporting": "Effect accuracy only among true accepted predicted accepts; coverage reported separately",
+  "overall": {
+    "uniform_balanced_accuracy": 0.6699,
+    "franzen_balanced_accuracy": 0.8263,
+    "difference": 0.1565,
+    "cluster_bootstrap_95_ci": [
+      0.1176,
+      0.1918
+    ],
+    "positive_seed_fraction": 0.9167
+  },
+  "by_operation": [
+    {
+      "operation": "orders.validate",
+      "arm": "uniform",
+      "n_seeds": 24,
+      "balanced_accuracy_mean": 0.6081,
+      "outcome_accuracy_mean": 0.7115,
+      "false_accept_rate_mean": 0.2508,
+      "coverage_mean": 1.0,
+      "discovery_positives_mean": 2.75,
+      "effects_full_case_mean": 0.913
+    },
+    {
+      "operation": "orders.validate",
+      "arm": "franzen",
+      "n_seeds": 24,
+      "balanced_accuracy_mean": 0.7086,
+      "outcome_accuracy_mean": 0.7683,
+      "false_accept_rate_mean": 0.2149,
+      "coverage_mean": 1.0,
+      "discovery_positives_mean": 3.542,
+      "effects_full_case_mean": 1.0
+    },
+    {
+      "operation": "invoices.validate",
+      "arm": "uniform",
+      "n_seeds": 24,
+      "balanced_accuracy_mean": 0.7245,
+      "outcome_accuracy_mean": 0.835,
+      "false_accept_rate_mean": 0.1037,
+      "coverage_mean": 1.0,
+      "discovery_positives_mean": 2.083,
+      "effects_full_case_mean": 1.0
+    },
+    {
+      "operation": "invoices.validate",
+      "arm": "franzen",
+      "n_seeds": 24,
+      "balanced_accuracy_mean": 0.8962,
+      "outcome_accuracy_mean": 0.8744,
+      "false_accept_rate_mean": 0.1422,
+      "coverage_mean": 1.0,
+      "discovery_positives_mean": 3.667,
+      "effects_full_case_mean": 1.0
+    },
+    {
+      "operation": "invoices.payment",
+      "arm": "uniform",
+      "n_seeds": 24,
+      "balanced_accuracy_mean": 0.6804,
+      "outcome_accuracy_mean": 0.7927,
+      "false_accept_rate_mean": 0.1689,
+      "coverage_mean": 1.0,
+      "discovery_positives_mean": 2.375,
+      "effects_full_case_mean": 0.75
+    },
+    {
+      "operation": "invoices.payment",
+      "arm": "franzen",
+      "n_seeds": 24,
+      "balanced_accuracy_mean": 0.8419,
+      "outcome_accuracy_mean": 0.725,
+      "false_accept_rate_mean": 0.3161,
+      "coverage_mean": 1.0,
+      "discovery_positives_mean": 4.208,
+      "effects_full_case_mean": 1.0
+    },
+    {
+      "operation": "orders.close",
+      "arm": "uniform",
+      "n_seeds": 24,
+      "balanced_accuracy_mean": 0.6471,
+      "outcome_accuracy_mean": 0.7635,
+      "false_accept_rate_mean": 0.1889,
+      "coverage_mean": 1.0,
+      "discovery_positives_mean": 2.208,
+      "effects_full_case_mean": 1.0
+    },
+    {
+      "operation": "orders.close",
+      "arm": "franzen",
+      "n_seeds": 24,
+      "balanced_accuracy_mean": 0.8532,
+      "outcome_accuracy_mean": 0.7856,
+      "false_accept_rate_mean": 0.2361,
+      "coverage_mean": 1.0,
+      "discovery_positives_mean": 3.75,
+      "effects_full_case_mean": 1.0
+    },
+    {
+      "operation": "inventory.reserve",
+      "arm": "uniform",
+      "n_seeds": 24,
+      "balanced_accuracy_mean": 0.6893,
+      "outcome_accuracy_mean": 0.7327,
+      "false_accept_rate_mean": 0.2099,
+      "coverage_mean": 1.0,
+      "discovery_positives_mean": 3.167,
+      "effects_full_case_mean": 0.875
+    },
+    {
+      "operation": "inventory.reserve",
+      "arm": "franzen",
+      "n_seeds": 24,
+      "balanced_accuracy_mean": 0.8318,
+      "outcome_accuracy_mean": 0.8281,
+      "false_accept_rate_mean": 0.1686,
+      "coverage_mean": 1.0,
+      "discovery_positives_mean": 4.25,
+      "effects_full_case_mean": 1.0
+    }
+  ],
+  "caveats": [
+    "No general-purpose LLM is called; both arms use a bounded symbolic rule learner.",
+    "Oracle guard family is expressible by known sparse-conjunction hypothesis grammar.",
+    "Both arms begin with the same budgeted public example that happens to be valid; cold start is not tested.",
+    "Action effects can be partially unidentified when only a few positive examples occur.",
+    "A failed or negative result does not mean Franzen fails at ARC or Dolibarr.",
+    "Heldout cases are generated separately and never stored in learning memory.",
+    "Execution against actual Dolibarr has not occurred."
+  ],
+  "live_calls": 0,
+  "public_contracts_sha256": "741c383610bff25f76ce6d7a49cdbf3dd0866a1051747639506cbc98575fb938"
+}

@@ -1,0 +1,538 @@
+{
+  "actual_llm_calls": 0,
+  "dataset_manifest_sha256": "738233c919a53ebbf2987bbf9bcb09298d1efd6efffe10f08f7ccfb39a37e3b7",
+  "effect_induction": {
+    "close_order": {
+      "audited": true,
+      "identified_effect_fields": [
+        "customer.closes",
+        "order.status"
+      ],
+      "unidentified_effect_fields": [],
+      "validation_accepts": 50,
+      "validation_effect_exact": 1.0,
+      "witnessed_accepts": 200
+    },
+    "pay_invoice": {
+      "audited": true,
+      "identified_effect_fields": [
+        "customer.received",
+        "invoice.balance",
+        "invoice.payment_count"
+      ],
+      "unidentified_effect_fields": [],
+      "validation_accepts": 50,
+      "validation_effect_exact": 1.0,
+      "witnessed_accepts": 200
+    },
+    "reserve_stock": {
+      "audited": true,
+      "identified_effect_fields": [
+        "order.allocated",
+        "product.reserved",
+        "product.stock"
+      ],
+      "unidentified_effect_fields": [],
+      "validation_accepts": 50,
+      "validation_effect_exact": 1.0,
+      "witnessed_accepts": 200
+    },
+    "validate_order": {
+      "audited": true,
+      "identified_effect_fields": [
+        "customer.credit",
+        "order.status",
+        "product.stock"
+      ],
+      "unidentified_effect_fields": [],
+      "validation_accepts": 50,
+      "validation_effect_exact": 1.0,
+      "witnessed_accepts": 200
+    }
+  },
+  "format": "orgsim-model-refiner-simlearn-v1-offline-benchmark",
+  "independent_erp_holdout": false,
+  "model_refiner_full_fit_run": false,
+  "model_refiner_native_aw_tested": false,
+  "model_refiner_retrieval_source": "model_refiner.suite.runtime.Memory",
+  "model_selection_only_on_validation": true,
+  "model_source_manifest_not_supplied_to_predictors": true,
+  "oracle": "actual_OrgSim_SQLite_workflow_interpreter",
+  "retrieval_k_selection": {
+    "k": 9,
+    "validation_accuracy": {
+      "1": 0.5675,
+      "3": 0.6175,
+      "5": 0.6225,
+      "9": 0.6575
+    }
+  },
+  "router_examples": 400,
+  "scores": {
+    "stress": {
+      "always_reject": {
+        "accept_precision": null,
+        "accept_recall": 0.0,
+        "accuracy": 0.5,
+        "balanced_accuracy": 0.5,
+        "cases": 800,
+        "decision_coverage": 1.0,
+        "effect_exact_on_true_accepts": null,
+        "end_to_end_exact_accuracy": 0.5,
+        "false_accept_rate": 0.0,
+        "false_accepts": 0,
+        "false_rejects": 400,
+        "per_operation": {
+          "close_order": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "correct": 100,
+            "effects": 0,
+            "fn": 100,
+            "fp": 0,
+            "n": 200
+          },
+          "pay_invoice": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "correct": 100,
+            "effects": 0,
+            "fn": 100,
+            "fp": 0,
+            "n": 200
+          },
+          "reserve_stock": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "correct": 100,
+            "effects": 0,
+            "fn": 100,
+            "fp": 0,
+            "n": 200
+          },
+          "validate_order": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "correct": 100,
+            "effects": 0,
+            "fn": 100,
+            "fp": 0,
+            "n": 200
+          }
+        },
+        "reject_recall": 1.0
+      },
+      "model_refiner_retrieval": {
+        "accept_precision": 0.615385,
+        "accept_recall": 0.74,
+        "accuracy": 0.63875,
+        "balanced_accuracy": 0.63875,
+        "cases": 800,
+        "decision_coverage": 1.0,
+        "effect_exact_on_true_accepts": 1.0,
+        "end_to_end_exact_accuracy": 0.63875,
+        "false_accept_rate": 0.4625,
+        "false_accepts": 185,
+        "false_rejects": 104,
+        "per_operation": {
+          "close_order": {
+            "accepted": 100,
+            "accuracy": 0.655,
+            "correct": 131,
+            "effects": 84,
+            "fn": 16,
+            "fp": 53,
+            "n": 200
+          },
+          "pay_invoice": {
+            "accepted": 100,
+            "accuracy": 0.62,
+            "correct": 124,
+            "effects": 63,
+            "fn": 37,
+            "fp": 39,
+            "n": 200
+          },
+          "reserve_stock": {
+            "accepted": 100,
+            "accuracy": 0.645,
+            "correct": 129,
+            "effects": 80,
+            "fn": 20,
+            "fp": 51,
+            "n": 200
+          },
+          "validate_order": {
+            "accepted": 100,
+            "accuracy": 0.635,
+            "correct": 127,
+            "effects": 69,
+            "fn": 31,
+            "fp": 42,
+            "n": 200
+          }
+        },
+        "reject_recall": 0.5375
+      },
+      "public_guards": {
+        "accept_precision": 0.681431,
+        "accept_recall": 1.0,
+        "accuracy": 0.76625,
+        "balanced_accuracy": 0.76625,
+        "cases": 800,
+        "decision_coverage": 1.0,
+        "effect_exact_on_true_accepts": 1.0,
+        "end_to_end_exact_accuracy": 0.76625,
+        "false_accept_rate": 0.4675,
+        "false_accepts": 187,
+        "false_rejects": 0,
+        "per_operation": {
+          "close_order": {
+            "accepted": 100,
+            "accuracy": 0.71,
+            "correct": 142,
+            "effects": 100,
+            "fn": 0,
+            "fp": 58,
+            "n": 200
+          },
+          "pay_invoice": {
+            "accepted": 100,
+            "accuracy": 0.77,
+            "correct": 154,
+            "effects": 100,
+            "fn": 0,
+            "fp": 46,
+            "n": 200
+          },
+          "reserve_stock": {
+            "accepted": 100,
+            "accuracy": 0.77,
+            "correct": 154,
+            "effects": 100,
+            "fn": 0,
+            "fp": 46,
+            "n": 200
+          },
+          "validate_order": {
+            "accepted": 100,
+            "accuracy": 0.815,
+            "correct": 163,
+            "effects": 100,
+            "fn": 0,
+            "fp": 37,
+            "n": 200
+          }
+        },
+        "reject_recall": 0.5325
+      },
+      "tabular_simtrained": {
+        "accept_precision": 0.992481,
+        "accept_recall": 0.99,
+        "accuracy": 0.99125,
+        "balanced_accuracy": 0.99125,
+        "cases": 800,
+        "decision_coverage": 1.0,
+        "effect_exact_on_true_accepts": 1.0,
+        "end_to_end_exact_accuracy": 0.99125,
+        "false_accept_rate": 0.0075,
+        "false_accepts": 3,
+        "false_rejects": 4,
+        "per_operation": {
+          "close_order": {
+            "accepted": 100,
+            "accuracy": 0.99,
+            "correct": 198,
+            "effects": 98,
+            "fn": 2,
+            "fp": 0,
+            "n": 200
+          },
+          "pay_invoice": {
+            "accepted": 100,
+            "accuracy": 0.985,
+            "correct": 197,
+            "effects": 100,
+            "fn": 0,
+            "fp": 3,
+            "n": 200
+          },
+          "reserve_stock": {
+            "accepted": 100,
+            "accuracy": 1.0,
+            "correct": 200,
+            "effects": 100,
+            "fn": 0,
+            "fp": 0,
+            "n": 200
+          },
+          "validate_order": {
+            "accepted": 100,
+            "accuracy": 0.99,
+            "correct": 198,
+            "effects": 98,
+            "fn": 2,
+            "fp": 0,
+            "n": 200
+          }
+        },
+        "reject_recall": 0.9925
+      }
+    },
+    "test": {
+      "always_reject": {
+        "accept_precision": null,
+        "accept_recall": 0.0,
+        "accuracy": 0.5,
+        "balanced_accuracy": 0.5,
+        "cases": 800,
+        "decision_coverage": 1.0,
+        "effect_exact_on_true_accepts": null,
+        "end_to_end_exact_accuracy": 0.5,
+        "false_accept_rate": 0.0,
+        "false_accepts": 0,
+        "false_rejects": 400,
+        "per_operation": {
+          "close_order": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "correct": 100,
+            "effects": 0,
+            "fn": 100,
+            "fp": 0,
+            "n": 200
+          },
+          "pay_invoice": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "correct": 100,
+            "effects": 0,
+            "fn": 100,
+            "fp": 0,
+            "n": 200
+          },
+          "reserve_stock": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "correct": 100,
+            "effects": 0,
+            "fn": 100,
+            "fp": 0,
+            "n": 200
+          },
+          "validate_order": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "correct": 100,
+            "effects": 0,
+            "fn": 100,
+            "fp": 0,
+            "n": 200
+          }
+        },
+        "reject_recall": 1.0
+      },
+      "model_refiner_retrieval": {
+        "accept_precision": 0.633641,
+        "accept_recall": 0.6875,
+        "accuracy": 0.645,
+        "balanced_accuracy": 0.645,
+        "cases": 800,
+        "decision_coverage": 1.0,
+        "effect_exact_on_true_accepts": 1.0,
+        "end_to_end_exact_accuracy": 0.645,
+        "false_accept_rate": 0.3975,
+        "false_accepts": 159,
+        "false_rejects": 125,
+        "per_operation": {
+          "close_order": {
+            "accepted": 100,
+            "accuracy": 0.72,
+            "correct": 144,
+            "effects": 78,
+            "fn": 22,
+            "fp": 34,
+            "n": 200
+          },
+          "pay_invoice": {
+            "accepted": 100,
+            "accuracy": 0.595,
+            "correct": 119,
+            "effects": 57,
+            "fn": 43,
+            "fp": 38,
+            "n": 200
+          },
+          "reserve_stock": {
+            "accepted": 100,
+            "accuracy": 0.625,
+            "correct": 125,
+            "effects": 70,
+            "fn": 30,
+            "fp": 45,
+            "n": 200
+          },
+          "validate_order": {
+            "accepted": 100,
+            "accuracy": 0.64,
+            "correct": 128,
+            "effects": 70,
+            "fn": 30,
+            "fp": 42,
+            "n": 200
+          }
+        },
+        "reject_recall": 0.6025
+      },
+      "public_guards": {
+        "accept_precision": 0.693241,
+        "accept_recall": 1.0,
+        "accuracy": 0.77875,
+        "balanced_accuracy": 0.77875,
+        "cases": 800,
+        "decision_coverage": 1.0,
+        "effect_exact_on_true_accepts": 1.0,
+        "end_to_end_exact_accuracy": 0.77875,
+        "false_accept_rate": 0.4425,
+        "false_accepts": 177,
+        "false_rejects": 0,
+        "per_operation": {
+          "close_order": {
+            "accepted": 100,
+            "accuracy": 0.785,
+            "correct": 157,
+            "effects": 100,
+            "fn": 0,
+            "fp": 43,
+            "n": 200
+          },
+          "pay_invoice": {
+            "accepted": 100,
+            "accuracy": 0.69,
+            "correct": 138,
+            "effects": 100,
+            "fn": 0,
+            "fp": 62,
+            "n": 200
+          },
+          "reserve_stock": {
+            "accepted": 100,
+            "accuracy": 0.8,
+            "correct": 160,
+            "effects": 100,
+            "fn": 0,
+            "fp": 40,
+            "n": 200
+          },
+          "validate_order": {
+            "accepted": 100,
+            "accuracy": 0.84,
+            "correct": 168,
+            "effects": 100,
+            "fn": 0,
+            "fp": 32,
+            "n": 200
+          }
+        },
+        "reject_recall": 0.5575
+      },
+      "tabular_simtrained": {
+        "accept_precision": 0.977833,
+        "accept_recall": 0.9925,
+        "accuracy": 0.985,
+        "balanced_accuracy": 0.985,
+        "cases": 800,
+        "decision_coverage": 1.0,
+        "effect_exact_on_true_accepts": 1.0,
+        "end_to_end_exact_accuracy": 0.985,
+        "false_accept_rate": 0.0225,
+        "false_accepts": 9,
+        "false_rejects": 3,
+        "per_operation": {
+          "close_order": {
+            "accepted": 100,
+            "accuracy": 0.98,
+            "correct": 196,
+            "effects": 98,
+            "fn": 2,
+            "fp": 2,
+            "n": 200
+          },
+          "pay_invoice": {
+            "accepted": 100,
+            "accuracy": 0.98,
+            "correct": 196,
+            "effects": 100,
+            "fn": 0,
+            "fp": 4,
+            "n": 200
+          },
+          "reserve_stock": {
+            "accepted": 100,
+            "accuracy": 1.0,
+            "correct": 200,
+            "effects": 100,
+            "fn": 0,
+            "fp": 0,
+            "n": 200
+          },
+          "validate_order": {
+            "accepted": 100,
+            "accuracy": 0.98,
+            "correct": 196,
+            "effects": 99,
+            "fn": 1,
+            "fp": 3,
+            "n": 200
+          }
+        },
+        "reject_recall": 0.9775
+      }
+    }
+  },
+  "selected_models": {
+    "close_order": {
+      "model": "extra256",
+      "threshold": 0.6,
+      "validation_accuracy": 1.0,
+      "validation_balanced_accuracy": 1.0,
+      "validation_false_accepts": 0
+    },
+    "pay_invoice": {
+      "model": "tree4",
+      "threshold": 0.5,
+      "validation_accuracy": 1.0,
+      "validation_balanced_accuracy": 1.0,
+      "validation_false_accepts": 0
+    },
+    "reserve_stock": {
+      "model": "tree4",
+      "threshold": 0.5,
+      "validation_accuracy": 1.0,
+      "validation_balanced_accuracy": 1.0,
+      "validation_false_accepts": 0
+    },
+    "validate_order": {
+      "model": "extra256",
+      "threshold": 0.5,
+      "validation_accuracy": 1.0,
+      "validation_balanced_accuracy": 1.0,
+      "validation_false_accepts": 0
+    }
+  },
+  "simulator_ground_truth_is_not_dolibarr": true,
+  "stress_examples": 800,
+  "test_examples": 800,
+  "train_data_sha256": "09bc2cd700a64bc9a040e11afd9e8e195f655ad2f313506fc683d013495721c9",
+  "training_examples": 1600,
+  "training_oracle_calls_including_discarded": 6122,
+  "validation_examples": 400,
+  "warnings": [
+    "Scores are from a synthetic simulator: not a real-world Dolibarr model or provider-LLM result.",
+    "The simulator is generated by code distributed in this package; not an independent black-box software validation.",
+    "Known policy family uses threshold guards and at most one two-variable veto. Arbitrary enterprise business rules not covered.",
+    "Artificial Weights and provider-model changes require the separately budgeted model-refiner fit experiment.",
+    "Effect exactness is based on observed accepted states and is not evidence of real ERP causal accuracy.",
+    "Balanced evaluation probabilities differ from naturally occurring enterprise class frequencies."
+  ]
+}

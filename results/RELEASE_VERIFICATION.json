@@ -1,0 +1,35 @@
+{
+  "format": "orgsim-refiner-v070-release-verification",
+  "source_suite": {
+    "passed": 288,
+    "failed": 0
+  },
+  "clean_extracted_source_with_installed_wheel": {
+    "passed": 288,
+    "failed": 0,
+    "seconds": 53.67
+  },
+  "installed_wheel_version": "0.7.0",
+  "wheel_sha256": "6bb92557764c003f05d118dfd49fb27d24fb7143c117ada5faef0551528c9de0",
+  "study_verifier": {
+    "verified": true,
+    "tenants": 24,
+    "checked": [
+      "source",
+      "sealed_data",
+      "frozen_policy",
+      "state_effects",
+      "training_evidence",
+      "evidence_chain",
+      "prediction_before_scoring",
+      "exact_input_split_disjointness"
+    ]
+  },
+  "legacy_application_source_files_unchanged": 89,
+  "real_provider_calls": 0,
+  "live_Dolibarr_calls": 0,
+  "windows_execution_performed": false,
+  "externally_timestamped": false,
+  "test_only_fix": "Two inherited ID privacy assertions corrected to ignore coincidental substrings inside hashes; standalone IDs remain rejected.",
+  "qualification": "Test-double integrations are not provider efficacy. Synthetic success is not arbitrary ERP fidelity or a formal safety proof."
+}

@@ -1,0 +1,235 @@
+{
+  "arms": {
+    "contract": {
+      "customer_categories": {
+        "kind": "array",
+        "status": 200
+      },
+      "customers_desc": {
+        "kind": "array",
+        "status": 200
+      },
+      "customers_outstanding_second": {
+        "kind": "array",
+        "status": 200
+      },
+      "customers_outstanding_third": {
+        "kind": "array",
+        "status": 200
+      },
+      "customers_page2": {
+        "kind": "array",
+        "status": 200
+      },
+      "invoices_by_ref": {
+        "status": 200
+      },
+      "invoices_contacts": {
+        "kind": "string",
+        "status": 200
+      },
+      "invoices_discount": {
+        "status": 200
+      },
+      "invoices_hide_lines": {
+        "kind": "array",
+        "status": 200
+      },
+      "invoices_unpaid": {
+        "kind": "array",
+        "status": 200
+      },
+      "orders_by_ref": {
+        "kind": "string",
+        "status": 200
+      },
+      "orders_contacts": {
+        "kind": "string",
+        "status": 200
+      },
+      "orders_desc": {
+        "kind": "array",
+        "status": 200
+      },
+      "orders_draft": {
+        "kind": "array",
+        "status": 200
+      },
+      "product_purchase_prices": {
+        "kind": "array",
+        "status": 200
+      },
+      "product_variants": {
+        "kind": "array",
+        "status": 200
+      },
+      "products_ids_desc": {
+        "kind": "array",
+        "status": 200
+      },
+      "products_mode": {
+        "kind": "array",
+        "status": 200
+      }
+    },
+    "symbolic": {
+      "customer_categories": {},
+      "customers_desc": {
+        "field_types": {
+          "client": "string",
+          "id": "string",
+          "name": "string"
+        },
+        "item_keys": [
+          "client",
+          "id",
+          "name"
+        ],
+        "kind": "array",
+        "length": 3,
+        "reverse_matches": true,
+        "status": 200
+      },
+      "customers_outstanding_second": {
+        "field_types": {
+          "opened": "number",
+          "refs": "object"
+        },
+        "kind": "object",
+        "status": 200
+      },
+      "customers_outstanding_third": {
+        "field_types": {
+          "opened": "number",
+          "refs": "object",
+          "refsopened": "array"
+        },
+        "kind": "object",
+        "status": 200
+      },
+      "customers_page2": {
+        "field_types": {
+          "client": "string",
+          "id": "string",
+          "name": "string"
+        },
+        "item_keys": [
+          "client",
+          "id",
+          "name"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "invoices_by_ref": {
+        "kind": "object",
+        "ref_matches": true,
+        "status": 200
+      },
+      "invoices_contacts": {},
+      "invoices_discount": {},
+      "invoices_hide_lines": {
+        "field_types": {
+          "id": "string",
+          "lines": "array",
+          "ref": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "lines",
+          "ref",
+          "status"
+        ],
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "invoices_unpaid": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "status"
+        ],
+        "kind": "array",
+        "status": 200
+      },
+      "orders_by_ref": {
+        "kind": "object",
+        "ref_matches": true,
+        "status": 200
+      },
+      "orders_contacts": {},
+      "orders_desc": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "socid": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "socid",
+          "status"
+        ],
+        "kind": "array",
+        "length": 2,
+        "reverse_matches": true,
+        "status": 200
+      },
+      "orders_draft": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "status"
+        ],
+        "kind": "array",
+        "status": 200
+      },
+      "product_purchase_prices": {},
+      "product_variants": {},
+      "products_ids_desc": {
+        "item_kind": "string",
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "products_mode": {
+        "field_types": {
+          "id": "string",
+          "label": "string",
+          "ref": "string",
+          "type": "string"
+        },
+        "item_keys": [
+          "id",
+          "label",
+          "ref",
+          "type"
+        ],
+        "kind": "array",
+        "status": 200
+      }
+    }
+  },
+  "behavioral_clone": false,
+  "format": "orgsim-gate2f-read-prediction-v1-candidate",
+  "model_provider_calls_during_prepare": 0,
+  "reviewed": false,
+  "role_scope": "same_readonly_API_user",
+  "source_discovery_sha256": "136025e9432f687605691473d515ad1dccdb435d227220e9146c04c77eb51d2c",
+  "source_swagger_sha256": "620d34b8a32dd4d32252b293050ce752cd17c54f1da52f53f2b8e5cca562310a",
+  "version": "0.2.5"
+}

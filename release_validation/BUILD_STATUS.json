@@ -1,0 +1,44 @@
+{
+  "checks": {
+    "clone_permit_cli_help": {
+      "log": "release_validation/clone_help.log",
+      "status": "passed"
+    },
+    "focused_safety_tests": {
+      "passed": 25,
+      "status": "passed"
+    },
+    "full_pytest": {
+      "duration_seconds": 63.13,
+      "log": "release_validation/all_tests.log",
+      "passed": 313,
+      "status": "passed"
+    },
+    "offline_cli": {
+      "log": "release_validation/cli_plan.log",
+      "status": "passed"
+    },
+    "read_only_cli_help": {
+      "log": "release_validation/readonly_help.log",
+      "status": "passed"
+    },
+    "wheel_build": {
+      "log": "release_validation/wheel_build.log",
+      "status": "passed"
+    }
+  },
+  "created_utc": "2026-10-11T22:48:14.063079+00:00",
+  "format": "orgsim-model-refiner-v0.9.0-build-status-v1",
+  "known_limits": [
+    "No independent production compatibility test across Dolibarr versions or installed custom modules.",
+    "Local permit/sentinel is defense-in-depth, not cryptographic proof of disposable-clone isolation.",
+    "v0.8 historical benchmarks were not rerun against live Dolibarr.",
+    "Automated ERP writes are enabled only in explicitly authorized local clone mode; operator must ensure safe isolation."
+  ],
+  "model_provider_calls": 0,
+  "new_live_dolibarr_calls": 0,
+  "production_write_capability_authorized": false,
+  "security_certified": false,
+  "source": "Reconstructed and modified from the verified v0.8.0 complete archive",
+  "source_v08_archive_sha256": "316fbdda146f5d059d481f8328738da67544dc95e852239ccb6e40d113a3edfb"
+}

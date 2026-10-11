@@ -1,0 +1,15 @@
+{
+  "format": "orgsim-offline-freeze-v1",
+  "source": "user-provided sanitized Swagger plus discovery evidence",
+  "swagger_sha256": "ed0a577cebcab831724ea6368a0697ed620417c8e95b89451b84a21c7dc539e8",
+  "manifest_sha256": "b6558d5ec9dfe80ed6ee7edcff4465b53222b6c083673d5129615501f668a795",
+  "no_live_calls": true,
+  "no_holdouts_seen": true,
+  "artifacts_sha256": {
+    "catalog.json": "25a46613594bc2f7d658531203ad6804199fd8c0a409d84f7920bf43c5b1b709",
+    "workflow_hypotheses.json": "852ea395b1782ff58bf23f59f24a538a905f0bac235109dfec1394a57edeb605",
+    "probe_priorities.json": "b191ab755bf9748877843205abe2d19d45dc8cefad9c721e206a7a6215f559d9",
+    "model_reconstruction_brief.json": "4dcca8675be49ae14390da48f2374f4c1aa49f091683a869e831a3d418783be6"
+  },
+  "note": "No blind behavioral evaluation has been performed"
+}

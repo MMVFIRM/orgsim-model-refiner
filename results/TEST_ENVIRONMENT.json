@@ -1,0 +1,14 @@
+{
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "versions": {
+    "numpy": "2.3.5",
+    "scikit-learn": "1.8.0",
+    "pytest": "9.0.2",
+    "jsonschema": "4.26.0",
+    "PyYAML": "6.0.3",
+    "setuptools": "82.0.1",
+    "wheel": "metadata not installed"
+  },
+  "windows_execution_performed": false
+}

@@ -1,0 +1,1268 @@
+{
+  "arms": [
+    "contract",
+    "symbolic"
+  ],
+  "behavioral_clone": false,
+  "budget_max": 32,
+  "by_evidence_class": {
+    "new_endpoint": {
+      "contract": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 0.53846,
+        "cases": 7,
+        "correct_fields": 7,
+        "full_predicted_matches": 2,
+        "observable_field_coverage": 0.56522,
+        "predicted_fields": 13,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 5,
+        "status_predictions": 7
+      },
+      "symbolic": {
+        "abstentions": 6,
+        "accuracy_on_predictions": 1.0,
+        "cases": 7,
+        "correct_fields": 3,
+        "full_predicted_matches": 1,
+        "observable_field_coverage": 0.13043,
+        "predicted_fields": 3,
+        "special_checks": 1,
+        "special_correct": 1,
+        "status_correct": 1,
+        "status_predictions": 1
+      }
+    },
+    "new_identity": {
+      "contract": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 0.5,
+        "cases": 2,
+        "correct_fields": 2,
+        "full_predicted_matches": 0,
+        "observable_field_coverage": 0.44444,
+        "predicted_fields": 4,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 2,
+        "status_predictions": 2
+      },
+      "symbolic": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 0.77778,
+        "cases": 2,
+        "correct_fields": 7,
+        "full_predicted_matches": 0,
+        "observable_field_coverage": 1.0,
+        "predicted_fields": 9,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 2,
+        "status_predictions": 2
+      }
+    },
+    "unseen_combined_modifier": {
+      "contract": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 1.0,
+        "cases": 1,
+        "correct_fields": 2,
+        "full_predicted_matches": 1,
+        "observable_field_coverage": 0.5,
+        "predicted_fields": 2,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 1,
+        "status_predictions": 1
+      },
+      "symbolic": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 1.0,
+        "cases": 1,
+        "correct_fields": 4,
+        "full_predicted_matches": 1,
+        "observable_field_coverage": 1.0,
+        "predicted_fields": 4,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 1,
+        "status_predictions": 1
+      }
+    },
+    "unseen_filter": {
+      "contract": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 1.0,
+        "cases": 3,
+        "correct_fields": 6,
+        "full_predicted_matches": 3,
+        "observable_field_coverage": 0.3,
+        "predicted_fields": 6,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 3,
+        "status_predictions": 3
+      },
+      "symbolic": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 0.78947,
+        "cases": 3,
+        "correct_fields": 15,
+        "full_predicted_matches": 2,
+        "observable_field_coverage": 0.79167,
+        "predicted_fields": 19,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 3,
+        "status_predictions": 3
+      }
+    },
+    "unseen_ordering": {
+      "contract": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 1.0,
+        "cases": 2,
+        "correct_fields": 4,
+        "full_predicted_matches": 2,
+        "observable_field_coverage": 0.21053,
+        "predicted_fields": 4,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 2,
+        "status_predictions": 2
+      },
+      "symbolic": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 1.0,
+        "cases": 2,
+        "correct_fields": 17,
+        "full_predicted_matches": 2,
+        "observable_field_coverage": 0.89474,
+        "predicted_fields": 17,
+        "special_checks": 2,
+        "special_correct": 2,
+        "status_correct": 2,
+        "status_predictions": 2
+      }
+    },
+    "unseen_pagination": {
+      "contract": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 1.0,
+        "cases": 1,
+        "correct_fields": 2,
+        "full_predicted_matches": 1,
+        "observable_field_coverage": 0.25,
+        "predicted_fields": 2,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 1,
+        "status_predictions": 1
+      },
+      "symbolic": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 1.0,
+        "cases": 1,
+        "correct_fields": 7,
+        "full_predicted_matches": 1,
+        "observable_field_coverage": 0.875,
+        "predicted_fields": 7,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 1,
+        "status_predictions": 1
+      }
+    },
+    "unseen_projection": {
+      "contract": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 1.0,
+        "cases": 1,
+        "correct_fields": 2,
+        "full_predicted_matches": 1,
+        "observable_field_coverage": 0.25,
+        "predicted_fields": 2,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 1,
+        "status_predictions": 1
+      },
+      "symbolic": {
+        "abstentions": 0,
+        "accuracy_on_predictions": 0.75,
+        "cases": 1,
+        "correct_fields": 6,
+        "full_predicted_matches": 0,
+        "observable_field_coverage": 0.88889,
+        "predicted_fields": 8,
+        "special_checks": 0,
+        "special_correct": 0,
+        "status_correct": 1,
+        "status_predictions": 1
+      }
+    }
+  },
+  "candidate_sha256": "364188150d57efccdea80424e2ff82eedb6cd9f79dcede4a92f5b853e33ed286",
+  "cases": [
+    {
+      "evidence_class": "unseen_ordering",
+      "family": "thirdparties",
+      "id": "customers_desc",
+      "method": "GET",
+      "observation": {
+        "field_types": {
+          "client": "string",
+          "id": "string",
+          "name": "string"
+        },
+        "item_keys": [
+          "client",
+          "id",
+          "name"
+        ],
+        "item_kind": "object",
+        "kind": "array",
+        "length": 3,
+        "reverse_matches": true,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {
+          "field_types": {
+            "client": "string",
+            "id": "string",
+            "name": "string"
+          },
+          "item_keys": [
+            "client",
+            "id",
+            "name"
+          ],
+          "kind": "array",
+          "length": 3,
+          "reverse_matches": true,
+          "status": 200
+        }
+      },
+      "route_template": "/thirdparties?limit=3&sortorder=DESC&properties=id,name,client",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 2,
+          "coverage": 0.22222,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 9,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": false,
+          "correct_fields": 8,
+          "coverage": 0.88889,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "field_types.client": true,
+            "field_types.id": true,
+            "field_types.name": true,
+            "item_keys": true,
+            "kind": true,
+            "length": true,
+            "reverse_matches": true,
+            "status": true
+          },
+          "observable_fields": 9,
+          "predicted_fields": 8
+        }
+      }
+    },
+    {
+      "evidence_class": "unseen_ordering",
+      "family": "orders",
+      "id": "orders_desc",
+      "method": "GET",
+      "observation": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "socid": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "socid",
+          "status"
+        ],
+        "item_kind": "object",
+        "kind": "array",
+        "length": 2,
+        "reverse_matches": true,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {
+          "field_types": {
+            "id": "string",
+            "ref": "string",
+            "socid": "string",
+            "status": "string"
+          },
+          "item_keys": [
+            "id",
+            "ref",
+            "socid",
+            "status"
+          ],
+          "kind": "array",
+          "length": 2,
+          "reverse_matches": true,
+          "status": 200
+        }
+      },
+      "route_template": "/orders?limit=3&sortorder=DESC&properties=id,socid,ref,status",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 2,
+          "coverage": 0.2,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 10,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": false,
+          "correct_fields": 9,
+          "coverage": 0.9,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "field_types.id": true,
+            "field_types.ref": true,
+            "field_types.socid": true,
+            "field_types.status": true,
+            "item_keys": true,
+            "kind": true,
+            "length": true,
+            "reverse_matches": true,
+            "status": true
+          },
+          "observable_fields": 10,
+          "predicted_fields": 9
+        }
+      }
+    },
+    {
+      "evidence_class": "unseen_pagination",
+      "family": "thirdparties",
+      "id": "customers_page2",
+      "method": "GET",
+      "observation": {
+        "field_types": {
+          "client": "string",
+          "id": "string",
+          "name": "string"
+        },
+        "item_keys": [
+          "client",
+          "id",
+          "name"
+        ],
+        "item_kind": "object",
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {
+          "field_types": {
+            "client": "string",
+            "id": "string",
+            "name": "string"
+          },
+          "item_keys": [
+            "client",
+            "id",
+            "name"
+          ],
+          "kind": "array",
+          "length": 1,
+          "status": 200
+        }
+      },
+      "route_template": "/thirdparties?limit=1&page=2&properties=id,name,client",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 2,
+          "coverage": 0.25,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 8,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": false,
+          "correct_fields": 7,
+          "coverage": 0.875,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "field_types.client": true,
+            "field_types.id": true,
+            "field_types.name": true,
+            "item_keys": true,
+            "kind": true,
+            "length": true,
+            "status": true
+          },
+          "observable_fields": 8,
+          "predicted_fields": 7
+        }
+      }
+    },
+    {
+      "evidence_class": "unseen_filter",
+      "family": "products",
+      "id": "products_mode",
+      "method": "GET",
+      "observation": {
+        "field_types": {
+          "id": "string",
+          "label": "string",
+          "ref": "string",
+          "type": "string"
+        },
+        "item_keys": [
+          "id",
+          "label",
+          "ref",
+          "type"
+        ],
+        "item_kind": "object",
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {
+          "field_types": {
+            "id": "string",
+            "label": "string",
+            "ref": "string",
+            "type": "string"
+          },
+          "item_keys": [
+            "id",
+            "label",
+            "ref",
+            "type"
+          ],
+          "kind": "array",
+          "status": 200
+        }
+      },
+      "route_template": "/products?limit=3&mode=1&properties=id,ref,label,type",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 2,
+          "coverage": 0.22222,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 9,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": false,
+          "correct_fields": 7,
+          "coverage": 0.77778,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "field_types.id": true,
+            "field_types.label": true,
+            "field_types.ref": true,
+            "field_types.type": true,
+            "item_keys": true,
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 9,
+          "predicted_fields": 7
+        }
+      }
+    },
+    {
+      "evidence_class": "unseen_combined_modifier",
+      "family": "products",
+      "id": "products_ids_desc",
+      "method": "GET",
+      "observation": {
+        "item_kind": "string",
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {
+          "item_kind": "string",
+          "kind": "array",
+          "length": 1,
+          "status": 200
+        }
+      },
+      "route_template": "/products?limit=3&sortorder=DESC&ids_only=1",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 2,
+          "coverage": 0.5,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 4,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": false,
+          "correct_fields": 4,
+          "coverage": 1.0,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "item_kind": true,
+            "kind": true,
+            "length": true,
+            "status": true
+          },
+          "observable_fields": 4,
+          "predicted_fields": 4
+        }
+      }
+    },
+    {
+      "evidence_class": "unseen_filter",
+      "family": "orders",
+      "id": "orders_draft",
+      "method": "GET",
+      "observation": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "status"
+        ],
+        "item_kind": "object",
+        "kind": "array",
+        "length": 2,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {
+          "field_types": {
+            "id": "string",
+            "ref": "string",
+            "status": "string"
+          },
+          "item_keys": [
+            "id",
+            "ref",
+            "status"
+          ],
+          "kind": "array",
+          "status": 200
+        }
+      },
+      "route_template": "/orders?limit=3&status=draft&properties=id,ref,status",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 2,
+          "coverage": 0.25,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 8,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": false,
+          "correct_fields": 6,
+          "coverage": 0.75,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "field_types.id": true,
+            "field_types.ref": true,
+            "field_types.status": true,
+            "item_keys": true,
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 8,
+          "predicted_fields": 6
+        }
+      }
+    },
+    {
+      "evidence_class": "unseen_filter",
+      "family": "invoices",
+      "id": "invoices_unpaid",
+      "method": "GET",
+      "observation": {
+        "field_types": {},
+        "kind": "array",
+        "length": 0,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {
+          "field_types": {
+            "id": "string",
+            "ref": "string",
+            "status": "string"
+          },
+          "item_keys": [
+            "id",
+            "ref",
+            "status"
+          ],
+          "kind": "array",
+          "status": 200
+        }
+      },
+      "route_template": "/invoices?limit=3&status=unpaid&properties=id,ref,status",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 2,
+          "coverage": 0.66667,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 3,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": false,
+          "correct_fields": 2,
+          "coverage": 0.85714,
+          "exact_predicted_fields": false,
+          "field_checks": {
+            "field_types.id": false,
+            "field_types.ref": false,
+            "field_types.status": false,
+            "item_keys": false,
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 7,
+          "predicted_fields": 6
+        }
+      }
+    },
+    {
+      "evidence_class": "unseen_projection",
+      "family": "invoices",
+      "id": "invoices_hide_lines",
+      "method": "GET",
+      "observation": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "status": "string"
+        },
+        "item_keys": [
+          "id",
+          "ref",
+          "status"
+        ],
+        "item_kind": "object",
+        "kind": "array",
+        "length": 1,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {
+          "field_types": {
+            "id": "string",
+            "lines": "array",
+            "ref": "string",
+            "status": "string"
+          },
+          "item_keys": [
+            "id",
+            "lines",
+            "ref",
+            "status"
+          ],
+          "kind": "array",
+          "length": 1,
+          "status": 200
+        }
+      },
+      "route_template": "/invoices?limit=3&withLines=false&properties=id,ref,status,lines",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 2,
+          "coverage": 0.25,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 8,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": false,
+          "correct_fields": 6,
+          "coverage": 0.88889,
+          "exact_predicted_fields": false,
+          "field_checks": {
+            "field_types.id": true,
+            "field_types.lines": false,
+            "field_types.ref": true,
+            "field_types.status": true,
+            "item_keys": false,
+            "kind": true,
+            "length": true,
+            "status": true
+          },
+          "observable_fields": 9,
+          "predicted_fields": 8
+        }
+      }
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "orders",
+      "id": "orders_by_ref",
+      "method": "GET",
+      "observation": {
+        "field_types": {
+          "id": "string",
+          "ref": "string",
+          "socid": "string",
+          "status": "string"
+        },
+        "kind": "object",
+        "ref_matches": true,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "string",
+          "status": 200
+        },
+        "symbolic": {
+          "kind": "object",
+          "ref_matches": true,
+          "status": 200
+        }
+      },
+      "route_template": "/orders/ref/{ref}",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 1,
+          "coverage": 0.28571,
+          "exact_predicted_fields": false,
+          "field_checks": {
+            "kind": false,
+            "status": true
+          },
+          "observable_fields": 7,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": false,
+          "correct_fields": 3,
+          "coverage": 0.42857,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "kind": true,
+            "ref_matches": true,
+            "status": true
+          },
+          "observable_fields": 7,
+          "predicted_fields": 3
+        }
+      }
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "orders",
+      "id": "orders_contacts",
+      "method": "GET",
+      "observation": {
+        "kind": "array",
+        "length": 0,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "string",
+          "status": 200
+        },
+        "symbolic": {}
+      },
+      "route_template": "/orders/{id}/contacts",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 1,
+          "coverage": 0.66667,
+          "exact_predicted_fields": false,
+          "field_checks": {
+            "kind": false,
+            "status": true
+          },
+          "observable_fields": 3,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": true,
+          "correct_fields": 0,
+          "coverage": 0.0,
+          "exact_predicted_fields": false,
+          "field_checks": {},
+          "observable_fields": 3,
+          "predicted_fields": 0
+        }
+      }
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "invoices",
+      "id": "invoices_contacts",
+      "method": "GET",
+      "observation": {
+        "kind": "array",
+        "length": 0,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "string",
+          "status": 200
+        },
+        "symbolic": {}
+      },
+      "route_template": "/invoices/{id}/contacts",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 1,
+          "coverage": 0.66667,
+          "exact_predicted_fields": false,
+          "field_checks": {
+            "kind": false,
+            "status": true
+          },
+          "observable_fields": 3,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": true,
+          "correct_fields": 0,
+          "coverage": 0.0,
+          "exact_predicted_fields": false,
+          "field_checks": {},
+          "observable_fields": 3,
+          "predicted_fields": 0
+        }
+      }
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "invoices",
+      "id": "invoices_discount",
+      "method": "GET",
+      "observation": {
+        "kind": "object",
+        "status": 404
+      },
+      "predictions": {
+        "contract": {
+          "status": 200
+        },
+        "symbolic": {}
+      },
+      "route_template": "/invoices/{id}/discount",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 0,
+          "coverage": 0.5,
+          "exact_predicted_fields": false,
+          "field_checks": {
+            "status": false
+          },
+          "observable_fields": 2,
+          "predicted_fields": 1
+        },
+        "symbolic": {
+          "abstained": true,
+          "correct_fields": 0,
+          "coverage": 0.0,
+          "exact_predicted_fields": false,
+          "field_checks": {},
+          "observable_fields": 2,
+          "predicted_fields": 0
+        }
+      }
+    },
+    {
+      "evidence_class": "new_identity",
+      "family": "thirdparties",
+      "id": "customers_outstanding_second",
+      "method": "GET",
+      "observation": {
+        "field_types": {
+          "opened": "number",
+          "refs": "array"
+        },
+        "kind": "object",
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {
+          "field_types": {
+            "opened": "number",
+            "refs": "object"
+          },
+          "kind": "object",
+          "status": 200
+        }
+      },
+      "route_template": "/thirdparties/{id}/outstandingorders",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 1,
+          "coverage": 0.5,
+          "exact_predicted_fields": false,
+          "field_checks": {
+            "kind": false,
+            "status": true
+          },
+          "observable_fields": 4,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": false,
+          "correct_fields": 3,
+          "coverage": 1.0,
+          "exact_predicted_fields": false,
+          "field_checks": {
+            "field_types.opened": true,
+            "field_types.refs": false,
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 4,
+          "predicted_fields": 4
+        }
+      }
+    },
+    {
+      "evidence_class": "new_identity",
+      "family": "thirdparties",
+      "id": "customers_outstanding_third",
+      "method": "GET",
+      "observation": {
+        "field_types": {
+          "opened": "number",
+          "refs": "array",
+          "refsopened": "array"
+        },
+        "kind": "object",
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {
+          "field_types": {
+            "opened": "number",
+            "refs": "object",
+            "refsopened": "array"
+          },
+          "kind": "object",
+          "status": 200
+        }
+      },
+      "route_template": "/thirdparties/{id}/outstandinginvoices",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 1,
+          "coverage": 0.4,
+          "exact_predicted_fields": false,
+          "field_checks": {
+            "kind": false,
+            "status": true
+          },
+          "observable_fields": 5,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": false,
+          "correct_fields": 4,
+          "coverage": 1.0,
+          "exact_predicted_fields": false,
+          "field_checks": {
+            "field_types.opened": true,
+            "field_types.refs": false,
+            "field_types.refsopened": true,
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 5,
+          "predicted_fields": 5
+        }
+      }
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "thirdparties",
+      "id": "customer_categories",
+      "method": "GET",
+      "observation": {
+        "kind": "object",
+        "status": 403
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {}
+      },
+      "route_template": "/thirdparties/{id}/categories",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 0,
+          "coverage": 1.0,
+          "exact_predicted_fields": false,
+          "field_checks": {
+            "kind": false,
+            "status": false
+          },
+          "observable_fields": 2,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": true,
+          "correct_fields": 0,
+          "coverage": 0.0,
+          "exact_predicted_fields": false,
+          "field_checks": {},
+          "observable_fields": 2,
+          "predicted_fields": 0
+        }
+      }
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "products",
+      "id": "product_purchase_prices",
+      "method": "GET",
+      "observation": {
+        "kind": "array",
+        "length": 0,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {}
+      },
+      "route_template": "/products/{id}/purchase_prices",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 2,
+          "coverage": 0.66667,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 3,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": true,
+          "correct_fields": 0,
+          "coverage": 0.0,
+          "exact_predicted_fields": false,
+          "field_checks": {},
+          "observable_fields": 3,
+          "predicted_fields": 0
+        }
+      }
+    },
+    {
+      "evidence_class": "new_endpoint",
+      "family": "products",
+      "id": "product_variants",
+      "method": "GET",
+      "observation": {
+        "kind": "array",
+        "length": 0,
+        "status": 200
+      },
+      "predictions": {
+        "contract": {
+          "kind": "array",
+          "status": 200
+        },
+        "symbolic": {}
+      },
+      "route_template": "/products/{id}/variants",
+      "scores": {
+        "contract": {
+          "abstained": false,
+          "correct_fields": 2,
+          "coverage": 0.66667,
+          "exact_predicted_fields": true,
+          "field_checks": {
+            "kind": true,
+            "status": true
+          },
+          "observable_fields": 3,
+          "predicted_fields": 2
+        },
+        "symbolic": {
+          "abstained": true,
+          "correct_fields": 0,
+          "coverage": 0.0,
+          "exact_predicted_fields": false,
+          "field_checks": {},
+          "observable_fields": 3,
+          "predicted_fields": 0
+        }
+      }
+    }
+  ],
+  "cases_configured": 18,
+  "cases_scored": 17,
+  "conclusion": "READ_ONLY_SHAPE_BEHAVIOR_NOT_CAUSAL_FIDELITY",
+  "credentials_saved": false,
+  "format": "orgsim-gate2f-read-prediction-v1-report",
+  "independent_tenant_holdout": false,
+  "live_writes": 0,
+  "model_provider_calls_during_evaluation": 0,
+  "model_provider_calls_during_prepare": 0,
+  "operations_executed": 21,
+  "phase": "holdout",
+  "plan_sha256": "f20b4f5256ca3a602df532ce1031558ad9f7abc4fad1eeaa44fa431ac379ca8b",
+  "query_holdout": true,
+  "raw_values_saved": false,
+  "scores": {
+    "contract": {
+      "abstentions": 0,
+      "accuracy_on_predictions": 0.75758,
+      "cases": 17,
+      "correct_fields": 25,
+      "full_predicted_matches": 10,
+      "observable_field_coverage": 0.36264,
+      "predicted_fields": 33,
+      "special_checks": 0,
+      "special_correct": 0,
+      "status_correct": 15,
+      "status_predictions": 17
+    },
+    "symbolic": {
+      "abstentions": 6,
+      "accuracy_on_predictions": 0.8806,
+      "cases": 17,
+      "correct_fields": 59,
+      "full_predicted_matches": 7,
+      "observable_field_coverage": 0.69792,
+      "predicted_fields": 67,
+      "special_checks": 3,
+      "special_correct": 3,
+      "status_correct": 11,
+      "status_predictions": 11
+    }
+  },
+  "selector_counts": {
+    "invoices": 1,
+    "orders": 2,
+    "products": 1,
+    "thirdparties": 3
+  },
+  "selector_reads": 4,
+  "skipped": [
+    {
+      "id": "invoices_by_ref",
+      "reason": "unsafe_or_absent_ref"
+    }
+  ],
+  "source_discovery_sha256": "136025e9432f687605691473d515ad1dccdb435d227220e9146c04c77eb51d2c",
+  "stop_reason": "plan_complete"
+}

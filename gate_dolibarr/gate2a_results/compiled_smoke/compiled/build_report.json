@@ -1,0 +1,20 @@
+{
+  "organization": "SYNTHETIC_ORACLE_UNREVIEWED",
+  "reviewed": false,
+  "assurance": "contract_only_unreviewed",
+  "tool_count": 4,
+  "resource_count": 1,
+  "integration_count": 0,
+  "workflow_count": 1,
+  "lookup_count": 0,
+  "notes": [
+    "Synthetic discovery hypothesis only. Cannot be presented as verified Dolibarr behavior.",
+    "All preconditions must be validated on new independent examples."
+  ],
+  "limits": [
+    "Only configured policy invariants are enforced",
+    "Tool roles are untrusted caller-supplied lab identities",
+    "Unmodeled custom operations remain unsupported until a reviewed declarative action is supplied",
+    "No live system I/O or organization data cloning"
+  ]
+}

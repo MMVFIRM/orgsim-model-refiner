@@ -1,0 +1,33 @@
+{
+  "swagger": "2.0",
+  "info": {"title": "ILLUSTRATIVE Dolibarr-style API (NOT captured from Dolibarr)", "version": "fixture-only"},
+  "basePath": "/api/index.php",
+  "produces": ["application/json"],
+  "paths": {
+    "/thirdparties": {
+      "get": {"summary": "List thirdparties", "responses": {"200": {"description": "OK", "schema": {"type": "array", "items": {"$ref": "#/definitions/Thirdparty"}}}}},
+      "post": {"parameters": [{"in": "body", "name": "thirdparty", "required": true, "schema": {"$ref": "#/definitions/Thirdparty"}}], "responses": {"200": {"description": "Created", "schema": {"type": "integer"}}}}
+    },
+    "/thirdparties/{id}": {
+      "get": {"parameters": [{"name": "id", "in": "path", "type": "integer", "required": true}], "responses": {"200": {"description": "OK", "schema": {"$ref": "#/definitions/Thirdparty"}}, "404": {"description": "Missing"}}},
+      "put": {"parameters": [{"name": "id", "in": "path", "type": "integer", "required": true}, {"name": "thirdparty", "in": "body", "schema": {"$ref": "#/definitions/Thirdparty"}}], "responses": {"200": {"description": "OK", "schema": {"$ref": "#/definitions/Thirdparty"}}}}
+    },
+    "/products": {
+      "get": {"responses": {"200": {"description": "OK", "schema": {"type": "array", "items": {"$ref": "#/definitions/Product"}}}}},
+      "post": {"parameters": [{"in": "body", "name": "product", "schema": {"$ref": "#/definitions/Product"}}], "responses": {"200": {"description": "Created", "schema": {"type": "integer"}}}}
+    },
+    "/products/{id}": {
+      "get": {"responses": {"200": {"description": "OK", "schema": {"$ref": "#/definitions/Product"}}}}
+    },
+    "/orders/{id}/validate": {
+      "post": {"responses": {"200": {"description": "A non-CRUD workflow command"}}}
+    },
+    "/login": {
+      "get": {"responses": {"200": {"description": "Auth token", "schema": {"type": "object", "properties": {"success": {"type": "string"}}}}}}
+    }
+  },
+  "definitions": {
+    "Thirdparty": {"type": "object", "properties": {"id": {"type": "integer"}, "name": {"type": "string"}, "client": {"type": "integer"}}, "required": ["name"]},
+    "Product": {"type": "object", "properties": {"id": {"type": "integer"}, "ref": {"type": "string"}, "label": {"type": "string"}, "price": {"type": "number"}}, "required": ["ref", "label"]}
+  }
+}

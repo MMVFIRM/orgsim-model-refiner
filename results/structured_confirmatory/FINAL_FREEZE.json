@@ -1,0 +1,9 @@
+{
+  "dolibarr_reads": 0,
+  "dolibarr_writes": 0,
+  "externally_timestamped": false,
+  "format": "orgsim-refiner-executable-policy-study-v1-final-freeze",
+  "independent_tenant_holdout": false,
+  "provider_calls": 0,
+  "summary_sha256": "0d87e8983460f9da736b3980ecbb98e20692cda85b6f1cfc2877d6095e7d681b"
+}
